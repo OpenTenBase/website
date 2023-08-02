@@ -1,9 +1,9 @@
 - id: blogTitle
-  translation: 最新文章
+  translation: 最新 文章
 - id: newsTitle
-  translation: 最新新闻
+  translation: 最新 新闻
 - id: eventTitle
-  translation: 最新活动
+  translation: 最新 活动
 - id: readMore
   translation: 阅读更多
 - id: viewAllPost
@@ -11,9 +11,9 @@
 - id: share
   translation: 分享
 - id: aboutAuthor
-  translation: 关于作者
+  translation: 关于 作者
 - id: authorsPosts
-  translation: 作者文章
+  translation: 作者 文章
 - id: all
   translation: 所有
 - id: about
@@ -21,7 +21,7 @@
 - id: services
   translation: 特性
 - id: portfolio
-  translation: 合作伙伴
+  translation: 合作 伙伴
 - id: team
   translation: 团队
 - id: pricing
@@ -33,6 +33,6 @@
 - id: event
   translation: 活动
 - id: contact
-  translation: 联系我们
+  translation: 联系 我们
 - id: themefisher
   translation: Themefisher
