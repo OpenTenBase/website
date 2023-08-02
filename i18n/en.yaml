@@ -1,5 +1,9 @@
 - id: blogTitle
   translation: Latest Post
+- id: newsTitle
+  translation: Latest News
+- id: eventTitle
+  translation: Latest Event
 - id: readMore
   translation: Read more
 - id: viewAllPost
@@ -24,6 +28,10 @@
   translation: Pricing
 - id: blog
   translation: Blog
+- id: news
+  translation: News
+- id: event
+  translation: Event
 - id: contact
   translation: Contact
 - id: themefisher

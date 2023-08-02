@@ -3,7 +3,7 @@ baseURL = "https://bartdong.github.io"
 title = "OpenTenBase"
 theme = "meghna-hugo"
 # Default time zone for time stamps; use any valid tz database name: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
-timeZone = "America/New_York"
+timeZone = "Asia/Shanghai"
 # post pagination
 paginate = 6 # see https://gohugo.io/extras/pagination/
 # post excerpt
@@ -15,7 +15,7 @@ disqusShortname = "themefisher-template" # we use disqus to show comments in blo
 # disable language
 disableLanguages = [
 ] # example: ["fr"] for disable french language. see https://gohugo.io/content-management/multilingual/
-hasCJKLanguage = false #  If hasCJKLanguage true, auto-detect Chinese/Japanese/Korean Languages in the content. see: https://gohugo.io/getting-started/configuration/#hascjklanguage
+hasCJKLanguage = true #  If hasCJKLanguage true, auto-detect Chinese/Japanese/Korean Languages in the content. see: https://gohugo.io/getting-started/configuration/#hascjklanguage
 
 ############################# Build ##############################
 [build]
@@ -88,6 +88,39 @@ link = "plugins/lazy-load/lozad.min.js"
 [[params.plugins.js]]
 link = "plugins/google-map/map.js"
 
+
+
+################### Chinese Navigation ########################
+[[Languages.cn.menu.main]]
+name = "新闻"
+url = "#news"
+weight = 1
+
+[[Languages.cn.menu.main]]
+name = "活动"
+url = "#event"
+weight = 2
+
+[[Languages.cn.menu.main]]
+name = "文章"
+url = "#blog"
+weight = 3
+
+[[Languages.cn.menu.main]]
+name = "文档"
+url = "#"
+weight = 4
+
+[[Languages.cn.menu.main]]
+name = "下载"
+url = "https://github.com/Tencent/TBase/tags"
+weight = 5
+
+[[Languages.cn.menu.main]]
+name = "源码"
+url = "https://github.com/Tencent/TBase"
+weight = 6
+
 ################### English Navigation ########################
 [[Languages.en.menu.main]]
 name = "about"
@@ -148,47 +181,6 @@ url = "https://themefisher.com/"
 weight = 8
 
 
-################### French Navigation ########################
-[[Languages.fr.menu.main]]
-name = "sur"
-url = "#about"
-weight = 1
-
-[[Languages.fr.menu.main]]
-name = "un service"
-url = "#services"
-weight = 2
-
-[[Languages.fr.menu.main]]
-name = "portefeuille"
-url = "#portfolio"
-weight = 3
-
-[[Languages.fr.menu.main]]
-name = "équipe"
-url = "#team"
-weight = 4
-
-[[Languages.fr.menu.main]]
-name = "tarification"
-url = "#pricing"
-weight = 5
-
-[[Languages.fr.menu.main]]
-name = "blog"
-url = "#blog"
-weight = 6
-
-[[Languages.fr.menu.main]]
-name = "contact"
-url = "#contact"
-weight = 7
-
-[[Languages.fr.menu.main]]
-name = "themefisher"
-url = "https://themefisher.com/"
-weight = 8
-
 ############################# Default Parameters ##########################
 [params]
 logo = "images/logo.png"
@@ -244,6 +236,17 @@ icon = "ti-pinterest" # themify icon pack : https://themify.me/themify-icons
 link = "#"
 
 
+################################ Chinese Language ########################
+[Languages.cn]
+languageName = "中文"
+languageCode = "zh-cn"
+contentDir = "content/chinese"
+weight = 1
+
+[Languages.cn.params]
+home = "首页"
+copyright = "Copyright &copy; 2020 Designed by [Themefisher](https://themefisher.com) & Developed by [Gethugothemes](https://gethugothemes.com)"
+
 ################################ English Language ########################
 [Languages.en]
 languageName = "En"
@@ -251,17 +254,6 @@ languageCode = "en-us"
 contentDir = "content/english"
 
 [Languages.en.params]
-weight = 1
-home = "Home"
-copyright = "Copyright &copy; 2020 Designed by [Themefisher](https://themefisher.com) & Developed by [Gethugothemes](https://gethugothemes.com)"
-
-################################ France Language ########################
-[Languages.fr]
-languageName = "Fr"
-languageCode = "fr-fr"
-contentDir = "content/french"
 weight = 2
-
-[Languages.fr.params]
-home = "Accueil"
+home = "Home"
 copyright = "Copyright &copy; 2020 Designed by [Themefisher](https://themefisher.com) & Developed by [Gethugothemes](https://gethugothemes.com)"

@@ -1,7 +1,7 @@
 ################################# Service #################################
 service:
   enable : true
-  title : Our Services
+  title : 关键特性
   service_item :
     # service item loop
     - name : WordPress Theme
