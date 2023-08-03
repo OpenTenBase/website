@@ -110,7 +110,7 @@ weight = 3
 
 [[Languages.cn.menu.main]]
 name = "文档"
-url = "#"
+url = "https://bartdong.github.io/docs/"
 weight = 4
 
 [[Languages.cn.menu.main]]
@@ -125,62 +125,34 @@ weight = 6
 
 ################### English Navigation ########################
 [[Languages.en.menu.main]]
-name = "about"
-url = "#about"
+name = "News"
+url = "#news"
 weight = 1
 
 [[Languages.en.menu.main]]
-name = "services"
-url = "#services"
+name = "Event"
+url = "#event"
 weight = 2
 
 [[Languages.en.menu.main]]
-name = "portfolio"
-url = "#portfolio"
+name = "Blog"
+url = "#blog"
 weight = 3
 
 [[Languages.en.menu.main]]
-name = "team"
-url = "#team"
+name = "Document"
+url = "https://bartdong.github.io/docs/en/"
 weight = 4
 
 [[Languages.en.menu.main]]
-name = "pricing"
-url = "#pricing"
+name = "Download"
+url = "https://github.com/Tencent/TBase/tags"
 weight = 5
 
 [[Languages.en.menu.main]]
-name = "blog"
-url = "#blog"
+name = "Code"
+url = "https://github.com/Tencent/TBase"
 weight = 6
-
-[[Languages.en.menu.main]]
-name = "contact"
-url = "#contact"
-weight = 7
-
-
-[[Languages.en.menu.main]]
-name = "Dropdown"
-weight = 7
-hasChildren = true
-
-[[Languages.en.menu.main]]
-parent = "Dropdown"
-name = "Dropdown 1"
-url = "#"
-weight = 1
-
-[[Languages.en.menu.main]]
-parent = "Dropdown"
-name = "Dropdown 2"
-url = "#"
-weight = 2
-
-[[Languages.en.menu.main]]
-name = "themefisher"
-url = "https://themefisher.com/"
-weight = 8
 
 
 ############################# Default Parameters ##########################
