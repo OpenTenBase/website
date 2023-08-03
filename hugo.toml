@@ -8,6 +8,8 @@ timeZone = "Asia/Shanghai"
 paginate = 6 # see https://gohugo.io/extras/pagination/
 # post excerpt
 summaryLength = 15 # see https://gohugo.io/content-management/excerpts/
+# defaultContentLanguage
+defaultContentLanguage = "cn"
 # google analytics
 googleAnalytics = "UA-123456-78" # example: UA-123456-78, for more info, read the article https://support.google.com/analytics/answer/1008080?hl=en
 # disqus short name
