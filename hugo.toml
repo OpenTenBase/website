@@ -1,5 +1,5 @@
 ################################# Default configuration ###################
-baseURL = "https://bartdong.github.io"
+baseURL = "https://opentenbase.github.io"
 title = "OpenTenBase"
 theme = "meghna-hugo"
 # Default time zone for time stamps; use any valid tz database name: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
@@ -110,7 +110,7 @@ weight = 3
 
 [[Languages.cn.menu.main]]
 name = "文档"
-url = "https://bartdong.github.io/docs/"
+url = "https://opentenbase.github.io/docs/"
 weight = 4
 
 [[Languages.cn.menu.main]]
@@ -141,7 +141,7 @@ weight = 3
 
 [[Languages.en.menu.main]]
 name = "Document"
-url = "https://bartdong.github.io/docs/en/"
+url = "https://opentenbase.github.io/docs/en/"
 weight = 4
 
 [[Languages.en.menu.main]]
