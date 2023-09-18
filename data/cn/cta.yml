@@ -5,7 +5,7 @@ cta:
 #  bg_image_webp : "images/backgrounds/bg-white-wall.webp"
   title : "进一步探索OpenTenBase更多特性 OpenTenBase代码仓库"
 #  content : "OpenTenBase代码仓库"
-  link: "https://github.com/Tencent/TBase"
+  link: "https://github.com/OpenTenBase/OpenTenBase"
   button:
     enable : false
     label : "Start a project with us"

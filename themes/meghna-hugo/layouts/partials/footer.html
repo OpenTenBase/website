@@ -14,10 +14,11 @@
         <!--				</div>-->
 
         {{"<!-- copyright --> " | safeHTML}}
-        <div class="logo" data-wow-duration="500ms">
+        <div class="col-lg-9" data-wow-duration="500ms">
           <a href="{{ site.Home.Permalink }}">
-            <img src="{{ site.Params.logo_footer | absURL }}" alt="{{ site.Title }}" height="42"/>
+            <img class="logo" src="{{ site.Params.logo_footer | absURL }}" alt="{{ site.Title }}" height="42"/>
           </a>
+          <img align="right" src="{{ site.Params.qr_code}}" height="72"/>
         </div>
         <br>
         <hr>

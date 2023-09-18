@@ -159,6 +159,7 @@ weight = 6
 [params]
 logo = "images/logo.png"
 logo_footer = "images/logo_footer.png"
+qr_code = "images/qr.png"
 # Meta data
 description = "Responsive Multipurpose Parallax Hugo Template"
 author = "Themefisher"
