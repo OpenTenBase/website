@@ -3,25 +3,25 @@ feature:
   enable : true
   image : images/about/about-business-man.jpg
   image_webp : images/about/about-business-man.webp
-  title : We’re A Digital Design Agency.
-  content : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam tempora itaque, autem dolores culpa cum mollitia voluptate nesciunt voluptatibus quasi."
+  title : Install, Use, Contribute? Get started quickly with OpenTenBase!
+  content :
   feature_item : 
       # feature item loop
-    - title : SEO Optimized
-      icon : ti-world # themify icon pack : https://themify.me/themify-icons
-      content : Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus consectetur dolores repellendus eos saepe
+    - title : What is OpenTenBase
+      icon : ti-help # themify icon pack : https://themify.me/themify-icons
+      content : OpenTenBase is an open source distributed database that can easily handle the storage, analysis and query of billions of data.
       
       # feature item loop
-    - title : Easy Customization
-      icon : ti-panel # themify icon pack : https://themify.me/themify-icons
-      content : Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus consectetur dolores repellendus eos saepe
+    - title : Quick Start
+      icon : ti-wand # themify icon pack : https://themify.me/themify-icons
+      content : OpenTenBase architecture, introduction, compilation and installation, cluster running status, start and stop, etc.
 
       # feature item loop
-    - title : SEO Optimized
-      icon : ti-stats-up # themify icon pack : https://themify.me/themify-icons
-      content : Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus consectetur dolores repellendus eos saepe
+    - title : Basic Use
+      icon : ti-book # themify icon pack : https://themify.me/themify-icons
+      content : Creation of shard table, hot and cold partition table, copy table, and basic DML operations.
       
       # feature item loop
-    - title : Easy Customization
-      icon : ti-announcement # themify icon pack : https://themify.me/themify-icons
-      content : Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus consectetur dolores repellendus eos saepe
+    - title : Contribute
+      icon : ti-write # themify icon pack : https://themify.me/themify-icons
+      content : If you have good comments or suggestions, welcome to create Issues or Pull Requests to contribute to the OpenTenBase open source community.

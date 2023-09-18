@@ -1,0 +1,25 @@
+{{ $data := index site.Data site.Language.Lang }}
+
+{{ if $data.article.article.enable}}
+{{ with $data.article.article}}
+{{"<!-- article -->" | safeHTML }}
+<section id="article" class="bg-one blog_section">
+  <div class="container">
+    {{"<!-- section title --> " | safeHTML }}
+    <p class="blog-service-font">{{.title | markdownify }} </p>
+    <hr>
+    <br>
+    <div class="row justify-content-center">
+      {{ range .article_item}}
+      <div class="col-lg-4 col-12" data-wow-duration="500ms">
+        <p class="article_item_title"><a href="{{ .link }}">{{ .title | markdownify }}</a></p>
+        <p class="article_item_source">{{ .source | markdownify }}</p>
+        <hr>
+        <a class="article_item_sub_title" href="{{ .link }}">{{ .sub_title | markdownify }}</a>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}

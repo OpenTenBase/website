@@ -3,9 +3,10 @@ cta:
   enable : true
   bg_image : "images/backgrounds/bg-white-wall.jpg"
   bg_image_webp : "images/backgrounds/bg-white-wall.webp"
-  title : "Great Design & Incredible Features"
-  content : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis tenetur odio impedit incidunt? Omnis accusantium ea reiciendis, fugit commodi nostrum."
+  title : "Explore more features of OpenTenBase"
+  # content : "OpenTenBase code repository"
+  link: "https://github.com/OpenTenBase/OpenTenBase"
   button:
-    enable : true
+    enable : false
     label : "Start a project with us"
     link : "#https://github.com/Tencent/TBase"

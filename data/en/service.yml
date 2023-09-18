@@ -1,34 +1,40 @@
 ################################# Service #################################
 service:
   enable : true
-  title : Our Services
+  title : Key Feature
   service_item :
     # service item loop
-    - name : WordPress Theme
+    - name : Commercial Database Compatibility
       icon : ti-world # themify icon pack : https://themify.me/themify-icons
-      content : Lorem ipsum dolor sit amet, consectetur.. Sed id lorem eget orci dictum facilisis vel id tellus.Nullam iaculis arcu at mauris dapibus consectetur.
+      content : Fully compatible with SQL2011, Supports commercial database syntax
+      content_2: 
       
     # service item loop
-    - name : Responsive Design
+    - name : PostgreSQL Compatibility
       icon : ti-layout # themify icon pack : https://themify.me/themify-icons
-      content : Lorem ipsum dolor sit amet, consectetur.. Sed id lorem eget orci dictum facilisis vel id tellus.Nullam iaculis arcu at mauris dapibus consectetur.
-      
+      content : Highly compatible with PostgreSQL syntax and following the community ecology
+      content_2:
+
     # service item loop
-    - name : Media &amp; Advertisement
-      icon : ti-blackboard # themify icon pack : https://themify.me/themify-icons
-      content : Lorem ipsum dolor sit amet, consectetur.. Sed id lorem eget orci dictum facilisis vel id tellus.Nullam iaculis arcu at mauris dapibus consectetur.
-      
+    - name: Complete Distributed Transaction Capabilities
+      icon: ti-blackboard # themify icon pack : https://themify.me/themify-icons
+      content: Complete distributed transaction ACID capabilities to ensure distributed read consistency
+      content_2:
+
     # service item loop
-    - name : Graphic Design
-      icon : ti-palette # themify icon pack : https://themify.me/themify-icons
-      content : Lorem ipsum dolor sit amet, consectetur.. Sed id lorem eget orci dictum facilisis vel id tellus.Nullam iaculis arcu at mauris dapibus consectetur.
-      
+    - name: HTAP Dual Engine
+      icon: ti-palette # themify icon pack : https://themify.me/themify-icons
+      content: Equipped with efficient OLTP and powerful OLAP dual engine capabilities, supporting PB level
+      content_2: Efficient processing of massive data and efficient distributed execution capabilities
+
     # service item loop
-    - name : Apps Development
+    - name : Flexible Extension
       icon : ti-package # themify icon pack : https://themify.me/themify-icons
-      content : Lorem ipsum dolor sit amet, consectetur.. Sed id lorem eget orci dictum facilisis vel id tellus.Nullam iaculis arcu at mauris dapibus consectetur.
-      
+      content : Distributed flexible expansion, distributed efficient elastic expansion and contraction
+      content_2:
+
     # service item loop
-    - name : Networking
+    - name : Superior performance
       icon : ti-pulse # themify icon pack : https://themify.me/themify-icons
-      content : Lorem ipsum dolor sit amet, consectetur.. Sed id lorem eget orci dictum facilisis vel id tellus.Nullam iaculis arcu at mauris dapibus consectetur.
+      content : Superior performance, good distributed elastic expansion, supporting high concurrency and high-speed throughput
+      content_2:

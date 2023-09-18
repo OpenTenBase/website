@@ -3,7 +3,7 @@
 {{ if $data.feature.feature.enable }}
 {{ with $data.feature.feature }}
 {{"<!-- feature -->" | safeHTML}}
-<section class="section section-bg about-2 padding-0" id="feature">
+<section class="feature section-bg about-2 padding-0" id="feature">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-6 padding-0" style="background-image: url('{{ .image_webp | absURL }}'); background-size: cover; background-position: top center; background-repeat: no-repeat; min-height: 400px;">
@@ -12,8 +12,7 @@
 			</div>
 			<div class="col-lg-6">
 				<div class="content-block">
-					<h2>{{ .title | markdownify }}</h2>
-					<p>{{ .content | markdownify }}</p>
+					<p class="feature-title-font">{{ .title | markdownify }}</p>
 					<div class="row">
 						{{ range .feature_item }}
 						<div class="col-lg-6">
@@ -24,8 +23,8 @@
 								</div>
 								{{ end }}
 								<div class="media-body">
-									<h4 class="media-heading">{{ .title | markdownify }}</h4>
-									<p>{{ .content | markdownify }}</p>
+									<p class="feature-sub-title-font">{{ .title | markdownify }}</p>
+									<p class="feature-sub-content-font">{{ .content | markdownify }}</p>
 								</div>
 							</div>
 						</div>

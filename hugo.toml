@@ -99,13 +99,13 @@ url = "#news"
 weight = 1
 
 [[Languages.cn.menu.main]]
-name = "活动"
-url = "#event"
+name = "文章"
+url = "#article"
 weight = 2
 
 [[Languages.cn.menu.main]]
-name = "文章"
-url = "#blog"
+name = "活动"
+url = "#event"
 weight = 3
 
 [[Languages.cn.menu.main]]
@@ -130,13 +130,13 @@ url = "#news"
 weight = 1
 
 [[Languages.en.menu.main]]
-name = "Event"
-url = "#event"
+name = "Blog"
+url = "#article"
 weight = 2
 
 [[Languages.en.menu.main]]
-name = "Blog"
-url = "#blog"
+name = "Event"
+url = "#event"
 weight = 3
 
 [[Languages.en.menu.main]]
@@ -158,6 +158,7 @@ weight = 6
 ############################# Default Parameters ##########################
 [params]
 logo = "images/logo.png"
+logo_footer = "images/logo_footer.png"
 # Meta data
 description = "Responsive Multipurpose Parallax Hugo Template"
 author = "Themefisher"
@@ -169,7 +170,7 @@ post_share = true
 # preloader
 [params.preloader]
 enable = false
-preloader = "images/logo.png"
+preloader = "images/logo_footer.png"
 
 # cookies
 [params.cookies]
@@ -215,11 +216,11 @@ link = "#"
 languageName = "中文"
 languageCode = "zh-cn"
 contentDir = "content/chinese"
-weight = 1
+#weight = 1
 
 [Languages.cn.params]
 home = "首页"
-copyright = "Copyright &copy; 2020 Designed by [Themefisher](https://themefisher.com) & Developed by [Gethugothemes](https://gethugothemes.com)"
+copyright = "               Copyright © 2013 - 2023 Tencent Cloud. All Rights Reserved. 腾讯云 版权所有"
 
 ################################ English Language ########################
 [Languages.en]
@@ -230,4 +231,4 @@ contentDir = "content/english"
 [Languages.en.params]
 weight = 2
 home = "Home"
-copyright = "Copyright &copy; 2020 Designed by [Themefisher](https://themefisher.com) & Developed by [Gethugothemes](https://gethugothemes.com)"
+copyright = "                Copyright © 2013 - 2023 Tencent Cloud. All Rights Reserved. 腾讯云 版权所有"

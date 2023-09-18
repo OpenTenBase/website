@@ -3,24 +3,29 @@
 {{ if $data.banner.banner.enable }}
 {{ with $data.banner.banner }}
 {{"<!-- Welcome Slider-->" | safeHTML}}
-<section class="hero-area" style='background-image: url("{{ .bg_image_webp | absURL }}")'>
-	<!-- this image is for trigger this section fallback background image -->
-	<img class="d-none" src="{{ .bg_image_webp | absURL }}" onerror="this.onerror=null;this.parentElement.style.backgroundImage= 'url({{ .bg_image | absURL }})'"/>
-
-	<div class="block">
-		{{ if .icon }}
-		<div class="video-button">
-			<i class="{{ .icon }}"></i>
-		</div>
-		{{ end }}
-		<h1>{{ .title | markdownify }}</h1>
-		<p>{{ .content | markdownify }}</p>
-		{{ if .button.enable }}
-		{{ with .button }}
-		<a href="{{ .link }}" class="btn btn-transparent page-scroll">{{ .label }}</a>
-		{{ end }}
-		{{ end }}
-	</div>
+<section class="hero" style='background-image: url("{{ .bg_image_webp | absURL }}")'>
+  <div class="container">
+    <img class="d-none" src="{{ .bg_image_webp | absURL }}"
+         onerror="this.onerror=null;this.parentElement.style.backgroundImage= 'url({{ .bg_image | absURL }})'"/>
+    <div class="hero-inner">
+      <div class="hero-copy">
+        {{ if .icon }}
+        <div class="video-button">
+          <i class="{{ .icon }}"></i>
+        </div>
+        {{ end }}
+        <h2 class="hero-title h2-mobile mt-0 is-revealing"><span class="color">{{ with .title }} {{ index (split . " ") 0 | safeHTML }} {{ end }}</span>
+          {{ with .title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}</h2>
+        <p class="hero-paragraph is-revealing">{{ .content | markdownify }}</p>
+        {{ if .button.enable }}
+        {{ with .button }}
+        <p class="hero-cta is-revealing"><a class="button button-primary" href="{{ .link }}">{{ .label
+          }}</a></p>
+        {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
 </section>
 {{"<!-- /Welcome Slider-->" | safeHTML}}
 {{end}}

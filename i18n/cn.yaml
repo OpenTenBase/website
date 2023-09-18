@@ -1,9 +1,9 @@
 - id: blogTitle
-  translation: 最新 文章
+  translation: 技术博客
 - id: newsTitle
-  translation: 最新 新闻
+  translation: 社区新闻
 - id: eventTitle
-  translation: 最新 活动
+  translation: 最新活动
 - id: readMore
   translation: 阅读更多
 - id: viewAllPost

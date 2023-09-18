@@ -3,41 +3,58 @@
 {{ if $data.testimonial.testimonial.enable }}
 {{ with $data.testimonial.testimonial }}
 {{"<!-- Start Testimonial -->" | safeHTML}}
-<section id="testimonial" class="testimonial overly section bg-2"
-	style='background-image: url("{{ .bg_image_webp | absURL }}")'>
-	<!-- this image is for trigger this section fallback background image -->
-	<img src="{{ .bg_image_webp | absURL }}" style="display: none;" onerror="this.onerror=null;this.parentElement.style.backgroundImage= 'url({{ .bg_image | absURL }})'">
-	<div class="container">
-		<div class="row">
-			<div class="col-xl-12">
-				{{"<!-- testimonial wrapper -->" | safeHTML}}
-				<div id="testimonials" class="wow fadeInUp" data-wow-duration="500ms" data-wow-delay="100ms">
-					{{ range .testimonial_item }}
-					{{"<!-- testimonial single -->" | safeHTML}}
-					<div class="item text-center">
+<section id="testimonial" class="testimonial bg-one blog_section">
+  <div class="container">
+    {{"<!-- testimonial wrapper --> " | safeHTML}}
+    <div class="wow fadeIn" data-wow-duration="500ms">
+      <p class="service-font">{{.title | markdownify }} </p>
+    </div>
+    <!--      <div id="testimonials">-->
+    <!--        {{ range .testimonial_item }}-->
+    <!--        <div class="testimonial_item2 col-lg-4">-->
+    <!--          <div class="media">-->
+    <!--            {{with .image}}-->
+    <!--            <div class="align-self-start mr-3">-->
+    <!--              <i class="{{ . }}"></i>-->
+    <!--            </div>-->
+    <!--            {{ end }}-->
+    <!--            <div>-->
+    <!--              <p class="testimonial_item_name">{{ .name | markdownify }}</p>-->
+    <!--              <p class="testimonial_item_position">{{ .position | markdownify }}</p>-->
+    <!--            </div>-->
+    <!--          </div>-->
+    <!--          <div class="testimonial_item_content">-->
+    <!--            <p>{{ .content | markdownify }}</p>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--        {{"&lt;!&ndash; /testimonial single &ndash;&gt; " | safeHTML}}-->
+    <!--        {{ end }}-->
+    <!--      </div>-->
+    <div class="row justify-content-center">
+      {{ range .testimonial_item }}
+      <div class="col-lg-4">
+        <div class="testimonial_item3 service-block">
+          {{with .icon}}
+          <div class="align-self-start service-icon mr-3">
+            <i class="{{ . }}"></i>
+          </div>
+          {{ end }}
+          <div>
+            <p class="testimonial_item_name">{{ .name | markdownify }}</p>
+            <p class="testimonial_item_position">{{ .position | markdownify }}</p>
+            <p class="testimonial_item_content">{{ .content | markdownify }}</p>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+      {{"<!-- End Single Service Item --> " | safeHTML }}
 
-						{{"<!-- client photo -->" | safeHTML}}
-						<div class="client-thumb">
-							<img class="img-fluid lozad" data-src="{{ .image_webp | absURL }}" onerror="this.onerror=null;this.src='{{ .image | absURL }}'" alt="{{ .name }}">
-						</div>
-
-						{{"<!-- client info -->" | safeHTML}}
-						<div class="client-info">
-							<div class="client-meta">
-								<h3>{{ .name }}</h3>
-								<span>{{ .date }}</span>
-							</div>
-							<div class="client-comment">
-								<p>{{ .content | markdownify }}</p>
-							</div>
-						</div>
-					</div>
-					{{"<!-- /testimonial single -->" | safeHTML}}
-					{{ end }}
-				</div>
-			</div>
-		</div>
-	</div>
+      <div style="text-align:center">
+        <button class="my-button"><i class="{{ .btnPre }}"></i></button>
+        <button class="my-button"><i class="{{ .btnNext }}"></i></button>
+      </div>
+    </div>
+  </div>
 </section>
 {{"<!-- /testimonial -->" | safeHTML}}
 {{ end }}

@@ -2,28 +2,29 @@
 
 {{ partial "navigation.html" . }}
 
-<section class="section">
+<section class="section bg-one">
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 offset-lg-2 text-center">
-        <h1>{{ .Title }}</h1>
+      <div class="col-lg-8 offset-lg-2 text-center ">
+        <p class="title h2">{{ .Title }}</p>
         <ul class="list-inline mb-50">
-          <li class="list-inline-item"><a href="{{ `author/` | relLangURL }}{{ .Params.Author | urlize }}/">{{ .Params.Author }}</a></li>
+          <li class="list-inline-item"><a href="{{ `author/` | relLangURL }}{{ .Params.Author | urlize }}/">{{
+            .Params.Author }}</a></li>
           <li class="list-inline-item">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</li>
         </ul>
-        <img class="img-fluid mb-50 lozad" data-src="{{ .Params.Image | absURL }}" alt="blog-image">
+<!--        <img class="img-fluid mb-50 lozad" data-src="{{ .Params.Image | absURL }}" alt="blog-image">-->
       </div>
       <div class="col-lg-8 offset-lg-2">
         <div class="post-single-content">
           {{ .Content }}
         </div>
-        {{ if site.Params.post_share }}
-        {{ partial "post-share.html" . }}
-        {{ end }}
+        <!--        {{ if site.Params.post_share }}-->
+        <!--        {{ partial "post-share.html" . }}-->
+        <!--        {{ end }}-->
         <!-- comments -->
-        <div class="mt-5">
-          {{ template "_internal/disqus.html" . }}
-        </div>
+        <!--        <div class="mt-5">-->
+        <!--          {{ template "_internal/disqus.html" . }}-->
+        <!--        </div>-->
       </div>
     </div>
   </div>

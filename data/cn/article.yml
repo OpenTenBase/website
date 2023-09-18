@@ -1,0 +1,24 @@
+################################# article ##################################
+article:
+  enable: true
+  #  bg_image : "images/backgrounds/bg-white-wall.jpg"
+  #  bg_image_webp : "images/backgrounds/bg-white-wall.webp"
+  title: "技术博客"
+  article_item:
+    # counter item loop
+    - title: "安装时报错指令错误的处理"
+      source: "来源：zhang-xubo"
+      sub_title: "安装时报指令错误的处理"
+      link: "news/news-post-1/"
+
+    # counter item loop
+    - title: "OM安装后，linux命令报错TenBase不兼容"
+      source: "来源：zhang-xubo"
+      sub_title: "腾讯云数据库 TDSQL-C"
+      link: "news/news-post-1/"
+
+    # counter item loop
+    - title: "数据库本机系统检查时提示异常检查项怎么办"
+      source: "来源：zhang-xubo"
+      sub_title: "腾讯云数据库 TDSQL-C"
+      link: "news/news-post-1/"

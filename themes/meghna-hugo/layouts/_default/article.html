@@ -4,9 +4,9 @@
       <img class="img-fluid lozad" data-src="{{ .Params.Image_webp | absURL }}" onerror="this.onerror=null;this.src='{{ .Params.image | absURL }}'">
     </div>
 
-    <div class="content">
-      <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-      <p>{{ .Summary }}</p>
+    <div class="content post-block-layout">
+      <p class="=post-block-title"><a href="{{ .Permalink }}">{{ .Title }}</a></p>
+      <p class="post-block-summary">{{ .Summary }}</p>
       <a class="btn btn-transparent" href="{{ .Permalink }}">{{ i18n "readMore" }}</a>
     </div>
   </div>

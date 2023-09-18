@@ -3,25 +3,25 @@ feature:
   enable : true
   image : images/about/about-business-man.jpg
   image_webp : images/about/about-business-man.webp
-  title : We’re A Digital Design Agency.
-  content : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam tempora itaque, autem dolores culpa cum mollitia voluptate nesciunt voluptatibus quasi."
+  title : 安装、使用、如何贡献？快速入门OpenTenBase！
+  content :
   feature_item : 
       # feature item loop
-    - title : SEO Optimized
-      icon : ti-world # themify icon pack : https://themify.me/themify-icons
-      content : Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus consectetur dolores repellendus eos saepe
+    - title : 什么是OpenTenBase
+      icon : ti-help # themify icon pack : https://themify.me/themify-icons
+      content : OpenTenBase 是开源的分布式数据库，可以轻松应对亿级数据的存储、分析和查询。
       
       # feature item loop
-    - title : Easy Customization
-      icon : ti-panel # themify icon pack : https://themify.me/themify-icons
-      content : Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus consectetur dolores repellendus eos saepe
+    - title : 快速入门
+      icon : ti-wand # themify icon pack : https://themify.me/themify-icons
+      content : OpenTenBase架构、简介、编译安装、集群运行状态、启动停止等。
 
       # feature item loop
-    - title : SEO Optimized
-      icon : ti-stats-up # themify icon pack : https://themify.me/themify-icons
-      content : Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus consectetur dolores repellendus eos saepe
+    - title : 基本使用
+      icon : ti-book # themify icon pack : https://themify.me/themify-icons
+      content : Shard表、冷热分区表、复制表的创建和基本的DML操作。
       
       # feature item loop
-    - title : Easy Customization
-      icon : ti-announcement # themify icon pack : https://themify.me/themify-icons
-      content : Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus consectetur dolores repellendus eos saepe
+    - title : 参与贡献
+      icon : ti-write # themify icon pack : https://themify.me/themify-icons
+      content : 如果您有好的意见或建议，欢迎创建Issues或Pull Requests,为OpenTenBase 开源社区做出贡献。

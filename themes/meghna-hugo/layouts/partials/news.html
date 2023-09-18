@@ -1,27 +1,26 @@
 {{ if gt (where site.RegularPages "Section" "==" "news") 0}}
 {{"<!-- Start news Section -->" | safeHTML}}
-<section id="news" class="section">
-	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-lg-12">
-				{{"<!-- section title -->" | safeHTML}}
-				<div class="title text-center wow fadeInDown">
-					<h2> {{ with i18n "newsTitle" }} {{ index (split . " ") 0 | safeHTML }} {{ end }}<span class="color">
-							{{ with i18n "newsTitle" }} {{ index (split . " ") 1 | safeHTML }} {{ end }} </span></h2>
-					<div class="border-meghna"></div>
-				</div>
-			</div>
-			{{"<!-- /section title -->" | safeHTML}}
+<section id="news" class="bg-one section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-12">
+        {{"<!-- section title --> " | safeHTML}}
+        <div class="wow fadeIn" data-wow-duration="500ms">
+          <p class="service-font"> {{ with i18n "newsTitle" }} {{ index (split . " ") 0 | safeHTML }} {{ end }}<span>
+							{{ with i18n "newsTitle" }} {{ index (split . " ") 1 | safeHTML }} {{ end }} </span></p>
+        </div>
+      </div>
+      {{"<!-- /section title --> " | safeHTML}}
 
-			{{ range first 3 (where site.RegularPages "Section" "==" "news")}}
-			{{ .Render "article"}}
-			{{ end }}
+      {{ range first 3 (where site.RegularPages "Section" "==" "news")}}
+      {{ .Render "article2"}}
+      {{ end }}
 
-			<div class="all-post text-center col-lg-12">
-				<a class="btn btn-main" href="{{ `news/` | absLangURL }}">{{ i18n "viewAllPost" }}</a>
-			</div>
-		</div>
-	</div>
+      <!--			<div class="all-post text-center col-lg-12">-->
+      <!--				<a class="btn btn-main" href="{{ `news/` | absLangURL }}">{{ i18n "viewAllPost" }}</a>-->
+      <!--			</div>-->
+    </div>
+  </div>
 </section>
 {{"<!-- /news -->" | safeHTML}}
 {{ end }}
