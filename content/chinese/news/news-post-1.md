@@ -3,7 +3,7 @@ title: "腾讯会议、TencentOS入选“年度优秀创新软件产品”目录
 date: 2023-09-01T16:19:36+08:00
 image_webp: images/news/news-post-1.webp
 #image: images/news/news-post-1.jpg
-author: Bart Dong
+author: OpenTenBase
 description : "This is meta description"
 ---
 
