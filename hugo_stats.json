@@ -45,13 +45,10 @@
     "classes": [
       "=post-block-title",
       "=post-block-title2",
+      "=post-block-title3",
       "about-2",
       "align-self-start",
-      "article_item_source",
-      "article_item_sub_title",
-      "article_item_title",
       "bg-one",
-      "blog-service-font",
       "blog_section",
       "border-meghna",
       "btn",
@@ -132,8 +129,10 @@
       "post-block",
       "post-block-layout",
       "post-block-layout2",
+      "post-block-layout3",
       "post-block-summary",
       "post-block-summary2",
+      "post-block-summary3",
       "post-single-content",
       "rounded-0",
       "rounded-circle",
@@ -173,7 +172,6 @@
       "wow"
     ],
     "ids": [
-      "article",
       "blog",
       "body",
       "cn",
@@ -206,7 +204,6 @@
       "云原生存储的技术实践-hwameistor",
       "什么是opentenbase",
       "安装依赖",
-      "开源数据库opentenbase获信通院oscar尖峰开源项目优秀案例奖",
       "系统要求"
     ]
   }

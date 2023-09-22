@@ -100,7 +100,7 @@ weight = 1
 
 [[Languages.cn.menu.main]]
 name = "文章"
-url = "#article"
+url = "#blog"
 weight = 2
 
 [[Languages.cn.menu.main]]
@@ -131,7 +131,7 @@ weight = 1
 
 [[Languages.en.menu.main]]
 name = "Blog"
-url = "#article"
+url = "#blog"
 weight = 2
 
 [[Languages.en.menu.main]]
