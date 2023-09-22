@@ -99,7 +99,7 @@ a:hover {
 
 .btn {
   background-color: transparent;
-  color: #fff;
+  color: #1b1e23;
   padding: 10px 30px;
   border-radius: 0;
   transition: all .3s ease-in 0s;
@@ -1480,6 +1480,7 @@ a:hover {
 .post-block {
   background-color: #292F36;
   margin-bottom: 10px;
+  weight: 1408px;
 }
 
 .post-block2 {
@@ -1489,25 +1490,15 @@ a:hover {
 }
 
 .post-block-layout {
-  /*display: flex;*/
-  /*padding: 24px 0px 24px 24px;*/
-  /*flex-direction: column;*/
-  /*align-items: flex-start;*/
-  /*gap: 24px;*/
-  /*align-self: stretch;*/
-  /*background: #1D73E4;*/
-  /*weight: 1408px;*/
-
   display: flex;
-  height: 236px;
-  weight: 1408px;
-  padding: 40px;
+  padding: 24px 0 24px 24px;
   flex-direction: column;
   align-items: flex-start;
+  align-self: stretch;
+  weight: 600px;
+  height: 236px;
   gap: 38px;
   flex: 1 0 0;
-
-  border-radius: 4px;
   background: #F4F4F4;
 }
 
@@ -1533,7 +1524,7 @@ a:hover {
 }
 
 .post-block-title {
-  color: #1D73E4;
+  color: #1b1e23;
   font-family: PingFang SC;
   font-size: 20px;
   font-style: normal;
@@ -1561,7 +1552,7 @@ a:hover {
 
 .post-block-summary {
   align-self: stretch;
-  color: #FFFFFF;
+  color: #1b1e23;
   font-family: PingFang SC;
   font-size: 12px;
   font-style: normal;
