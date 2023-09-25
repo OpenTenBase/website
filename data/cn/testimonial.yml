@@ -11,19 +11,19 @@ testimonial:
     - name : "李晓峰"
       image: images/client/client-1.jpg
       image_webp: images/client/client-1.webp
-      position : "运营三组组长"
-      content : "系统基于人工智能和各种算法及时生成包括NPS等维度的体验测量关键指标看板，同时将体验管理指栎与公司管理指标结合。"
+      # position : "运营三组组长"
+      content : "愿OpenTenBase不断壮大，成为数据库领域的创新之源，推动行业高质量发展。"
       
     # testimonial item loop
     - name : "王雪"
       image: images/client/client-2.jpg
       image_webp: images/client/client-2.webp
-      position : "云线产研架构师"
-      content : "系统基于人工智能和各种算法及时生成包括NPS等维度的体验测量关键指标看板。"
+      # position : "云线产研架构师"
+      content : "愿OpenTenBase成为开发者的得力助手，提供易用、高效、安全的数据库服务，助力开发者在数字化浪潮中实现创新。"
       
     # testimonial item loop
     - name : "张磊"
       image: images/client/client-2.jpg
       image_webp: images/client/client-2.webp
-      position : "运营一组组长"
-      content : "系统基于人工智能和各种算法及时生成包括NPS等维度的体验测量关键指标看板。"
+      # position : "运营一组组长"
+      content : "愿OpenTenBase秉持开源精神，开放包容，合作共赢，与开发者共同创造更加美好的数字未来。"

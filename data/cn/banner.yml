@@ -9,4 +9,4 @@ banner:
   button:
     enable : true
     label : "了解更多"
-    link : "#services"
+    link : "https://github.com/OpenTenBase/OpenTenBase"

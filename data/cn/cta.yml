@@ -9,4 +9,4 @@ cta:
   button:
     enable : false
     label : "Start a project with us"
-    link : "https://github.com/Tencent/TBase"
+    link : "https://github.com/OpenTenBase/OpenTenBase"

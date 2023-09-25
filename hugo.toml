@@ -1,5 +1,5 @@
 ################################# Default configuration ###################
-baseURL = "https://opentenbase.github.io"
+baseURL = "https://opentenbase.org"
 title = "OpenTenBase"
 theme = "meghna-hugo"
 # Default time zone for time stamps; use any valid tz database name: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
@@ -110,17 +110,17 @@ weight = 3
 
 [[Languages.cn.menu.main]]
 name = "文档"
-url = "https://opentenbase.github.io/docs/"
+url = "https://docs.opentenbase.org/"
 weight = 4
 
 [[Languages.cn.menu.main]]
 name = "下载"
-url = "https://github.com/Tencent/TBase/tags"
+url = "https://github.com/OpenTenBase/OpenTenBase/tags"
 weight = 5
 
 [[Languages.cn.menu.main]]
 name = "源码"
-url = "https://github.com/Tencent/TBase"
+url = "https://github.com/OpenTenBase/OpenTenBase"
 weight = 6
 
 ################### English Navigation ########################
@@ -141,17 +141,17 @@ weight = 3
 
 [[Languages.en.menu.main]]
 name = "Document"
-url = "https://opentenbase.github.io/docs/en/"
+url = "https://docs.opentenbase.org/en/"
 weight = 4
 
 [[Languages.en.menu.main]]
 name = "Download"
-url = "https://github.com/Tencent/TBase/tags"
+url = "https://github.com/OpenTenBase/OpenTenBase/tags"
 weight = 5
 
 [[Languages.en.menu.main]]
 name = "Code"
-url = "https://github.com/Tencent/TBase"
+url = "https://github.com/OpenTenBase/OpenTenBase"
 weight = 6
 
 
