@@ -1,6 +1,6 @@
 ############################# About ###################################
 about:
-  enable : true
+  enable : false
   title : 关于 我们
   about_item :
   - icon : ti-ruler-pencil # themify icon pack : https://themify.me/themify-icons

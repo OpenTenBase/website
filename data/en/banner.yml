@@ -5,7 +5,7 @@ banner:
   bg_image : "images/backgrounds/hero-area.jpg"
   icon : "" # themify icon pack : https://themify.me/themify-icons
   title : "OpenTenBase an enterprise-level distributed HTAP open source database"
-  content : "OpenTenBase is an enterprise-level distributed HTAP open source database. It has high scalability, commercial database syntax compatibility, distributed HTAP engine, multi-level disaster recovery and multi-dimensional resource isolation.It has been successfully used in core businesses in finance, medical, aerospace and other industries. system."
+  content : "OpenTenBase is an enterprise-level distributed HTAP open source database. It has high scalability, commercial database syntax compatibility, distributed HTAP engine, multi-level disaster recovery and multi-dimensional resource isolation. It has been successfully used in core businesses in finance, medical, aerospace and other industries system."
   button:
     enable : true
     label : "Explore Us"

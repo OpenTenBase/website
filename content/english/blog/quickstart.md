@@ -1,7 +1,7 @@
 ---
 title: "Quick Start"
 date: 2023-07-20T08:00:36+08:00
-author: Bart Dong
+author: OpenTenBase
 image_webp: images/blog/blog-post-1.webp
 image: images/blog/blog-post-1.jpg
 description : "This is quickstart of OpenTenBase"

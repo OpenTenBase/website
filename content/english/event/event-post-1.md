@@ -3,7 +3,7 @@ title: "Special Review of Cloud Native Open Source Project Application Practice"
 date: 2023-07-20T08:00:36+08:00
 #image_webp: images/blog/blog-post-3.webp
 image: images/event/event-post-1-image.png
-author: Bart Dong
+author: OpenTenBase
 description: "Cloud Native Open Source Project Application Practice"
 ---
 

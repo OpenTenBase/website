@@ -3,7 +3,7 @@ title: "Tencent Meeting and TencentOS were selected into the catalog of \"Outsta
 date: 2023-09-01T16:19:36+08:00
 image_webp: images/news/news-post-1.webp
 #image: images/news/news-post-1.jpg
-author: Bart Dong
+author: OpenTenBase
 description : "This is meta description"
 ---
 
