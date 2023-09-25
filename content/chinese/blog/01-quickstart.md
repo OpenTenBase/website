@@ -1,74 +1,75 @@
 ---
-title: "Quick Start"
+title: "快速入门"
 date: 2023-07-20T08:00:36+08:00
 author: OpenTenBase
 image_webp: images/blog/blog-post-1.webp
 image: images/blog/blog-post-1.jpg
-description : "This is quickstart of OpenTenBase"
+description : "The Quick Start of OpenTenBase"
 ---
 
-## What's OpenTenBase
 
-OpenTenBase is a relational database cluster platform that provides write reliability and multi node data synchronization. You can configure OpenTenBase on one or more hosts and store OpenTenBase data on multiple physical hosts. There are two ways to store data tables: distributed or replicated. When sending query SQL to OpenTenBase, OpenTenBase will automatically send query statements to data nodes and get the final results.
+## 什么是OpenTenBase
+
+OpenTenBase 是一个提供写可靠性，多主节点数据同步的关系数据库集群平台。你可以将 OpenTenBase 配置一台或者多台主机上， OpenTenBase 数据存储在多台物理主机上面。数据表的存储有两种方式， 分别是 distributed 或者 replicated ，当向OpenTenBase发送查询 SQL时， OpenTenBase 会自动向数据节点发出查询语句并获取最终结果。
+
+OpenTenBase 采用分布式集群架构（如下图）， 该架构分布式为无共享(share nothing)模式，节点之间相应独立，各自处理自己的数据，处理后的结果可能向上层汇总或在节点间流转，各处理单元之间通过网络协议进行通信，并行处理和扩展能力更好，这也意味着只需要简单的x86服务器就可以部署 OpenTenBase 数据库集群
+
+<img src=../images/OpenTenBase_demo.jpg width=730 />
+
+OpenTenBase架构图
 
 
-OpenTenBase is a distributed cluster architecture (as shown in the figure below), which is a distributed share nothing architecture mode, each node is independent and processes its own data. After processing, the results may be summarized to the upper layer or transferred between nodes. Each processing unit communicates with each other through the network protocol, with better parallel processing and expansion ability, which also means that the OpenTenBase cluster can be deployed on the basic x86 server.
+下面简单解读一下OpenTenBase的三大模块
 
-<img src=../images/OpenTenBase_demo.EN.png width=730 />
-OpenTenBase architecture
-
-Here are three modules of OpenTenBase
-
-- **Coordinator Node: (CN for short)**
+- **Coordinator：协调节点（简称CN）**
 	
-	Application access portal is responsible for data distribution and query planning. Multiple nodes are in the same location, and each node provides the same database view. In terms of function, CN only stores the global metadata of the system, not the actual user data.
+	业务访问入口，负责数据的分发和查询规划，多个节点位置对等，每个节点都提供相同的数据库视图；在功能上CN上只存储系统的全局元数据，并不存储实际的业务数据。
+
+- **Datanode：数据节点（简称DN）**
 	
-- **Datanode Node: (DN for short)**
+	每个节点还存储业务数据的分片在功能上，DN节点负责完成执行协调节点分发的执行请求。 
 	
-	Each DN stores the partition of user data. In function, DN node is responsible for completing the request of executing CN distribution.
-	
-- **GTM Node: (Global Transaction Manager)**
+- **GTM:全局事务管理器(Global Transaction Manager)**
 
-	GTM is responsible for the management of cluster transaction information, as well as the global objects of the cluster, such as sequence.
+	负责管理集群事务信息，同时管理集群的全局对象，比如序列等。
 
+接下来，让我们来看看如何从源码开始，完成到OpenTenBase集群环境的搭建。
 
-Next, let's show how to build a OpenTenBase cluster environment from the source code
+## OpenTenBase源码编译安装
 
-## OpenTenBase source code compilation and installation
-
-### System Requirements: 
+### 系统要求: 
 
 Memory: 4G RAM minimum
 
 OS: TencentOS 2, TencentOS 3, OpenCloudOS, CentOS 7, CentOS 8, Ubuntu
 
-### Dependence
+### 安装依赖
 
-` yum -y install gcc make readline-devel zlib-devel openssl-devel uuid-devel bison flex`
+` yum -y install gcc make readline-devel zlib-devel openssl-devel uuid-devel bison flex git`
 
-or
+或
 
-` apt install -y gcc make libreadline-dev zlib1g-dev libssl-dev libossp-uuid-dev bison flex`
+` apt install -y gcc make libreadline-dev zlib1g-dev libssl-dev libossp-uuid-dev bison flex git`
 
-- **create user**
+- **创建opentenbase用户**
 
-	Note: all machines that need to install OpenTenBase cluster need to create
+	注意：所有需要安装OpenTenBase集群的机器上都需要创建
 
-```shell
+``` shell
 mkdir /data
 useradd -d /data/opentenbase -s /bin/bash -m opentenbase
 passwd opentenbase # set password
 ```
 
-- **get source code**
+- **源码获取**
 
-```shell
+```
 git clone https://github.com/OpenTenBase/OpenTenBase
 ```
 
-- **source code compilation**
+- **源码编译**
 
-```shell
+``` shell
 cd ${SOURCECODE_PATH}
 rm -rf ${INSTALL_PATH}/opentenbase_bin_v2.0
 chmod +x configure*
@@ -82,42 +83,42 @@ make -sj
 make install
 ```
 
-In this paper, the above two parameters are as follows
+本文的使用环境中，上述两个参数如下
 
-```shell
-${SOURCECODE_PATH}=/data/opentenbase/OpenTenBase
+```
+${SOURCECODE_PATH}=/data/opentenbase/OpenTenBase	
 ${INSTALL_PATH}=/data/opentenbase/install
 ```
+- **集群安装**
 
-- **cluster installation**
+	- **集群规划**
 
-	- **cluster planning**
-
-	Next, set up a cluster of 1 GTM master, 1 GTM standby, 2 CN master (the CN master is equivalent, so there is no need to standy CN), 2 DN master, and 2 DN standby on two servers. This cluster is the minimum configuration with disaster tolerance capability.
+	下面以两台服务器上搭建1GTM主，1GTM备，2CN主（CN主之间对等，因此无需备CN），2DN主，2DN备的集群，该集群为具备容灾能力的最小配置
 	
 ```
-host1：10.215.147.158
-host2：10.240.138.159
+机器1：10.215.147.158
+机器2：10.240.138.159
 ```
-planning is as follows：
 
-node name|IP|data directory
----|---|---
-GTM master|10.215.147.158|/data/opentenbase/data/gtm
-GTM slave|10.240.138.159|/data/opentenbase/data/gtm
-CN1|10.215.147.158|/data/opentenbase/data/coord
-CN2|10.240.138.159|/data/opentenbase/data/coord
-DN1 master|10.215.147.158|/data/opentenbase/data/dn001
-DN1 slave|10.240.138.159|/data/opentenbase/data/dn001
-DN2 master|10.240.138.159|/data/opentenbase/data/dn002
-DN2 slave|10.215.147.158|/data/opentenbase/data/dn002
+  集群规划如下：
 
-Sketch Map:  
+  |节点名称|IP|数据目录|
+  |---|---|---|
+  |GTM master|10.215.147.158|/data/opentenbase/data/gtm|
+  |GTM slave|10.240.138.159|/data/opentenbase/data/gtm|
+  |CN1|10.215.147.158|/data/opentenbase/data/coord|
+  |CN2|10.240.138.159|/data/opentenbase/data/coord|
+  |DN1 master|10.215.147.158|/data/opentenbase/data/dn001|
+  |DN1 slave|10.240.138.159|/data/opentenbase/data/dn001|
+  |DN2 master|10.240.138.159|/data/opentenbase/data/dn002|
+  |DN2 slave|10.215.147.158|/data/opentenbase/data/dn002|
 
-<img src=../images/node_ip.png width=730 />
-OpenTenBase Deploy Sketch Map
+  示意图
 
-- **Disable SELinux and firewall (optinal)**
+  <img src=../images/node_ip.png width=730 />
+  OpenTenBase部署示意图
+
+  - **禁用 SELinux 和 防火墙 (可选)**
 
 ```shell
 vi /etc/selinux/config # disable SELinux, change SELINUX=enforcing to SELINUX=disabled
@@ -126,7 +127,7 @@ systemctl disable firewalld
 systemctl stop firewalld
 ```
 
-- **SSH mutual trust configuration between machines**
+  - **机器间的ssh互信配置**
 
 ```shell
 su opentenbase
@@ -134,13 +135,14 @@ ssh-keygen -t rsa
 ssh-copy-id -i ~/.ssh/id_rsa.pub destination-user@destination-server
 ```
 
-Reference resources: [Linux ssh mutual trust](https://blog.csdn.net/chenghuikai/article/details/52807074)
+      参考[Linux ssh互信配置](https://blog.csdn.net/chenghuikai/article/details/52807074)
 
-- **Environment variable configuration**
+  - **环境变量配置**
 
-All machines in the cluster need to be configured
+  集群所有机器都需要配置
+  
 
-```shell
+``` shell
 [opentenbase@localhost ~]$ vim ~/.bashrc
 export OPENTENBASE_HOME=/data/opentenbase/install/opentenbase_bin_v2.0
 export PATH=$OPENTENBASE_HOME/bin:$PATH
@@ -148,9 +150,9 @@ export LD_LIBRARY_PATH=$OPENTENBASE_HOME/lib:${LD_LIBRARY_PATH}
 export LC_ALL=C
 ```
 
-Above, the required basic environment has been configured, and you can enter the cluster initialization stage. For the convenience of users, OpenTenBase provides special configuration and operation tools: **pgxc_ctl** to help users quickly build and manage clusters. Here, you need to write the IP, port and data directory of the nodes mentioned above into the configuration file pgxc\_ctl.conf
+以上，已经配置好了所需要基础环境，可以进入到集群初始化阶段，为了方便用户，OpenTenBase提供了专用的配置和操作工具：**pgxc_ctl**来协助用户快速搭建并管理集群，首先需要将前文所述的节点的ip，端口，目录写入到配置文件 pgxc\_ctl.conf 中。
 
-- **Initialization configuration file pgxc_ctl.conf**
+  - **初始化pgxc_ctl.conf文件**
 
 ```shell
 [opentenbase@localhost ~]$ mkdir /data/opentenbase/pgxc_ctl
@@ -158,11 +160,21 @@ Above, the required basic environment has been configured, and you can enter the
 [opentenbase@localhost ~/pgxc_ctl]$ vim pgxc_ctl.conf
 ```
 
-The following shows the pgxc\_ctl.conf file content written using the IP, port, database directory, binary directory and other planning values described above. In practice, we only need to configure it according to our own actual situation.
+如下，是结合上文描述的IP，端口，数据库目录，二进制目录等规划来写的pgxc_ctl.conf文件。具体实践中只需按照自己的实际情况配置好即可。
+
+亦可从此处下载，修改文件名为 ```pgxc_ctl.conf``` ，按照实际情况修改内容：
+
+[点击此处下载双节点配置](https://docs.opentenbase.org/guide/pgxc_ctl_double.conf)
+
+[点击此处下载单节点配置](https://docs.opentenbase.org/guide/pgxc_ctl_single.conf)
 
 
-```shell
+``` shell
 #!/bin/bash
+# Double Node Config
+
+IP_1=10.215.147.158
+IP_2=10.240.138.159
 
 pgxcInstallDir=/data/opentenbase/install/opentenbase_bin_v2.0
 pgxcOwner=opentenbase
@@ -178,13 +190,13 @@ configBackupFile=pgxc_ctl.bak
 
 #---- GTM ----------
 gtmName=gtm
-gtmMasterServer=10.215.147.158
+gtmMasterServer=$IP_1
 gtmMasterPort=50001
 gtmMasterDir=/data/opentenbase/data/gtm
 gtmExtraConfig=none
 gtmMasterSpecificExtraConfig=none
 gtmSlave=y
-gtmSlaveServer=10.240.138.159
+gtmSlaveServer=$IP_2
 gtmSlavePort=50001
 gtmSlaveDir=/data/opentenbase/data/gtm
 gtmSlaveSpecificExtraConfig=none
@@ -197,7 +209,7 @@ coordNames=(cn001 cn002 )
 coordPorts=(30004 30004 )
 poolerPorts=(31110 31110 )
 coordPgHbaEntries=(0.0.0.0/0)
-coordMasterServers=(10.215.147.158 10.240.138.159)
+coordMasterServers=($IP_1 $IP_2)
 coordMasterDirs=($coordMasterDir $coordMasterDir)
 coordMaxWALsernder=2
 coordMaxWALSenders=($coordMaxWALsernder $coordMaxWALsernder )
@@ -252,7 +264,7 @@ EOF
 
 
 coordSpecificExtraPgHba=(none none)
-coordAdditionalSlaves=n	
+coordAdditionalSlaves=n 
 cad1_Sync=n
 
 #---- Datanodes ---------------------
@@ -268,13 +280,13 @@ datanodeNames=(dn001 dn002)
 datanodePorts=(40004 40004)
 datanodePoolerPorts=(41110 41110)
 datanodePgHbaEntries=(0.0.0.0/0)
-datanodeMasterServers=(10.215.147.158 10.240.138.159)
+datanodeMasterServers=($IP_1 $IP_2)
 datanodeMasterDirs=($dn1MstrDir $dn2MstrDir)
 dnWALSndr=4
 datanodeMaxWALSenders=($dnWALSndr $dnWALSndr)
 
 datanodeSlave=y
-datanodeSlaveServers=(10.240.138.159 10.215.147.158)
+datanodeSlaveServers=($IP_2 $IP_1)
 datanodeSlavePorts=(50004 54004)
 datanodeSlavePoolerPorts=(51110 51110)
 datanodeSlaveSync=n
@@ -334,9 +346,9 @@ walArchive=n
 
 ```
 
-- **Distribute binary package**
+- **分发二进制包**
 
-After writing the configuration file, you need to deploy the binary package to the physical machine where all nodes are located. This can be done by executing the **deploy all** command with pgxc\_ctl tool.
+在一个节点配置好配置文件后，需要预先将二进制包部署到所有节点所在的机器上，这个可以使用pgxc_ctl工具，执行**deploy all**命令来完成。
 
 ```shell
 [opentenbase@localhost ~/pgxc_ctl]$ pgxc_ctl 
@@ -354,16 +366,13 @@ Prepare tarball to deploy ...
 Deploying to the server 10.215.147.158.
 Deploying to the server 10.240.138.159.
 Deployment done.
-```
 
-Log in to all nodes and check whether the binary package is distributed
-
-```
+登录到所有节点，check二进制包是否分发OK
 [opentenbase@localhost ~/install]$ ls /data/opentenbase/install/opentenbase_bin_v2.0
 bin  include  lib  share	
 ```
 
-* execute **init all** command to complete cluster initialization
+* 执行**init all**命令，完成集群初始化命令
 
 ```shell
 [opentenbase@localhost ~]$ pgxc_ctl
@@ -387,9 +396,9 @@ pg_ctl: directory "/data1/opentenbase/data/dn001" does not exist
 pg_basebackup: could not create directory "/data1/opentenbase": Permission denied
 ```
 
-- **Installation error handling**
+- **安装错误处理**
 
-Generally, if there is an error in initializing the cluster, the terminal will print out the error log. You can look up the error reason and change the configuration, or through the error log in '/data/OpenTenBase/pgxc\_ctl/pgxc\_log' path to check the error in the configuration file
+一般init集群出错，终端会打印出错误日志，通过查看错误原因，更改配置即可，或者可以通过/data/opentenbase/pgxc\_ctl/pgxc_log路径下的错误日志查看错误，排查配置文件的错误
 
 ```shell
 [opentenbase@localhost ~]$ ll ~/pgxc_ctl/pgxc_log/
@@ -403,8 +412,7 @@ total 184
 -rw-rw-r-- 1 opentenbase opentenbase 15671 Nov 14 07:57 6849_pgxc_ctl.log
 ```
 
-By running pgxc\_ctl tool, execute **clean all** command to delete the initialized file. Then modify the pgxc\_ctl.conf file，and execute the **init all** command to reinitialize.
-
+通过运行 pgxc\_ctl 工具，执行**clean all**命令删除已经初始化的文件，修改pgxc\_ctl.conf文件，重新执行**init all**命令重新发起初始化。
 
 ```shell
 [opentenbase@localhost ~]$ pgxc_ctl
@@ -441,9 +449,9 @@ EXECUTE DIRECT ON (dn002) 'SELECT pgxc_pool_reload()';
 Done.
 ```
 
-- **Show cluster status**	
-	
-	When the above output is found, the cluster is OK. In addition, you can show the cluster status through the **monitor all** command of the pgxc\_ctl tool
+- **查看集群状态**	
+
+	当发现上面的输出时，集群已经OK，另外也可以通过pgxc_ctl工具的**monitor all**命令来查看集群状态
 	
 ```shell
 [opentenbase@localhost ~/pgxc_ctl]$ pgxc_ctl
@@ -465,13 +473,10 @@ Running: datanode slave dn001
 Running: datanode master dn002
 Not running: datanode slave dn002
 ```	
+一般的如果配置的不是强同步模式，gtm salve，dn slave的故障不会影响访问。
 
-If the replication mode between the master and slave nodes is not synchronous replication (meaning asynchronous replication), the failure of GTM salve and DN slave will not affect the access.
-
-- **cluster access**
-
-	There is basically no difference between accessing OpenTenBase cluster and PostgreSQL. We can access database cluster through any CN: for example, we can view the topology of the cluster by connecting CN node to select pgxc\_node table (the standby node will not be shown in pgxc\_node under the current configuration).   
-	The example of accessing through psql under the Linux command line is as follows:
+- **集群访问**	
+	访问OpenTenBase集群和访问单机的PostgreSQL基本上无差别，我们可以通过任意一个CN访问数据库集群：例如通过连接CN节点select pgxc\_node表即可查看集群的拓扑结构（当前的配置下备机不会展示在pgxc\_node中），在Linux命令行下通过psql访问的具体示例如下
 	
 ```sql
 [opentenbase@localhost ~/pgxc_ctl]$ psql -h 10.215.147.158 -p 30004 -d postgres -U opentenbase
@@ -491,12 +496,10 @@ postgres=# select * from pgxc_node;
 (5 rows)
 ```
 
-* Before using the database, you need to **create the default group and sharding group**
+* 使用数据库前需要**创建default group以及sharding表**
 
-OpenTenBase uses datanode group to increase the management flexibility of nodes. A default group is required to be used, so it needs to be created in advance. In general, all datanode nodes will be added to the default group.  
-
- On the other hand, in order to increase the flexibility of OpenTenBase data distribution, an intermediate logic layer is added to maintain the mapping of data records to physical nodes, which is called sharding. Therefore, sharding needs to be created in advance. The command is as follows:
- 
+OpenTenBase使用datanode group来增加节点的管理灵活度，要求有一个default group才能使用，因此需要预先创建；一般情况下，会将节点的所有datanode节点加入到default group里
+另外一方面，OpenTenBase的数据分布为了增加灵活度，加了中间逻辑层来维护数据记录到物理节点的映射，我们叫sharding，所以需要预先创建sharding，命令如下：
 
 ```sql
 postgres=# create default node group default_group  with (dn001,dn002);
@@ -505,9 +508,9 @@ postgres=# create sharding group to group default_group;
 CREATE SHARDING GROUP
 ```
 
-* Create database, user, table, insert/delete/update/select, etc
+* 创建数据库，用户，创建表，增删查改等操作
 
-Now you can access the database cluster just like you can use a stand-alone database
+至此，就可以跟使用单机数据库一样来访问数据库集群了
 
 ```sql
 postgres=# create database test;
@@ -530,10 +533,10 @@ test=> select * from foo;
 (2 rows)
 ```
 
-- **stop cluster**	
+- **停止集群**
 
-	Stop the cluster through the **stop all** command of pgxc\_ctl tool.  
-	The **stop all** command can be followed by the parameter **-m fast** or **-m immediate** to decide how to stop each node	
+通过pgxc_ctl工具的 **stop all** 命令来停止集群，stop all 后面可以加上参数 **-m fast** 或者是 **-m immediate** 来决定如何停止各个节点。
+
 
 ```shell
 PGXC stop all -m fast
@@ -567,9 +570,9 @@ Not running: datanode master dn002
 Not running: datanode slave dn002
 ```
 
-- **start cluster**	  
+- **启动集群**	
 
-	Start the cluster through the **start all** command of pgxc\_ctl tool. 
+	通过pgxc_ctl工具的**start all**命令来启动集群
 	
 ```shell
 [opentenbase@localhost ~]$ pgxc_ctl
@@ -584,5 +587,5 @@ Current directory: /data/opentenbase/pgxc_ctl
 PGXC start all
 ```
 
-- **Concluding remarks**	
-    This document is just a quick start guide for users, demonstrating how to build a complete OpenTenBase cluster step by step from the source code. Refer to other documents for OpenTenBase features, use, optimization, problem location, etc.
+- **结语**	
+    本文档只是给用户一个简单的指引，演示如何从源码开始，一步一步搭建一个完整的OpenTenBase集群，后续会有更多的文章来介绍OpenTenBase的特性使用，优化，问题定位等内容。
