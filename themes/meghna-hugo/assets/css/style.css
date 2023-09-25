@@ -166,6 +166,11 @@ a:hover {
   border: 1px solid var(--unnamed, #D6DBE3);
 }
 
+.bg-one-single {
+  background-color: #FFFFFF;
+  border: 1px solid var(--unnamed, #D6DBE3);
+}
+
 .service-font {
   color: #1A1A1A;
   font-family: PingFang SC;
