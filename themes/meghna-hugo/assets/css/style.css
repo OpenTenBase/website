@@ -167,9 +167,10 @@ a:hover {
 }
 
 .bg-one-single {
-  background-color: #FFFFFF;
+  background-color: #D9DEE5;
   border: 1px solid var(--unnamed, #D6DBE3);
 }
+
 
 .service-font {
   color: #1A1A1A;
