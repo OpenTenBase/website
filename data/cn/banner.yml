@@ -5,7 +5,7 @@ banner:
   bg_image : "images/backgrounds/hero-area.jpg"
   icon : "" # themify icon pack : https://themify.me/themify-icons
   title : "OpenTenBase 开放中立的开源数据库"
-  content : "OpenTenBase是开放中立的开源分布式数据库系统，是在PostgreSQL基础上打磨而成的企业级分布式HTAP开源数据库。具有高可用、高扩展性和高性能的特点，支持分布式事务，兼容SQL2011标准，支持海量数据混合负载处理。"
+  content : "OpenTenBase 企业级分布式HTAP开源数据库，具备高扩展性、商业数据库语法兼容、分布式HTAP引擎、多级容灾和多维度资源隔离等能力，成功应用在金融、医疗、航天等行业的核心业务系统。"
   button:
     enable : true
     label : "了解更多"
