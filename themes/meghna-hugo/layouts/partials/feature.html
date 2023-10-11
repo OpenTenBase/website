@@ -1,40 +1,39 @@
-{{ $data := index site.Data site.Language.Lang }}
+{{ $data := index site.Data site.Language.Lang }} {{ if
+$data.feature.feature.enable }} {{ with $data.feature.feature }} {{"<!-- feature -->"
+| safeHTML}}
+<section class="basic_bgc container-fluid about-2" id="feature">
+  <div class="row padding-0">
+    <!-- this image is for trigger this section fallback background image -->
+    <div class="col-sm-6 padding-0">
+      <img
+        class="img-fluid"
+        src="{{ .image_webp | absURL }}"
+        onerror="this.onerror=null;this.parentElement.style.backgroundImage= 'url({{ .image | absURL }})'"
+      />
+    </div>
 
-{{ if $data.feature.feature.enable }}
-{{ with $data.feature.feature }}
-{{"<!-- feature -->" | safeHTML}}
-<section class="feature section-bg about-2 padding-0" id="feature">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-lg-6 padding-0" style="background-image: url('{{ .image_webp | absURL }}'); background-size: cover; background-position: top center; background-repeat: no-repeat; min-height: 400px;">
-				<!-- this image is for trigger this section fallback background image -->
-				<img src="{{ .image_webp | absURL }}" style="display: none;" onerror="this.onerror=null;this.parentElement.style.backgroundImage= 'url({{ .image | absURL }})'">
-			</div>
-			<div class="col-lg-6">
-				<div class="content-block">
-					<p class="feature-title-font">{{ .title | markdownify }}</p>
-					<div class="row">
-						{{ range .feature_item }}
-						<div class="col-lg-6">
-							<div class="media">
-								{{with .icon}}
-								<div class="align-self-start mr-3">
-									<i class="{{ . }}"></i>
-								</div>
-								{{ end }}
-								<div class="media-body">
-									<p class="feature-sub-title-font">{{ .title | markdownify }}</p>
-									<p class="feature-sub-content-font">{{ .content | markdownify }}</p>
-								</div>
-							</div>
-						</div>
-						{{ end }}
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="col-sm-6 container p-5">
+      <p class="feature-title-font">{{ .title | markdownify }}</p>
+      <div class="row">
+        {{ range .feature_item }}
+        <div class="col-6 ">
+          <div class="media">
+            {{with .icon}}
+            <div class="align-self-start mr-3">
+              <i class="{{ . }}"></i>
+            </div>
+            {{ end }}
+            <div class="media-body">
+              <p class="feature-sub-title-font">{{ .title | markdownify }}</p>
+              <p class="feature-sub-content-font">
+                {{ .content | markdownify }}
+              </p>
+            </div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
 </section>
-{{"<!-- /feature -->" | safeHTML}}
-{{ end }}
-{{ end }}
+{{"<!-- /feature -->" | safeHTML}} {{ end }} {{ end }}

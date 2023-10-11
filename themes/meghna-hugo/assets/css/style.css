@@ -463,16 +463,12 @@ a:hover {
 ==================================================================*/
 .navigation {
   width: 100%;
-  height: 60px;
-  flex-shrink: 0;
   fill: #1b838d;
-  margin-bottom: 0;
-  /*border: 1px solid var(--unnamed, #D6DBE3);*/
   background: linear-gradient(180deg, #ffffff 0%, #ffffff 100%);
 }
 
 .navigation-font {
-  color: #181818;
+  color: #181818 !important;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -1489,7 +1485,6 @@ a:hover {
 .post-block2 {
   background-color: #f5f7fb;
   margin-bottom: 10px;
-  height: 400px;
 }
 
 .post-block-layout {
@@ -1506,7 +1501,7 @@ a:hover {
 
 .post-block-layout2 {
   display: flex;
-  padding: 24px 0px 24px 24px;
+  padding: 10px;
   flex-direction: column;
   align-items: flex-start;
   gap: 24px;
@@ -1516,7 +1511,7 @@ a:hover {
 
 .post-block-layout3 {
   display: flex;
-  padding: 24px 0px 24px 24px;
+  padding: 10px;
   flex-direction: column;
   align-items: flex-start;
   gap: 24px;
@@ -1568,6 +1563,7 @@ a:hover {
   font-style: normal;
   font-weight: 400;
   line-height: 20px; /* 166.667% */
+  max-width: 300px;
 }
 
 hr.style-one {
@@ -3240,12 +3236,6 @@ main {
   padding: 24px 0;
 }
 
-.site-header-inner {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
 .header-links {
   display: inline-flex;
@@ -3350,4 +3340,13 @@ main {
   fill: #fff;
   stroke-width: 1px;
   stroke: var(--unnamed, #d6dbe3);
+}
+
+.basic_bgc {
+  background: linear-gradient(180deg, #ffffff 0%, #ffffff 100%);
+}
+
+.basic_img {
+  object-fit: fill;
+  width: -webkit-fill-available;
 }
