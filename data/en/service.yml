@@ -1,18 +1,18 @@
 ################################# Service #################################
 service:
-  enable : true
-  title : Key Feature
-  service_item :
+  enable: true
+  title: Key Feature
+  service_item:
     # service item loop
-    - name : Commercial Database Compatibility
-      icon : ti-world # themify icon pack : https://themify.me/themify-icons
-      content : Fully compatible with SQL2011, Supports commercial database syntax
-      content_2: 
-      
+    - name: Commercial Database Compatibility
+      icon: ti-world # themify icon pack : https://themify.me/themify-icons
+      content: Fully compatible with SQL2011, Supports commercial database syntax
+      content_2:
+
     # service item loop
-    - name : PostgreSQL Compatibility
-      icon : ti-layout # themify icon pack : https://themify.me/themify-icons
-      content : Highly compatible with PostgreSQL syntax and following the community ecology
+    - name: PostgreSQL Compatibility
+      icon: ti-layout # themify icon pack : https://themify.me/themify-icons
+      content: Highly compatible with PostgreSQL syntax and following the community ecology
       content_2:
 
     # service item loop
@@ -28,13 +28,13 @@ service:
       content_2: Efficient processing of massive data and efficient distributed execution capabilities
 
     # service item loop
-    - name : Flexible Extension
-      icon : ti-package # themify icon pack : https://themify.me/themify-icons
-      content : Distributed flexible expansion, distributed efficient elastic expansion and contraction
+    - name: Flexible Extension
+      icon: ti-package # themify icon pack : https://themify.me/themify-icons
+      content: Distributed flexible expansion, distributed efficient elastic expansion and contraction
       content_2:
 
     # service item loop
-    - name : Superior performance
-      icon : ti-pulse # themify icon pack : https://themify.me/themify-icons
-      content : Superior performance, good distributed elastic expansion, supporting high concurrency and high-speed throughput
+    - name: Superior performance
+      icon: ti-pulse # themify icon pack : https://themify.me/themify-icons
+      content: Superior performance, good distributed elastic expansion, supporting high concurrency and high-speed throughput
       content_2:

@@ -221,7 +221,7 @@ contentDir = "content/chinese"
 
 [Languages.cn.params]
 home = "首页"
-copyright = "               Copyright © 2013 - 2023 Tencent Cloud. All Rights Reserved. 腾讯云 版权所有"
+copyright = "Copyright © 2013 - 2023 Tencent Cloud. All Rights Reserved. 腾讯云 版权所有"
 
 ################################ English Language ########################
 [Languages.en]
@@ -232,4 +232,4 @@ contentDir = "content/english"
 [Languages.en.params]
 weight = 2
 home = "Home"
-copyright = "                Copyright © 2013 - 2023 Tencent Cloud. All Rights Reserved. 腾讯云 版权所有"
+copyright = "Copyright © 2013 - 2023 Tencent Cloud. All Rights Reserved. 腾讯云 版权所有"
