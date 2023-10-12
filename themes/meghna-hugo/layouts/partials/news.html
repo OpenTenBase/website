@@ -2,20 +2,16 @@
 {{"<!-- Start news Section -->" | safeHTML}}
 <section id="news" class="bg-one section">
   <div class="container">
+    {{"<!-- section title --> " | safeHTML}}
+    <div class="wow fadeIn" data-wow-duration="500ms">
+      <p class="service-font"> {{ with i18n "newsTitle" }} {{ index (split . " ") 0 | safeHTML }} {{ end }}<span>
+            {{ with i18n "newsTitle" }} {{ index (split . " ") 1 | safeHTML }} {{ end }} </span></p>
+    </div>
     <div class="row">
-      <div class="col-12">
-        {{"<!-- section title --> " | safeHTML}}
-        <div class="wow fadeIn" data-wow-duration="500ms">
-          <p class="service-font"> {{ with i18n "newsTitle" }} {{ index (split . " ") 0 | safeHTML }} {{ end }}<span>
-							{{ with i18n "newsTitle" }} {{ index (split . " ") 1 | safeHTML }} {{ end }} </span></p>
-        </div>
-      </div>
       {{"<!-- /section title --> " | safeHTML}}
-
       {{ range first 3 (where site.RegularPages "Section" "==" "news")}}
       {{ .Render "article2"}}
       {{ end }}
-
       <!--			<div class="all-post text-center col-lg-12">-->
       <!--				<a class="btn btn-main" href="{{ `news/` | absLangURL }}">{{ i18n "viewAllPost" }}</a>-->
       <!--			</div>-->

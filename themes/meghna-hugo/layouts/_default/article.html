@@ -4,10 +4,10 @@
     <!--      <img class="img-fluid lozad" data-src="{{ .Params.Image_webp | absURL }}" onerror="this.onerror=null;this.src='{{ .Params.image | absURL }}'">-->
     <!--    </div>-->
 
-    <div class="content post-block-layout">
-      <p class="post-block-title">{{ .Title }}</p>
-      <p class="post-block-summary">{{ .Summary }}</p>
-      <a class="btn btn-transparent" href="{{ .Permalink }}">{{ i18n "readMore" }}</a>
+    <div class="content latest_activity_layout">
+      <div class="latest_activity_title">{{ .Title }}</div>
+      <div class="latest_activity_content text-truncate">{{ .Summary }}</div>
+      <a class="latest_activity_footer" href="{{ .Permalink }}">{{ i18n "readMore" }}</a>
     </div>
   </div>
 </article>

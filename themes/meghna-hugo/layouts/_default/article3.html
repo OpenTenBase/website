@@ -1,14 +1,15 @@
 <article class="col-lg-3 col-md-6 col-12 clearfix wow fadeInUp mb-4" data-wow-duration="500ms">
-  <div class="row">
-    <!--    <div class="media-wrapper">-->
-    <!--      <img class="img-fluid lozad" data-src="{{ .Params.Image_webp | absURL }}" onerror="this.onerror=null;this.src='{{ .Params.image | absURL }}'">-->
-    <!--    </div>-->
-
-    <div class="post-block-layout3">
-      <p class="article_item_title"><a href="{{ .Permalink }}">{{ .Title }}</a></p>
-      <hr class="style-one"/>
-      <p class="article_item_source">{{ .Summary }}</p>
-      <!--      <a class="btn btn-transparent" href="{{ .Permalink }}">{{ i18n "readMore" }}</a>-->
+  <div class="container">
+    <div class="row">
+      <!--    <div class="media-wrapper">-->
+      <!--      <img class="img-fluid lozad" data-src="{{ .Params.Image_webp | absURL }}" onerror="this.onerror=null;this.src='{{ .Params.image | absURL }}'">-->
+      <!--    </div>-->
+      <div class="post-block-layout3">
+        <p class="article_item_title"><a href="{{ .Permalink }}">{{ .Title }}</a></p>
+        <hr class="style-one"/>
+        <p class="article_item_source">{{ .Summary }}</p>
+        <!--      <a class="btn btn-transparent" href="{{ .Permalink }}">{{ i18n "readMore" }}</a>-->
+      </div>
     </div>
   </div>
 </article>

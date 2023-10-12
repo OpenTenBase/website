@@ -172,7 +172,7 @@ a:hover {
 }
 
 .service-font {
-  color: #1a1a1a;
+  color: #000000;
   font-family: PingFang SC;
   font-size: 32px;
   font-style: normal;
@@ -274,9 +274,6 @@ a:hover {
 }
 
 .blog_section {
-  padding: 100px 0;
-  width: 100%;
-  height: 450px;
   flex-shrink: 0;
   background: #0082ec;
 }
@@ -1080,7 +1077,6 @@ a:hover {
   margin-bottom: 40px;
   border-radius: 4px;
   border: 1px solid var(--unnamed, #d6dbe3);
-  width: 350px;
   height: 160px;
 }
 
@@ -1482,18 +1478,53 @@ a:hover {
   weight: 1408px;
 }
 
-.post-block2 {
+
+.community_news_layout {
+  font-family: PingFang SC;
   background-color: #f5f7fb;
-  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+.community_news_layout_info {
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.community_news_layout_title {
+  color: #181818;
+  font-size: 20px;
+  line-height: 28px; /* 140% */
+  width: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  word-wrap:break-word;
+  overflow: hidden;
+}
+
+.community_news_layout_content {
+  margin-top: 24px;
+  color: #4B5364;
+  font-size: 12px;
+  line-height: 20px; /* 166.667% */
+}
+
+.community_news_layout_footer {
+  margin-top: 24px;
+  color: #4B5364;
+  font-size: 12px;
+  line-height: 20px; /* 166.667% */
 }
 
 .post-block-layout {
   display: flex;
-  padding: 24px 0 24px 24px;
+  padding: 40px;
   flex-direction: column;
   align-items: flex-start;
   align-self: stretch;
-  height: 236px;
   gap: 38px;
   flex: 1 0 0;
   background: #f4f4f4;
@@ -1520,11 +1551,11 @@ a:hover {
 }
 
 .post-block-title {
-  color: #1b1e23;
   font-family: PingFang SC;
+  color: #181818;
   font-size: 20px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 28px; /* 140% */
 }
 
@@ -1546,25 +1577,6 @@ a:hover {
   line-height: 28px; /* 140% */
 }
 
-.post-block-summary {
-  align-self: stretch;
-  color: #1b1e23;
-  font-family: PingFang SC;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px; /* 166.667% */
-}
-
-.post-block-summary2 {
-  color: #4b5364;
-  font-family: PingFang SC;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px; /* 166.667% */
-  max-width: 300px;
-}
 
 hr.style-one {
   width: 100%;
@@ -3350,3 +3362,68 @@ main {
   object-fit: fill;
   width: -webkit-fill-available;
 }
+
+.feature_left_img {
+  height: -webkit-fill-available;
+}
+
+.basic_title {
+  color: #000;
+  font-family: PingFang SC;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.latest_activity_layout {
+  display: flex;
+  padding: 40px;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1 0 0;
+  border-radius: 4px;
+  background: #F4F4F4;
+  font-family: PingFang SC;
+}
+
+.latest_activity_title {
+  color: #181818;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px; /* 140% */
+}
+
+.latest_activity_content {
+  margin-top: 12px;
+  align-self: stretch;
+  overflow: hidden;
+  color: #4B5B76;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px; /* 157.143% */
+}
+
+.latest_activity_footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #000;
+  font-family: PingFang SC;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px; /* 157.143% */
+  margin-top: 38px;
+}
+
+
+.latest_activity_footer:hover,
+.latest_activity_footer:focus {
+  background-color: transparent;
+  color: #1D73E4;
+}
+
+

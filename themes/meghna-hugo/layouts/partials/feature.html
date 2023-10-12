@@ -6,7 +6,7 @@ $data.feature.feature.enable }} {{ with $data.feature.feature }} {{"<!-- feature
     <!-- this image is for trigger this section fallback background image -->
     <div class="col-sm-6 padding-0">
       <img
-        class="img-fluid"
+        class="img-fluid feature_left_img"
         src="{{ .image_webp | absURL }}"
         onerror="this.onerror=null;this.parentElement.style.backgroundImage= 'url({{ .image | absURL }})'"
       />
