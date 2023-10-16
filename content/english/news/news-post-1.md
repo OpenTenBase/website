@@ -1,10 +1,10 @@
 ---
-title: "Tencent Meeting and TencentOS were selected into the catalog of \"Outstanding Innovative Software Products of the Year\""
+title: 'Tencent Meeting and TencentOS were selected into the catalog of "Outstanding Innovative Software Products of the Year"'
 date: 2023-09-01T16:19:36+08:00
 image_webp: images/news/news-post-1.webp
 #image: images/news/news-post-1.jpg
 author: OpenTenBase
-description : "This is meta description"
+description: "This is meta description"
 ---
 
 On August 31, the China International Software Expo (hereinafter referred to as the Software Expo) was held in Tianjin. The Meeting announced the "2022-2023 Outstanding Innovative Software Product Catalog", and Tencent Meeting and Tencent operating system TencentOS Server were selected into the catalog. At the same time, Tencent continued to rank first in the "Top 100 Software".

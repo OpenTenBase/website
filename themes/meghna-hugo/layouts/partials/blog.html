@@ -3,13 +3,13 @@
 <section id="blog" class="bg-one section blog_section">
   <div class="container">
     <div class="row">
-      <div class="col-lg-12">
+      <div class="col-12">
         {{"<!-- section title --> " | safeHTML}}
-<!--        <div class="wow fadeIn" data-wow-duration="500ms">-->
-          <p class="service-font-blog"> {{ with i18n "blogTitle" }} {{ index (split . " ") 0 | safeHTML }} {{ end }}<span>
+        <!--        <div class="wow fadeIn" data-wow-duration="500ms">-->
+        <p class="service-font-blog"> {{ with i18n "blogTitle" }} {{ index (split . " ") 0 | safeHTML }} {{ end }}<span>
 							{{ with i18n "blogTitle" }} {{ index (split . " ") 1 | safeHTML }} {{ end }} </span></p>
         <hr>
-<!--        </div>-->
+        <!--        </div>-->
       </div>
       {{"<!-- /section title --> " | safeHTML}}
 

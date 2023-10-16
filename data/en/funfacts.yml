@@ -1,20 +1,20 @@
 ################################# funfacts ##################################
 funfacts:
-  enable : false
-  bg_image : "images/backgrounds/bg-white-wall.jpg"
-  bg_image_webp : "images/backgrounds/bg-white-wall.webp"
+  enable: false
+  bg_image: "images/backgrounds/bg-white-wall.jpg"
+  bg_image_webp: "images/backgrounds/bg-white-wall.webp"
   counter_item:
     # counter item loop
-    - title : "User"
-      icon : "ti-user" # themify icon pack : https://themify.me/themify-icons
-      count : "320"
+    - title: "User"
+      icon: "ti-user" # themify icon pack : https://themify.me/themify-icons
+      count: "320"
 
     # counter item loop
-    - title : "Contributor"
-      icon : "ti-hand-open" # themify icon pack : https://themify.me/themify-icons
-      count : "350"
+    - title: "Contributor"
+      icon: "ti-hand-open" # themify icon pack : https://themify.me/themify-icons
+      count: "350"
 
     # counter item loop
-    - title : "ISV"
-      icon : "ti-comments-smiley" # themify icon pack : https://themify.me/themify-icons
-      count : "250"
+    - title: "ISV"
+      icon: "ti-comments-smiley" # themify icon pack : https://themify.me/themify-icons
+      count: "250"

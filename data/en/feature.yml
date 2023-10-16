@@ -1,27 +1,27 @@
 ############################# feature ###################################
 feature:
-  enable : true
-  image : images/about/about-business-man.jpg
-  image_webp : images/about/about-business-man.webp
-  title : Install, Use, Contribute? Get started quickly with OpenTenBase!
-  content :
-  feature_item : 
-      # feature item loop
-    - title : What is OpenTenBase
-      icon : ti-help # themify icon pack : https://themify.me/themify-icons
-      content : OpenTenBase is an open source distributed database that can easily handle the storage, analysis and query of billions of data.
-      
-      # feature item loop
-    - title : Quick Start
-      icon : ti-wand # themify icon pack : https://themify.me/themify-icons
-      content : OpenTenBase architecture, introduction, compilation and installation, cluster running status, start and stop, etc.
+  enable: true
+  image: images/about/about-business-man.jpg
+  image_webp: images/about/about-business-man.webp
+  title: Install, Use, Contribute? Get started quickly with OpenTenBase!
+  content:
+  feature_item:
+    # feature item loop
+    - title: What is OpenTenBase
+      icon: ti-help # themify icon pack : https://themify.me/themify-icons
+      content: OpenTenBase is an open source distributed database that can easily handle the storage, analysis and query of billions of data.
 
       # feature item loop
-    - title : Basic Use
-      icon : ti-book # themify icon pack : https://themify.me/themify-icons
-      content : Creation of shard table, hot and cold partition table, copy table, and basic DML operations.
-      
+    - title: Quick Start
+      icon: ti-wand # themify icon pack : https://themify.me/themify-icons
+      content: OpenTenBase architecture, introduction, compilation and installation, cluster running status, start and stop, etc.
+
       # feature item loop
-    - title : Contribute
-      icon : ti-write # themify icon pack : https://themify.me/themify-icons
-      content : If you have good comments or suggestions, welcome to create Issues or Pull Requests to contribute to the OpenTenBase open source community.
+    - title: Basic Use
+      icon: ti-book # themify icon pack : https://themify.me/themify-icons
+      content: Creation of shard table, hot and cold partition table, copy table, and basic DML operations.
+
+      # feature item loop
+    - title: Contribute
+      icon: ti-write # themify icon pack : https://themify.me/themify-icons
+      content: If you have good comments or suggestions, welcome to create Issues or Pull Requests to contribute to the OpenTenBase open source community.
