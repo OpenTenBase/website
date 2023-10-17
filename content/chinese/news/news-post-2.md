@@ -9,7 +9,7 @@ description: ""
 
 9 月 21 日，OSCAR 开源产业大会上，颁布了“OSCAR 开源尖峰案例”奖项，开源数据库 OpenTenBase 获得“Oscar 尖峰开源项目优秀案例”奖。
 
-<img src=../images/news-post-2.png class="img-fluid" width=730 /><br/>
+<img src=../images/news-post-2.png class="img-fluid" /><br/>
 
 OpenTenBase 开源数据库（原 TBase 数据库）是腾讯云数据库团队研发的企业级分布式 HTAP 开源数据库，填补了业内基于 PostgreSQL 的开源分布式 OLTP 系统空白，具有高扩展性、商业数据库语法兼容、分布式 HTAP 引擎、多级容灾和多维度资源隔离等能力。
 

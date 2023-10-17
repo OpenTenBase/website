@@ -15,13 +15,13 @@ description: "The Basic Usage of OpenTenBase"
 
 ### 1.1、Create shard table
 
-<img src=../images/1.1shard.EN.png width=730 />
+<img src=../images/1.1shard.EN.png class="img-fluid" />
 OpenTenBase_shard_table_1
 
-<img src=../images/1.1shard_2.EN.png width=730 />
+<img src=../images/1.1shard_2.EN.png class="img-fluid" />
 OpenTenBase_shard_table_2
 
-<img src=../images/1.1shard_3.EN.png width=730 />
+<img src=../images/1.1shard_3.EN.png class="img-fluid" />
 OpenTenBase_shard_table_3
 
 Explain：
@@ -32,10 +32,10 @@ Explain：
 
 ### 1.2、Create partition shard table
 
-<img src=../images/1.2shard_part.EN.png width=730 />
+<img src=../images/1.2shard_part.EN.png class="img-fluid" />
 OpenTenBase_shard_partition_table_1
 
-<img src=../images/1.2shard_part_2.EN.png width=730 />
+<img src=../images/1.2shard_part_2.EN.png class="img-fluid" />
 OpenTenBase_shard_partition_table_2
 
 ```
@@ -89,10 +89,10 @@ Explain：
 
 ### 1.3、Create hot and cold partition shard table
 
-<img src=../images/1.3shard_cold_hot.EN.png width=730 />
+<img src=../images/1.3shard_cold_hot.EN.png class="img-fluid" />
 OpenTenBase_shard_hot_and_cold_partition_table_1
 
-<img src=../images/1.3shard_cold_hot_2.EN.png width=730 />
+<img src=../images/1.3shard_cold_hot_2.EN.png class="img-fluid" />
 OpenTenBase_shard_hot_and_cold_partition_table_2
  
 ``` 
@@ -167,7 +167,7 @@ manual_hot_date = '2019-01-01'
 
 ### 1.4、Create repilication table
 
-<img src=../images/1.4repilication.EN.png width=730 />
+<img src=../images/1.4repilication.EN.png class="img-fluid" />
 OpenTenBase_replicaiton_table
 
 ```

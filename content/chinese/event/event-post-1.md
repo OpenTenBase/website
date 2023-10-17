@@ -11,13 +11,13 @@ description: "来自「DaoCloud 道客」、腾讯云｜腾源会、Microsoft、
 
 **「DaoCloud 道客」研发副总裁-潘远航 Peter** 在开场致辞中讲到，技术永远不是单一且独立的存在，**交流和分享能使技术相互碰撞且爆发出能量**。像论道原生这样的线下 Meetup 系列活动，旨在通过云原生和开源的思想碰撞，让现场的观众们更加深入地了解到云原生开源项目的方方面面。这是一种好的方式，也是一种趋势。
 
-<img src=../images/event-post-1-01.png class="img-fluid"  width=730 />
+<img src=../images/event-post-1-01.png class="img-fluid"  />
 
 下面，让我们一起来回顾一下本次活动的精彩内容吧。
 
 ## **DaoCloud 在多云 多集群领域的技术实践**
 
-<img src=../images/event-post-1-02.png class="img-fluid"  width=730 />
+<img src=../images/event-post-1-02.png class="img-fluid"  />
 
 张潇《DaoCloud 在多云多集群领域的技术实践》
 
@@ -25,7 +25,7 @@ description: "来自「DaoCloud 道客」、腾讯云｜腾源会、Microsoft、
 
 ## **TDSQL-PG 开源特性 的升级与演进**
 
-<img src=../images/event-post-1-03.png class="img-fluid"  width=730 />
+<img src=../images/event-post-1-03.png class="img-fluid"  />
 
 陈再妮《TDSQL-PG 开源特性的升级与演进》
 
@@ -33,7 +33,7 @@ description: "来自「DaoCloud 道客」、腾讯云｜腾源会、Microsoft、
 
 ## **Dapr 助力应用现代化**
 
-<img src=../images/event-post-1-04.png class="img-fluid"  width=730 />
+<img src=../images/event-post-1-04.png class="img-fluid"  />
 
 张善友《Dapr 助力应用现代化》
 
@@ -41,7 +41,7 @@ description: "来自「DaoCloud 道客」、腾讯云｜腾源会、Microsoft、
 
 ## **云原生存储的技术实践 ——HwameiStor**
 
-<img src=../images/event-post-1-05.png class="img-fluid"  width=730 />
+<img src=../images/event-post-1-05.png class="img-fluid"  />
 
 戴秋萍《云原生存储的技术实践-Hwameistor》
 
@@ -49,7 +49,7 @@ description: "来自「DaoCloud 道客」、腾讯云｜腾源会、Microsoft、
 
 ## **为 LLM 创建云原生代理和扩展**
 
-<img src=../images/event-post-1-06.png class="img-fluid"  width=730 />
+<img src=../images/event-post-1-06.png class="img-fluid"  />
 
 Michael Yuan《为 LLM 创建云原生代理和扩展》
 

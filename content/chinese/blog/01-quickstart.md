@@ -13,7 +13,7 @@ OpenTenBase 是一个提供写可靠性，多主节点数据同步的关系数�
 
 OpenTenBase 采用分布式集群架构（如下图）， 该架构分布式为无共享(share nothing)模式，节点之间相应独立，各自处理自己的数据，处理后的结果可能向上层汇总或在节点间流转，各处理单元之间通过网络协议进行通信，并行处理和扩展能力更好，这也意味着只需要简单的 x86 服务器就可以部署 OpenTenBase 数据库集群
 
-<img src=../images/OpenTenBase_demo.jpg width=730 />
+<img src=../images/OpenTenBase_demo.jpg class="img-fluid"/>
 
 OpenTenBase 架构图
 
@@ -114,7 +114,7 @@ ${INSTALL_PATH}=/data/opentenbase/install
 
 示意图
 
-  <img src=../images/node_ip.png width=730 />
+  <img src=../images/node_ip.png class="img-fluid"/>
   OpenTenBase部署示意图
 
 - **禁用 SELinux 和 防火墙 (可选)**

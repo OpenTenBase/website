@@ -1,29 +1,29 @@
 ################################# Testimonial #########################
 testimonial:
-  enable: false
+  enable: true
   #  bg_image : images/backgrounds/bg-testimonial.jpg
   #  bg_image_webp : images/backgrounds/bg-testimonial.webp
-  title: "伙伴寄语"
+  title: "大咖寄语"
   btnNext: "ti-angle-right" # themify icon pack : https://themify.me/themify-icons
   btnPre: "ti-angle-left" # themify icon pack : https://themify.me/themify-icons
   testimonial_item:
     # testimonial item loop
-    - name: "李晓峰"
-      image: images/client/client-1.jpg
-      image_webp: images/client/client-1.webp
-      # position : "运营三组组长"
-      content: "愿OpenTenBase不断壮大，成为数据库领域的创新之源，推动行业高质量发展。"
+    - name: "王义成"
+      # image: images/client/client-1.jpg
+      # image_webp: images/client/client-1.webp
+      position : "腾讯云数据库总经理"
+      content: "这些年，数据量持续暴增，互联网、IoT、智能制造等发展带来数据的爆发式增长，云计算的发展让数据汇聚变得更容易。目前，TDSQL已涵盖金融级分布式、云原生、分析型等多引擎融合的完整数据库产品体系，提供业界领先的金融级高可用、存算分离、数据仓库、企业级安全等能力。未来，我们会继续投入和突破数据库核心技术，打造更加健康可持续发展的数据库生态和开源社区，为企业数字化转型提供长久动力。"
 
     # testimonial item loop
-    - name: "王雪"
-      image: images/client/client-2.jpg
-      image_webp: images/client/client-2.webp
-      # position : "云线产研架构师"
-      content: "愿OpenTenBase成为开发者的得力助手，提供易用、高效、安全的数据库服务，助力开发者在数字化浪潮中实现创新。"
+    - name: "王云龙"
+      # image: images/client/client-2.jpg
+      # image_webp: images/client/client-2.webp
+      position : "腾讯云数据库产品总监"
+      content: "OpenTenBase是腾讯内部深度实践的开源分布式数据库，历经金融、游戏、广告、社交等业务打磨10年之久，逐步推广到千行百业落地应用。腾讯云分布式数据库TDSQL团队十年磨一剑，未来我们会和业界一起打磨共创国产数据库开源生态和Oracle数据库兼容生态，更好的助力企业数字化转型，应对海量数据的高性能和高可用挑战，以及降低用户的使用门槛。"
 
     # testimonial item loop
-    - name: "张磊"
-      image: images/client/client-2.jpg
-      image_webp: images/client/client-2.webp
-      # position : "运营一组组长"
-      content: "愿OpenTenBase秉持开源精神，开放包容，合作共赢，与开发者共同创造更加美好的数字未来。"
+    - name: "平雷"
+      # image: images/client/client-2.jpg
+      # image_webp: images/client/client-2.webp
+      position : "国家能源集团信息技术公司网络安全中心副总经理"
+      content: "携手共进，共享开源数据库智慧！我们很高兴与OpenTenBase开源分布式数据库社区携手合作，共同做好这个开源数据库项目。我们相信通过共同努力，我们可以打造一个更加优质、高效、可靠的数据库产品，为全球开发者提供更好的支持和服务。我们期待着与OpenTenBase持续紧密合作，共同解决遇到的技术难题，共同探索数据库技术的未来。我们相信通过开源社区的开放与共享，我们可以取得更大的成功！"
