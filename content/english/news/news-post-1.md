@@ -9,17 +9,17 @@ description: "This is meta description"
 
 On August 31, the China International Software Expo (hereinafter referred to as the Software Expo) was held in Tianjin. The Meeting announced the "2022-2023 Outstanding Innovative Software Product Catalog", and Tencent Meeting and Tencent operating system TencentOS Server were selected into the catalog. At the same time, Tencent continued to rank first in the "Top 100 Software".
 
-<img src=../images/news-post-1-01.webp width=730 />
+<img src=../images/news-post-1-01.webp class="img-fluid" />
 Tencent Consecutively Ranks No. 1 in "Top 5 Software Top 100"
 
 Tencent Meeting is currently a widely used cloud video conferencing product in China, with more than 300 million users. Its services cover more than 220 countries and regions around the world, serving more than 30 fields such as education, medical care, finance and insurance, industry, and government affairs.
 
-<img src=../images/news-post-1-02.webp width=730 />
+<img src=../images/news-post-1-02.webp class="img-fluid" />
 Tencent Meeting Award Certificate
 
 Tencent's self-developed server operating system TencentOS Server is an enterprise-level stable operating system, which has accumulated more than 10 years of technology accumulation in the field of operating systems and carries Tencent's full self-developed business. TencentOS Server has done a lot of feature development and optimization for cloud native scenarios to help enterprises achieve "cost reduction and efficiency improvement" in terms of computing resources.
 
-<img src=../images/news-post-1-03.webp width=730 />
+<img src=../images/news-post-1-03.webp class="img-fluid" />
 Photo of award certificate for Tencent’s self-developed server operating system TencentOS Server
 
 In addition, this year's SoftExpo cooperated with the Open Atomic Foundation to create a new special open source exhibition area, inviting well-known domestic open source projects to participate in the exhibition, including the OpenCloudOS open source operating system, the OpenCloudOS open source operating system, the OpenTenBase open source database (formerly TBase database) and Tencent's deep participation and initiative. Many open source products such as Changan Chain ChainMaker were unveiled in the open source exhibition area of Software Expo.

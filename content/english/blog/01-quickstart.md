@@ -13,7 +13,7 @@ OpenTenBase is a relational database cluster platform that provides write reliab
 
 OpenTenBase is a distributed cluster architecture (as shown in the figure below), which is a distributed share nothing architecture mode, each node is independent and processes its own data. After processing, the results may be summarized to the upper layer or transferred between nodes. Each processing unit communicates with each other through the network protocol, with better parallel processing and expansion ability, which also means that the OpenTenBase cluster can be deployed on the basic x86 server.
 
-<img src=../images/OpenTenBase_demo.EN.png width=730 />
+<img src=../images/OpenTenBase_demo.EN.png class="img-fluid" />
 OpenTenBase architecture
 
 Here are three modules of OpenTenBase
@@ -113,7 +113,7 @@ planning is as follows：
 
 Sketch Map:
 
-<img src=../images/node_ip.png width=730 />
+<img src=../images/node_ip.png class="img-fluid" />
 OpenTenBase Deploy Sketch Map
 
 - **Disable SELinux and firewall (optinal)**

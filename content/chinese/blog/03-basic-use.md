@@ -17,13 +17,13 @@ description: "The Basic Usage of OpenTenBase"
 
 ### 1.1、创建 shard 普通表
 
-  <img src=../images/1.1shard.jpg width=730 />
+  <img src=../images/1.1shard.jpg class="img-fluid" />
   OpenTenBase_shard普通表
 
-  <img src=../images/1.1shard_2.jpg width=730 />
+  <img src=../images/1.1shard_2.jpg class="img-fluid" />
   OpenTenBase_shard普通表续
 
-  <img src=../images/1.1shard_3.jpg width=730 />
+  <img src=../images/1.1shard_3.jpg class="img-fluid" />
   OpenTenBase_shard普通表说明
 
 说明：
@@ -34,10 +34,10 @@ description: "The Basic Usage of OpenTenBase"
 
 ### 1.2、创建 shard 普通分区表
 
-  <img src=../images/1.2shard_part.jpg width=730 />
+  <img src=../images/1.2shard_part.jpg class="img-fluid" />
   OpenTenBase_shard分区表
 
-  <img src=../images/1.2shard_part_2.jpg width=730 />
+  <img src=../images/1.2shard_part_2.jpg class="img-fluid" />
   OpenTenBase_shard分区表续
 
 ```
@@ -91,10 +91,10 @@ postgres=#
 
 ### 1.3、创建 shard 冷热分区表
 
-  <img src=../images/1.3shard_cold_hot.jpg width=730 />
+  <img src=../images/1.3shard_cold_hot.jpg class="img-fluid" />
   OpenTenBase_shard冷热分区表
 
-  <img src=../images/1.3shard_cold_hot_2.jpg width=730 />
+  <img src=../images/1.3shard_cold_hot_2.jpg class="img-fluid" />
   OpenTenBase_shard冷热分区表续
  
 ``` 
@@ -169,7 +169,7 @@ manual_hot_date = '2019-01-01'
 
 ### 1.4、创建复制表
 
-  <img src=../images/1.4repilication.jpg width=730 />
+  <img src=../images/1.4repilication.jpg class="img-fluid" />
   OpenTenBase_shard冷热分区表
 
 ```

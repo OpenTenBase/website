@@ -9,17 +9,17 @@ description: "This is meta description"
 
 8 月 31 日，中国国际软件博览会（以下简称软博会）在天津举办，会议公布了《2022-2023 年度优秀创新软件产品目录》，腾讯会议、腾讯操作系统 TencentOS Server 入选该目录。同时，腾讯蝉联“软件百强”第一名。
 
-<img src=../images/news-post-1-01.webp class="img-fluid" width=730 />
+<img src=../images/news-post-1-01.webp class="img-fluid"  />
 腾讯蝉联“软件百强5”第一名
 
 腾讯会议是当前中国广泛使用的云视频会议产品，用户数超过 3 亿，服务覆盖全球超过 220 个国家和地区，服务教育、医疗、金融保险、工业、政务等 30 多个领域。
 
-<img src=../images/news-post-1-02.webp class="img-fluid" width=730 />
+<img src=../images/news-post-1-02.webp class="img-fluid"  />
 腾讯会议获奖证书
 
 腾讯自研服务器操作系统 TencentOS Server 是一款企业级稳定的操作系统，沉淀了腾讯在操作系统领域超过 10 年的技术积累，承载着腾讯全量自研业务。TencentOS Server 针对云原生场景做了大量特性开发和优化，帮助企业在算力资源方面做到“降本增效”。
 
-<img src=../images/news-post-1-03.webp class="img-fluid" width=730 />
+<img src=../images/news-post-1-03.webp class="img-fluid"  />
 腾讯自研服务器操作系统TencentOS Server获奖证书照片
 
 此外，本届软博会与开放原子基金会合作，新增专辟开源特色展区，邀请国内知名开源项目参展，包括腾讯深度参与并发起的 OpenCloudOS 开源操作系统、OpenTenBase 开源数据库（原 TBase 数据库）以及长安链 ChainMaker 等多款开源产品均在软博会开源展区亮相。

@@ -11,13 +11,13 @@ description: "Cloud Native Open Source Project Application Practice"
 
 **Peter Pan, Vice President of Research and Development of "DaoCloud", said in his opening speech that technology is never a single and independent existence. **Exchange and sharing can make technologies collide with each other and burst out with energy\*\*. A series of offline Meetup events like Lundao Native aims to give the audience a deeper understanding of all aspects of cloud native open source projects through the collision of ideas between cloud native and open source. This is a good way and a trend.
 
-<img src=../images/event-post-1-01.png width=730 />
+<img src=../images/event-post-1-01.png class="img-fluid" />
 
 Now, let us review the highlights of this event.
 
 ## **DaoCloud’s technical practice in the field of multi-cloud and multi-cluster**
 
-<img src=../images/event-post-1-02.png width=730 />
+<img src=../images/event-post-1-02.png class="img-fluid" />
 
 Zhang Xiao "DaoCloud's technical practice in the field of multi-cloud and multi-cluster"
 
@@ -25,7 +25,7 @@ Facing the deployment trend of multi-cloud and hybrid cloud, the open source com
 
 ## **Upgrade and evolution of TDSQL-PG open source features**
 
-<img src=../images/event-post-1-03.png width=730 />
+<img src=../images/event-post-1-03.png class="img-fluid" />
 
 Chen Zaini "Upgrade and Evolution of TDSQL-PG Open Source Features"
 
@@ -33,7 +33,7 @@ With the increase in application scenarios and data volume, distributed database
 
 ## **Dapr helps modernize applications**
 
-<img src=../images/event-post-1-04.png width=730 />
+<img src=../images/event-post-1-04.png class="img-fluid" />
 
 Zhang Shanyou "Dapr helps application modernization"
 
@@ -41,7 +41,7 @@ Nowadays, Kubernetes has become the de facto standard for running distributed ap
 
 ## **Technical practice of cloud native storage——HwameiStor**
 
-<img src=../images/event-post-1-05.png width=730 />
+<img src=../images/event-post-1-05.png class="img-fluid" />
 
 Dai Qiuping "Technical Practice of Cloud Native Storage - Hwameistor"
 
@@ -49,7 +49,7 @@ As we all know, storage is the cornerstone of application operation. As cloud na
 
 ## **Create cloud native agents and extensions for LLM**
 
-<img src=../images/event-post-1-06.png width=730 />
+<img src=../images/event-post-1-06.png class="img-fluid" />
 
 Creating Cloud-Native Agents and Extensions for LLM by Michael Yuan
 
