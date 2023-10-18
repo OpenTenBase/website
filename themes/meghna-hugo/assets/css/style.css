@@ -163,12 +163,27 @@ a:hover {
 
 .bg-one {
   background-color: #ffffff;
-  border: 1px solid var(--unnamed, #d6dbe3);
+  border: 1px solid #d6dbe3;
 }
 
 .bg-one-single {
   background-color: #d9dee5;
-  border: 1px solid var(--unnamed, #d6dbe3);
+  border: 1px solid #d6dbe3;
+}
+
+.testimonial-title {
+  margin-top: 42px;
+  color: #000000;
+  font-family: PingFang SC;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 42px; /* 131.25% */
+}
+
+.testimonial-content {
+  margin-top: 42px;
+  margin-bottom: 62px;
 }
 
 .service-font {
@@ -271,6 +286,7 @@ a:hover {
 
 .section {
   padding: 100px 0;
+  background: #FFF;
 }
 
 .blog_section {
@@ -1091,9 +1107,7 @@ a:hover {
 }
 
 .service-block {
-  display: flex;
   padding: 24px 16px;
-  align-items: flex-start;
   gap: 8px;
   flex: 10 0 0;
   background: #ffffff;
@@ -1292,10 +1306,9 @@ a:hover {
   Testimonial section
 ==================================================================*/
 .testimonial {
-  width: 100%;
-  height: 550px;
   flex-shrink: 0;
   background: #f5f7fb;
+  border: 1px solid #d6dbe3;
 }
 
 .testimonial_item {
@@ -1322,11 +1335,10 @@ a:hover {
   background: #ffffff;
 }
 
-.testimonial_item3 {
-  margin-bottom: 40px;
+.testimonial_content_item {
   border-radius: 4px;
-  width: 350px;
-  height: 260px;
+  padding: 32px 42px;
+  background: #ffffff;
 }
 
 .testimonial_item_name {
@@ -1336,20 +1348,24 @@ a:hover {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  display: flex;
+  justify-content: center;
 }
 
 .testimonial_item_position {
-  color: var(--unnamed, #97a3b7);
+  color: #97a3b7;
   font-family: PingFang SC;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  display: flex;
+  justify-content: center;
 }
 
 .testimonial_item_content {
-  width: 328px;
-  color: #1a1a1a;
+  margin-top: 24px;
+  color: #1A1A1A;
   font-family: PingFang SC;
   font-size: 16px;
   font-style: normal;
@@ -3360,11 +3376,15 @@ main {
 
 .basic_img {
   object-fit: fill;
+  width: -moz-available;
   width: -webkit-fill-available;
+  width: fill-available;
 }
 
 .feature_left_img {
+  height: -moz-available;
   height: -webkit-fill-available;
+  height: fill-available;
 }
 
 .basic_title {
@@ -3426,4 +3446,17 @@ main {
   color: #1D73E4;
 }
 
+.client-thumb img {
+  border-radius: 50%;
+  margin: 0 auto;
+  max-width: 115px;
+  width: 100%;
+}
 
+.blog-content {
+  margin-top: 42px;
+}
+
+.feature-content {
+  padding: 40px;
+}
