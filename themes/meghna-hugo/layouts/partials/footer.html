@@ -4,26 +4,14 @@
     <div class="row wow fadeInUp" data-wow-duration="500ms">
       <div class="col-xl-12">
         <br>
-        {{"<!-- Footer Social Links --> " | safeHTML}}
-        <!--				<div class="social-icon">-->
-        <!--					<ul class="list-inline">-->
-        <!--						{{ range site.Params.social }}-->
-        <!--						<li class="list-inline-item"><a href="{{ .link | safeURL }}"><i class="{{ .icon }}"></i></a></li>-->
-        <!--						{{ end }}-->
-        <!--					</ul>-->
-        <!--				</div>-->
-
         {{"<!-- copyright --> " | safeHTML}}
-        <div class="col-lg-9" data-wow-duration="500ms">
-          <a href="{{ site.Home.Permalink }}">
-            <img class="logo" src="{{ site.Params.logo_footer | absURL }}" alt="{{ site.Title }}" height="42"/>
+        <div class="col-lg-9 padding-0" data-wow-duration="500ms">
+          <a href="{{ site.Home.Permalink }}" class="padding-0">
+            <img src="{{ site.Params.logo_footer | absURL }}" alt="{{ site.Title }}" height="38"/>
           </a>
-<!--          <img align="right" src="{{ site.Params.qr_code | absURL }}" height="72"/>-->
         </div>
-        <br>
-        <hr>
         <div class="copyright">
-          <p>{{ site.Params.copyright | markdownify }}</p>
+          <div>{{ site.Params.copyright | markdownify }}</div>
         </div>
       </div>
     </div>

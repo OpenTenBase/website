@@ -5,25 +5,24 @@
 {{"<!-- Welcome Slider-->" | safeHTML}}
 <section class="hero" style='background-image: url("{{ .bg_image_webp | absURL }}")'>
   <div class="container">
-    <img class="d-none" src="{{ .bg_image_webp | absURL }}"
-         onerror="this.onerror=null;this.parentElement.style.backgroundImage= 'url({{ .bg_image | absURL }})'"/>
-    <div class="hero-inner">
-      <div class="hero-copy">
-        {{ if .icon }}
-        <div class="video-button">
-          <i class="{{ .icon }}"></i>
-        </div>
-        {{ end }}
-        <h2 class="hero-title h2-mobile mt-0 is-revealing"><span class="color">{{ with .title }} {{ index (split . " ") 0 | safeHTML }} {{ end }}</span>
-          {{ with .title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}</h2>
-        <p class="hero-paragraph is-revealing">{{ .content | markdownify }}</p>
-        {{ if .button.enable }}
-        {{ with .button }}
-        <p class="hero-cta is-revealing"><a class="button button-primary" href="{{ .link }}">{{ .label
-          }}</a></p>
-        {{ end }}
-        {{ end }}
+    <div class="hero-copy">
+      {{ if .icon }}
+      <div class="video-button">
+        <i class="{{ .icon }}"></i>
       </div>
+      {{ end }}
+      <div class="hero-title container row">
+        <div class="color">{{ with .title }} {{ index (split . " ") 0 | safeHTML }} {{ end }}</div>
+        <div class="hero-title_info">{{ with .title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}</div>
+      </div>
+      <div class="hero-paragraph is-revealing">{{ .content | markdownify }}</div>
+      {{ if .button.enable }}
+      {{ with .button }}
+      <div class="hero-cta is-revealing">
+        <a class="button button-primary" href="{{ .link }}">{{ .label}}</a>
+      </div>
+      {{ end }}
+      {{ end }}
     </div>
   </div>
 </section>

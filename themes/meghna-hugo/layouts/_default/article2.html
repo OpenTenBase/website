@@ -6,8 +6,8 @@
 
     <div class="community_news_layout_info">
       <div class="community_news_layout_title">{{ .Title }}</div>
-      <div class="community_news_layout_content text-truncate">{{ .Summary }}</div>
-      <a class="latest_activity_footer" href="{{ .Permalink }}">{{ i18n "readMore" }}</a>
+      <div class="community_news_layout_content">{{ .Summary }}</div>
+      <a class="btn btn-link latest_activity_footer padding-0" onclick="" href="{{ .Permalink }}">{{ i18n "readMore" }}</a>
     </div>
   </div>
 </article>

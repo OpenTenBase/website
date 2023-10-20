@@ -13,9 +13,9 @@
             {{ range .testimonial_item }}
             <div class="testimonial_content_item">
               {{"<!-- client photo -->" | safeHTML}}
-              <div class="client-thumb">
-                <img class="img-fluid lozad" data-src="{{ .image_webp | absURL }}" onerror="this.onerror=null;this.src='{{ .image | absURL }}'" alt="{{ .name }}">
-              </div>
+<!--              <div class="client-thumb">-->
+<!--                <img class="img-fluid lozad" data-src="{{ .image_webp | absURL }}" onerror="this.onerror=null;this.src='{{ .image | absURL }}'" alt="{{ .name }}">-->
+<!--              </div>-->
               {{"<!-- client info -->" | safeHTML}}
               <div class="testimonial_item_name">{{ .name | markdownify }}</div>
               <div class="testimonial_item_position">{{ .position | markdownify }}</div>
