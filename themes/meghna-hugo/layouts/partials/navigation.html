@@ -21,7 +21,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navigation-font navbar-collapse" id="navigation">
+      <div class="collapse navbar-collapse" id="navigation">
         <ul class="navbar-nav ml-auto">
           <!-- menu active -->
           {{ $currentPage := . }} {{ range site.Menus.main }} {{ $menuURL :=
@@ -29,7 +29,7 @@
           }} {{ $active := eq $menuURL $pageURL }} {{ if .HasChildren }}
           <li class="nav-item navigation-layout dropdown">
             <a
-              class="navigation-font nav-link dropdown-toggle"
+              class="navbar-brand nav-link dropdown-toggle"
               href="#"
               role="button"
               data-toggle="dropdown"
@@ -42,7 +42,7 @@
               {{ range .Children }} {{ $childURL := .URL | absLangURL }} {{
               $active := eq $childURL $pageURL }}
               <a
-                class="navigation-font dropdown-item"
+                class="navbar-brand dropdown-item"
                 {{if
                 findRE
                 `^http`
@@ -50,7 +50,7 @@
                 rel="noopener"
                 {{end}}
                 href="{{if findRE `^#` .URL}}{{if not $.IsHome}}{{site.BaseURL | relLangURL}}{{end}}{{.URL}}{{else}}{{.URL | relLangURL}}{{end}}"
-                >{{ .Name }}</a
+              >{{ .Name }}</a
               >
               {{ end }}
             </div>
@@ -58,7 +58,7 @@
           {{ else }}
           <li class="nav-item navigation-layout">
             <a
-              class="navigation-font nav-link"
+              class="navbar-brand nav-link"
               {{if
               findRE
               `^http`
@@ -66,7 +66,7 @@
               rel="noopener"
               {{end}}
               href="{{if findRE `^#` .URL}}{{if not $.IsHome}}{{site.BaseURL | relLangURL}}{{end}}{{.URL}}{{else}}{{.URL | relLangURL}}{{end}}"
-              >{{.Name}}</a
+            >{{.Name}}</a
             >
           </li>
           {{ end }} {{ end }}

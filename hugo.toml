@@ -7,7 +7,7 @@ timeZone = "Asia/Shanghai"
 # post pagination
 paginate = 6 # see https://gohugo.io/extras/pagination/
 # post excerpt
-summaryLength = 20 # see https://gohugo.io/content-management/excerpts/
+summaryLength = 50 # see https://gohugo.io/content-management/excerpts/
 # defaultContentLanguage
 defaultContentLanguage = "cn"
 # google analytics
