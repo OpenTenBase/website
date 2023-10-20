@@ -125,7 +125,6 @@
       "navbar-toggler",
       "navbar-toggler-icon",
       "navigation",
-      "navigation-layout",
       "navigation-logo-layout",
       "no-data",
       "offset-lg-2",
@@ -169,6 +168,7 @@
       "ti-world",
       "ti-write",
       "title",
+      "title-layout",
       "wow"
     ],
     "ids": [

@@ -491,20 +491,14 @@ a:hover {
   height: 28.801px;
   flex-shrink: 0;
 }
-
-.navigation-layout {
-  display: flex;
-  padding: 1px 10px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+.navbar-light .navbar-nav .nav-link {
+  color: #181818;
 }
-
-.navbar-dark .navbar-nav .active > .nav-link,
-.navbar-dark .navbar-nav .nav-link.active,
-.navbar-dark .navbar-nav .nav-link.show,
-.navbar-dark .navbar-nav .show > .nav-link {
-  color: #1b1e23;
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .show > .nav-link {
+  color: #006EFF;
 }
 
 .navbar-light .navbar-toggler {
@@ -2663,9 +2657,9 @@ figcaption {
 }
 
 #select-language {
-  background: linear-gradient(180deg, #ffffff 0%, #ffffff 100%);
-  color: #1b1e23;
   border: 0;
+  color: #181818;
+  font-size: 1.25rem;
 }
 
 .simple-icon {
@@ -3466,4 +3460,16 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+
+.title-layout {
+  background: linear-gradient(180deg, #ffffff 0%, #ffffff 100%);
+  border: 0;
+  color: #181818;
+  font-family: PingFang SC;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 135.023%; /* 27.005px */
 }
