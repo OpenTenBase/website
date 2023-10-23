@@ -1,29 +1,40 @@
 ################################# Testimonial #########################
 testimonial:
   enable: true
-  title: "伙伴寄语"
-  bg_image: images/backgrounds/bg-testimonial.jpg
-  bg_image_webp: images/backgrounds/bg-testimonial.webp
+  #  bg_image : images/backgrounds/bg-testimonial.jpg
+  #  bg_image_webp : images/backgrounds/bg-testimonial.webp
+  title: "Messages from Celebrities"
   btnNext: "ti-angle-right" # themify icon pack : https://themify.me/themify-icons
   btnPre: "ti-angle-left" # themify icon pack : https://themify.me/themify-icons
   testimonial_item:
     # testimonial item loop
-    - name: Jonathon Andrew
-      image: images/client/client-1.jpg
-      image_webp: images/client/client-1.webp
-      position: "云线产研架构师"
-      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium minima ex, quia error, deserunt voluptatibus repellendus? Incidunt eligendi aliquam repellat molestias, vel sed optio rem odit quis ratione non consequuntur!
+    - name: "WANG YiCheng"
+      #image: images/client/client-1.jpg
+      #image_webp: images/client/client-1.webp
+      position : "General Manager of Tencent Cloud Database"
+      content: "In recent years, the amount of data has continued to increase dramatically. The development of the Internet, IoT, and smart manufacturing has brought explosive growth of data. The development of cloud computing has made data aggregation easier. At present, TDSQL has covered a complete database product system that integrates financial-grade distributed, cloud-native, analytical and other multi-engines, and provides industry-leading financial-grade high availability, storage and calculation separation, data warehouse, enterprise-level security and other capabilities. In the future, we will continue to invest in and break through core database technologies, create a more healthy and sustainable database ecosystem and open source community, and provide long-term impetus for the digital transformation of enterprises."
 
     # testimonial item loop
-    - name: Mark Dinn
-      image: images/client/client-2.jpg
-      image_webp: images/client/client-2.webp
-      position: "云线产研架构师"
-      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium minima ex, quia error, deserunt voluptatibus repellendus? Incidunt eligendi aliquam repellat molestias, vel sed optio rem odit quis ratione non consequuntur!
+    - name: "WANG Yunlong"
+      position : "Product Director of Tencent Cloud Database"
+      content: "OpenTenBase is an open source distributed database deeply practiced within Tencent. After 10 years of development in finance, games, advertising, social networking and other businesses, it has been gradually promoted to applications in thousands of industries. The Tencent Cloud distributed database TDSQL team has been working hard for ten years. In the future, we will work with the industry to create an open source ecosystem for domestic databases and an ecosystem compatible with Oracle databases to better assist enterprises in digital transformation and cope with the challenges of high performance and high availability of massive data. , and lower the user threshold."
 
     # testimonial item loop
-    - name: Lemos Kail
-      image: images/client/client-1.jpg
-      image_webp: images/client/client-1.webp
-      position: "云线产研架构师"
-      content: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium minima ex, quia error, deserunt voluptatibus repellendus? Incidunt eligendi aliquam repellat molestias, vel sed optio rem odit quis ratione non consequuntur!
+    - name: "PING Lei"
+      position : "Vice General Manager of Cybersecurity Center of CHN Energy"
+      content: "Let’s work together to share the wisdom of open source databases! We are very happy to work together with the OpenTenBase open source distributed database community to work together on this open source database project. We believe that by working together, we can create a more high-quality, efficient, and reliable database product and provide better support and services to developers around the world. We look forward to continuing to work closely with OpenTenBase to jointly solve the technical problems encountered and jointly explore the future of database technology. We believe that through openness and sharing in the open source community, we can achieve greater success!"
+
+    # testimonial item loop
+    - name: "BAI Shi"
+      position : "Vice Director of China Chengtong"
+      content: "China Chengtong is the \"reform toolbox\" for the high-quality development of central enterprises. We are very happy to participate in the open source database community initiated by Tencent and work with the OpenTenBase community to promote the open source ecosystem of domestic databases. At the same time, we will use the concept of pioneering, reform and innovation to continue Promote the digital transformation of state-owned enterprises."
+
+    # testimonial item loop
+    - name: "ZHAO Zhenping"
+      position : "Former Chairman of PostgreSQL Chinese Community"
+      content: "I wish the Tencent OpenTenBase community to delve deeply into the database field, serve China and serve the world. Become a large and influential technology community in the world."
+
+    # testimonial item loop
+    - name: "BAI Guohua"
+      position : "Vice Chairman and Secretary General of China PostgreSQL Association"
+      content: "OpenTenBase is an enterprise-level distributed HTAP open source database that fills the gap in the industry's open source distributed OLTP system based on PostgreSQL. The Tencent Cloud TDSQL PG team also applies the open source kernel to core business systems in finance, government, telecommunications, medical, aerospace and other industries. In the future, China PostgreSQL Association will work with Tencent to promote open source products to a broader application market."
