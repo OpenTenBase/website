@@ -4,7 +4,7 @@
 
 {{"<!-- Start Blog Section -->" | safeHTML}}
 <section id="blog" class="section">
-  <div class="container no-data">
+  <div class="container">
     {{"<!-- section title --> " | safeHTML}}
     <div class="title text-center">
       <div>{{ with i18n "newPublish" }} {{ index (split . " ") 0 | safeHTML }} {{ end }} {{ with i18n "blogTitle" }} {{ index (split . " ") 1 | safeHTML }} {{ end }}
@@ -22,6 +22,17 @@
     </div>
   </div>
 </section>
+<script type="text/javascript">
+  /**
+   * hack 强制修改最小高度
+   * @type {HTMLElement}
+   */
+  var blog = document.getElementById('blog');
+  var clientHeight = blog.clientHeight || ""
+  if (clientHeight < 480) {
+    blog.setAttribute('style', 'min-height: 600px')
+  }
+</script>
 {{"<!-- /blog -->" | safeHTML}}
 
 {{ end }}
