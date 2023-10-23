@@ -2662,6 +2662,16 @@ figcaption {
   font-size: 1.25rem;
 }
 
+.navigation-layout {
+  display: flex;
+  padding: 1px 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+
+
 .simple-icon {
   color: #6c7b8a;
   padding: 10px;
