@@ -172,7 +172,7 @@ a:hover {
 }
 
 .testimonial-title {
-  margin-top: 42px;
+  margin:42px 0;
   color: #000000;
   font-family: PingFang SC;
   font-size: 32px;
@@ -184,6 +184,11 @@ a:hover {
 .testimonial-content {
   margin-top: 42px;
   margin-bottom: 62px;
+}
+
+.testimonial_content_footer {
+  display: flex;
+  justify-content: center;
 }
 
 .service-font {
@@ -1331,6 +1336,7 @@ a:hover {
   border-radius: 4px;
   padding: 32px 42px;
   background: #ffffff;
+  margin-bottom: 42px;
 }
 
 .testimonial_item_name {
@@ -3372,7 +3378,8 @@ main {
   flex-shrink: 0;
   fill: #fff;
   stroke-width: 1px;
-  stroke: var(--unnamed, #d6dbe3);
+  stroke: #d6dbe3;
+  margin-left: 24px;
 }
 
 .basic_bgc {
