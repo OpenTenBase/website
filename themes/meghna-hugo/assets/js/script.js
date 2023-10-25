@@ -56,8 +56,17 @@ jQuery(function($) {
 
   /*	Testimonial Carousel
    /* =========================================================================  */
-  function setSlidesInfo(slidesDefault) {
-
+  function setSlidesInfo() {
+    var slidesDefault = 3;
+    // 变化后需要做的事
+    if (isMobile()) {
+      slidesDefault = 1;
+    } else {
+      var body = document.getElementsByTagName('body');
+      if (body[0].clientWidth <= 960) {
+        slidesDefault = 1;
+      }
+    }
     $('#testimonials').slick({
       accessibility: true,
       infinite: true,
@@ -69,7 +78,7 @@ jQuery(function($) {
     });
   }
 
-  setSlidesInfo(3);
+  setSlidesInfo();
 
   $('.btn-pre').click(function() {
     $('#testimonials').slick('slickPrev');
@@ -173,17 +182,7 @@ jQuery(function($) {
 
   $(window).on('resize', function() {
     $('#testimonials').slick('unslick');
-    // 变化后需要做的事
-    if (isMobile()) {
-      setSlidesInfo(1);
-    } else {
-      var body = document.getElementsByTagName('body');
-      if (body[0].clientWidth <= 960) {
-        setSlidesInfo(1);
-      } else {
-        setSlidesInfo(3);
-      }
-    }
+    setSlidesInfo();
   });
 });
 
