@@ -2,6 +2,10 @@
 /*	Page Preloader
  /* ========================================================================= */
 
+$(window).on('load', function () {
+  $('.preloader').fadeOut(100);
+});
+
 jQuery(function($) {
   'use strict';
 
@@ -56,23 +60,24 @@ jQuery(function($) {
 
   /*	Testimonial Carousel
    /* =========================================================================  */
+  function isMobile() {
+    var flag = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent);
+    return flag;
+  }
   function setSlidesInfo() {
     var slidesDefault = 3;
+    var body = document.getElementsByTagName('body');
     // 变化后需要做的事
-    if (isMobile()) {
+    if (isMobile() || body[0].clientWidth <= 960) {
       slidesDefault = 1;
-    } else {
-      var body = document.getElementsByTagName('body');
-      if (body[0].clientWidth <= 960) {
-        slidesDefault = 1;
-      }
     }
     $('#testimonials').slick({
       accessibility: true,
       infinite: true,
       arrows: false,
-      autoplay: false,
-      autoplaySpeed: 2000,
+      autoplay: true,
+      autoplaySpeed: 4000,
       slidesToShow: slidesDefault,
       slidesToScroll: slidesDefault,
     });
@@ -169,21 +174,6 @@ jQuery(function($) {
     counter();
   });
 
-  function isMobile() {
-    var flag = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      navigator.userAgent);
-    return flag;
-  }
-
-
-  $(window).on('load', function() {
-    $('.preloader').fadeOut(100);
-  });
-
-  $(window).on('resize', function() {
-    $('#testimonials').slick('unslick');
-    setSlidesInfo();
-  });
 });
 
 

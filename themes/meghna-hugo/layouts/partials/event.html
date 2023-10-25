@@ -9,7 +9,7 @@
     </div>
     <div class="row">
       {{"<!-- /section title --> " | safeHTML}}
-      {{ range first 3 (where site.RegularPages "Section" "==" "event")}}
+      {{ range first 2 (where site.RegularPages "Section" "==" "event")}}
       {{ .Render "article"}}
       {{ end }}
       <!--			<div class="all-post text-center col-lg-12">-->

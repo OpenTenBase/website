@@ -7,7 +7,8 @@
   <div class="container">
     {{"<!-- section title --> " | safeHTML}}
     <div class="title text-center">
-      <div>{{ with i18n "newPublish" }} {{ index (split . " ") 0 | safeHTML }} {{ end }} {{ with i18n "blogTitle" }} {{ index (split . " ") 1 | safeHTML }} {{ end }}
+      <div>{{ with i18n "newPublish" }} {{ index (split . " ") 0 | safeHTML }} {{ end }} {{ with i18n "blogTitle" }} {{
+        index (split . " ") 1 | safeHTML }} {{ end }}
       </div>
     </div>
     <div class="row blog-content">
@@ -23,5 +24,20 @@
   </div>
 </section>
 {{"<!-- /blog -->" | safeHTML}}
+<script type="text/javascript">
+  function isMobile() {
+    let flag = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    return flag;
+  }
 
+  /**
+   * hack 强制修改最小高度
+   * @type {HTMLElement}
+   */
+  var blog = document.getElementById('blog');
+  var clientHeight = blog.clientHeight || ""
+  if (clientHeight < 600) {
+    blog.setAttribute('style', `min-height: ${isMobile() ? 650 : 1000}px`)
+  }
+</script>
 {{ end }}
