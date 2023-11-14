@@ -7,6 +7,12 @@ testimonial:
   btnNext: "ti-angle-right" # themify icon pack : https://themify.me/themify-icons
   btnPre: "ti-angle-left" # themify icon pack : https://themify.me/themify-icons
   testimonial_item:
+
+    # testimonial item loop
+    - name: "冯冠霖"
+      position : "开放原子开源基金会秘书长"
+      content: "很高兴看到腾讯能够把多年研发打磨、通过海量业务场景考验的基础软件数据库项目OpenTenBase开源并捐赠到基金会，未来基金会将秉持中立开放的态度，与业界一起将OpenTenBase打造成为具有全球影响力的优秀开源项目。"
+      
     # testimonial item loop
     - name: "王义成"
       #image: images/client/client-1.jpg

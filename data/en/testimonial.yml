@@ -7,8 +7,14 @@ testimonial:
   btnNext: "ti-angle-right" # themify icon pack : https://themify.me/themify-icons
   btnPre: "ti-angle-left" # themify icon pack : https://themify.me/themify-icons
   testimonial_item:
+
     # testimonial item loop
-    - name: "WANG YiCheng"
+    - name: "FENG Guanlin"
+      position : "Secretary General of OpenAtom Foundation"
+      content: "I am very happy to see that Tencent can open source OpenTenBase, a basic software database project that has been developed for many years and has passed the test of massive business scenarios, and donated it to the foundation. In the future, the foundation will uphold a neutral and open attitude and work with the industry to build OpenTenBase into a globally influential excellent open source projects."
+
+    # testimonial item loop
+    - name: "WANG Yicheng"
       #image: images/client/client-1.jpg
       #image_webp: images/client/client-1.webp
       position : "General Manager of Tencent Cloud Database"
