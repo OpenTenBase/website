@@ -13,18 +13,18 @@ description: "This is meta description"
   font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 10px;word-break:normal;}
 .tg th{background-color:#f0f0f0;border-color:#ccc;border-style:solid;border-width:1px;color:#333;
   font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 10px;word-break:normal;}
-.tg .tg-z0u2{background-color:#0052cb;border-color:#333333;color:#ffffff;font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-h38q{background-color:#0082ec;border-color:#333333;color:#ffffff;font-weight:bold;text-align:left;vertical-align:top}
 .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
 </style>
 <table class="tg">
 <thead>
   <tr>
-    <th class="tg-z0u2">认证发行版</th>
-    <th class="tg-z0u2">企业名称</th>
-    <th class="tg-z0u2">社区版本</th>
-    <th class="tg-z0u2">颁发日期</th>
-    <th class="tg-z0u2">有效日期</th>
-    <th class="tg-z0u2">证书查看</th>
+    <th class="tg-h38q">认证发行版</th>
+    <th class="tg-h38q">企业名称</th>
+    <th class="tg-h38q">社区版本</th>
+    <th class="tg-h38q">颁发日期</th>
+    <th class="tg-h38q">有效日期</th>
+    <th class="tg-h38q">证书查看</th>
   </tr>
 </thead>
 <tbody>

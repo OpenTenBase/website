@@ -114,14 +114,19 @@ url = "https://docs.opentenbase.org/"
 weight = 4
 
 [[Languages.cn.menu.main]]
+name = "认证"
+url = "event/certification"
+weight = 5
+
+[[Languages.cn.menu.main]]
 name = "下载"
 url = "https://github.com/OpenTenBase/OpenTenBase/tags"
-weight = 5
+weight = 6
 
 [[Languages.cn.menu.main]]
 name = "源码"
 url = "https://github.com/OpenTenBase/OpenTenBase"
-weight = 6
+weight = 7
 
 ################### English Navigation ########################
 [[Languages.en.menu.main]]
