@@ -14,7 +14,7 @@ description: "This is meta description"
 .tg th{background-color:#f0f0f0;border-color:#ccc;border-style:solid;border-width:1px;color:#333;
   font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 10px;word-break:normal;}
 .tg .tg-h38q{background-color:#0082ec;border-color:#333333;color:#ffffff;font-weight:bold;text-align:left;vertical-align:top}
-.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-de2y{border-color:#333333;text-align:left;vertical-align:top}
 </style>
 <table class="tg">
 <thead>
@@ -29,12 +29,12 @@ description: "This is meta description"
 </thead>
 <tbody>
   <tr>
-    <td class="tg-0pky">国能数据库CERDB</td>
-    <td class="tg-0pky">国能信息技术有限公司</td>
-    <td class="tg-0pky">OpenTenBase 2.5</td>
-    <td class="tg-0pky">2023-10-26</td>
-    <td class="tg-0pky">2023-10-26</td>
-    <td class="tg-0pky"><a href="https://../images/certification-001.png" target="_blank" rel="noopener noreferrer">下载证书</a></td>
+    <td class="tg-de2y">国能数据库CERDB</td>
+    <td class="tg-de2y">国能信息技术有限公司</td>
+    <td class="tg-de2y">OpenTenBase 2.5</td>
+    <td class="tg-de2y">2023-10-26</td>
+    <td class="tg-de2y">2023-10-26</td>
+    <td class="tg-de2y"><a href="../images/certification-001.png" target="_blank" rel="noopener noreferrer">下载证书</a></td>
   </tr>
 </tbody>
 </table>
