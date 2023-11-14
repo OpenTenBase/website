@@ -33,7 +33,7 @@ description: "This is meta description"
     <td class="tg-de2y">国能信息技术有限公司</td>
     <td class="tg-de2y">OpenTenBase 2.5</td>
     <td class="tg-de2y">2023-10-26</td>
-    <td class="tg-de2y">2023-10-26</td>
+    <td class="tg-de2y">2026-10-26</td>
     <td class="tg-de2y"><a href="../images/certification-001.png" target="_blank" rel="noopener noreferrer">下载证书</a></td>
   </tr>
 </tbody>
