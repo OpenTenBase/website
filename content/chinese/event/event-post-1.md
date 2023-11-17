@@ -3,7 +3,7 @@ title: "云原生开源项目应用实践专场回顾"
 date: 2023-07-20T08:00:36+08:00
 #image_webp: images/blog/blog-post-3.webp
 image: images/event/event-post-1-image.png
-author: Bart Dong
+author: OpenTenBase
 description: "来自「DaoCloud 道客」、腾讯云｜腾源会、Microsoft、OpenCloudOS 社区、WasmEdge 社区、DCE 社区的技术大牛们齐聚一堂，分享最前沿的云原生开源项目干货，共同探讨最新的云原生技术趋势。"
 ---
 

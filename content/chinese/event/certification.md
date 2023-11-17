@@ -1,6 +1,6 @@
 ---
 title: "发行版认证"
-date: 2023-11-14T00:00:00+08:00
+date: 2000-11-14T00:00:00+08:00
 #image_webp: images/news/news-post-1.webp
 #image: images/news/news-post-1.jpg
 author: OpenTenBase
