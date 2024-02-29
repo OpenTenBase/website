@@ -24,7 +24,7 @@ testimonial:
     - name: "潘安群"
       #image: images/client/client-1.jpg
       #image_webp: images/client/client-1.webp
-      position : "腾讯云数据库总经理"
+      position : "腾讯云数据库研发总经理"
       content: "OpenTenBase数据库在技术上填补了业内基于PostgreSQL的开源分布式OLTP系统空白，并且集HTAP双引擎、分布式事务一致性、高 SQL 兼容度、复杂查询等技术能力于一身，能够为企业数字化转型提供强有力支撑。在引擎方面，OpenTenBase同时支持OLTP（在线交易处理）和OLAP（在线分析处理）能力，能够有效降低业务架构复杂度和成本；在事务一致性方面，引入全局事务管理节点来管理分布式事务，通过分布式事务一致性技术来保证在全分布式环境下的事务一致性；在兼容性方面，高度兼容PostgreSQL版本和Oracle版本；在查询方面，全新开发分布式查询优化器，可将复杂查询的性能提升十倍以上。"
 
     # testimonial item loop
