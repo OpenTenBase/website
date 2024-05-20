@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authors on OpenTenBase</title>
+    <link>http://localhost:1313/en/author/</link>
+    <description>Recent content in Authors on OpenTenBase</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/en/author/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenTenBase</title>
+      <link>http://localhost:1313/en/author/opentenbase/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/en/author/opentenbase/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

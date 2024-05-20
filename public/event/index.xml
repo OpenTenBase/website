@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Events on OpenTenBase</title>
+    <link>http://localhost:1313/event/</link>
+    <description>Recent content in Events on OpenTenBase</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 29 Apr 2024 14:43:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/event/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>开源之夏2024，OpenTenBase邀你共赴数据库开发之旅！</title>
+      <link>http://localhost:1313/event/event-post-4/</link>
+      <pubDate>Mon, 29 Apr 2024 14:43:00 +0800</pubDate>
+      <guid>http://localhost:1313/event/event-post-4/</guid>
+      <description>活动介绍 “开源之夏（英文简称 OSPP）”是中国科学院软件研究所“开源软件供应链点亮计划”指</description>
+    </item>
+    <item>
+      <title>开放原子校源行走进西部，加速开源人才培养</title>
+      <link>http://localhost:1313/event/event-post-3/</link>
+      <pubDate>Mon, 06 Nov 2023 14:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/event/event-post-3/</guid>
+      <description>“开放原子校源行”公益项目由开放原子开源基金会（以下简称“基金会”）与腾讯公司共同出资设立</description>
+    </item>
+    <item>
+      <title>开放原子开源基金会赴黑龙江科技大学走访交流</title>
+      <link>http://localhost:1313/event/event-post-2/</link>
+      <pubDate>Thu, 21 Sep 2023 14:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/event/event-post-2/</guid>
+      <description>开放原子校源行”公益项目由开放原子开源基金会与腾讯公司共同出资设立发起。双方携手通过建立高</description>
+    </item>
+    <item>
+      <title>云原生开源项目应用实践专场回顾</title>
+      <link>http://localhost:1313/event/event-post-1/</link>
+      <pubDate>Thu, 20 Jul 2023 08:00:36 +0800</pubDate>
+      <guid>http://localhost:1313/event/event-post-1/</guid>
+      <description>7 月 15 日，云原生开源项目应用实践专场第三站，来到了以 “创新”和“开放” 著称的深圳。来自 「D</description>
+    </item>
+    <item>
+      <title>发行版认证</title>
+      <link>http://localhost:1313/event/certification/</link>
+      <pubDate>Tue, 14 Nov 2000 00:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/event/certification/</guid>
+      <description>认证发行版 企业名称 社区版本 颁发日期 有效日期 证书查看 国能数据库CERDB 国能信息技术有限公司</description>
+    </item>
+  </channel>
+</rss>

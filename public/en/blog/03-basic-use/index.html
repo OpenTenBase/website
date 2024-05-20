@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8">
+	<title>Basic Usage</title>
+
+	<!-- mobile responsive meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="The Basic Usage of OpenTenBase">
+	
+	<meta name="author" content="Themefisher">
+	
+	
+        <meta name="theme-name" content="meghna-hugo" />
+	<meta name="generator" content="Hugo 0.126.1">
+
+	<!-- plugins -->
+	
+	<link rel="stylesheet" href="http://localhost:1313/plugins/bootstrap/bootstrap.min.css">
+	
+	<link rel="stylesheet" href="http://localhost:1313/plugins/themify-icons/themify-icons.css">
+	
+	<link rel="stylesheet" href="http://localhost:1313/plugins/magnific-popup/magnific-popup.css">
+	
+	<link rel="stylesheet" href="http://localhost:1313/plugins/slick/slick.css">
+	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anaheim%7cQuattrocento&#43;Sans:400,700&amp;display=swap">
+	
+
+	<!-- Main Stylesheet -->
+	
+	<link rel="stylesheet" href="http://localhost:1313/css/style.min.css" media="screen">
+
+	<!-- Custom stylesheet - for your changes -->
+	
+  <link rel="stylesheet" href="http://localhost:1313/css/custom.min.css" media="screen">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" type="image/x-icon">
+	<link rel="icon" href="http://localhost:1313/images/favicon.png" type="image/x-icon">
+
+	
+
+</head>
+
+
+<body id="body" data-spy="scroll" data-target=".navbar" data-offset="55">
+  <div id="content">
+    
+
+
+<section class="sticky-top navigation">
+  <div class="container padding-0">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand p-0" href="/en">
+        
+        <img
+          class="lozad navigation-logo-layout"
+          data-src="http://localhost:1313/images/logo.png"
+          alt="OpenTenBase"
+          height="42"
+        />
+        
+      </a>
+
+      <button
+        class="navbar-toggler rounded-0"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse title-layout" id="navigation">
+        <ul class="navbar-nav ml-auto">
+          
+               
+          <li class="nav-item navbar-brand">
+            <a
+              class="nav-link"
+              
+              href="/en#news"
+            >News</a
+            >
+          </li>
+               
+          <li class="nav-item navbar-brand">
+            <a
+              class="nav-link"
+              
+              href="/en#blog"
+            >Blog</a
+            >
+          </li>
+               
+          <li class="nav-item navbar-brand">
+            <a
+              class="nav-link"
+              
+              href="/en#event"
+            >Event</a
+            >
+          </li>
+               
+          <li class="nav-item navbar-brand">
+            <a
+              class="nav-link"
+              target="_blank"
+              rel="noopener"
+              
+              href="https://docs.opentenbase.org/en/"
+            >Document</a
+            >
+          </li>
+               
+          <li class="nav-item navbar-brand">
+            <a
+              class="nav-link"
+              target="_blank"
+              rel="noopener"
+              
+              href="https://github.com/OpenTenBase/OpenTenBase/tags"
+            >Download</a
+            >
+          </li>
+               
+          <li class="nav-item navbar-brand">
+            <a
+              class="nav-link"
+              target="_blank"
+              rel="noopener"
+              
+              href="https://github.com/OpenTenBase/OpenTenBase"
+            >Code</a
+            >
+          </li>
+           
+        </ul>
+        
+        <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <option id="en" value="http://localhost:1313/en/blog/03-basic-use/" selected>En
+          </option>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <option id="cn" value="http://localhost:1313/blog/03-basic-use/">中文</option>
+          
+          
+          
+          
+          
+          
+        </select>
+        
+      </div>
+    </nav>
+  </div>
+</section>
+
+
+<section class="section bg-one-single">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center ">
+        <p class="title h2">Basic Usage</p>
+        <ul class="list-inline mb-50">
+          <li class="list-inline-item">
+            <a class="btn btn-link padding-0" href="/en/author/opentenbase/">OpenTenBase
+            </a>
+          </li>
+          <li class="list-inline-item">Monday, Sep 25, 2023</li>
+        </ul>
+
+      </div>
+      <div class="col-lg-8 offset-lg-2">
+        <div class="post-single-content">
+          <blockquote>
+<p>In &lt; Quick Start &gt; article, we introduced opentenbase architecture, source code compilation and installation, cluster running status, startup and stop, etc.</p>
+<p>This article will introduce the creation of shard table, hot and cold partition table, replication table and basic DML operation in opentenbase.</p>
+</blockquote>
+<h2 id="1create-table">1、Create table</h2>
+<h3 id="11create-shard-table">1.1、Create shard table</h3>
+<img src=../images/1.1shard.EN.png class="img-fluid" />
+OpenTenBase_shard_table_1
+<img src=../images/1.1shard_2.EN.png class="img-fluid" />
+OpenTenBase_shard_table_2
+<img src=../images/1.1shard_3.EN.png class="img-fluid" />
+OpenTenBase_shard_table_3
+<p>Explain：</p>
+<ul>
+<li>distribute by shard (x) is used to specify the distribution key. Based on the value of this field, calculate which node the partition data is distributed to .</li>
+<li>to group XXX is used to specify storage groups (each storage group can have multiple nodes).</li>
+<li>distribution key field value cannot be modified, field length cannot be modified, and field type cannot be modified.</li>
+</ul>
+<h3 id="12create-partition-shard-table">1.2、Create partition shard table</h3>
+<img src=../images/1.2shard_part.EN.png class="img-fluid" />
+OpenTenBase_shard_partition_table_1
+<img src=../images/1.2shard_part_2.EN.png class="img-fluid" />
+OpenTenBase_shard_partition_table_2
+<pre tabindex="0"><code>[opentenbase@VM_0_37_centos shell]$ psql -h 172.16.0.42 -p 11387 -d postgres -U opentenbase
+psql (PostgreSQL 10.0 opentenbase V2)
+Type &#34;help&#34; for help.
+
+postgres=# create table public.t1_pt
+(
+f1 int not null,
+f2 timestamp not null,
+f3 varchar(20),
+primary key(f1)
+)
+partition by range (f2)
+begin (timestamp without time zone &#39;2019-01-01 0:0:0&#39;)
+step (interval &#39;1 month&#39;) partitions (3)
+distribute by shard(f1)
+to group default_group;
+
+CREATE TABLE
+postgres=#
+
+postgres=# \d+ public.t1_pt
+                                             Table &#34;public.t1_pt&#34;
+ Column |            Type             | Collation | Nullable | Default | Storage  | Stats target | Description
+--------+-----------------------------+-----------+----------+---------+----------+--------------+-------------
+ f1     | integer                     |           | not null |         | plain    |              |
+ f2     | timestamp without time zone |           | not null |         | plain    |              |
+ f3     | character varying(20)       |           |          |         | extended |              |
+Indexes:
+    &#34;t1_pt_pkey&#34; PRIMARY KEY, btree (f1)
+Distribute By: SHARD(f1)
+Location Nodes: ALL DATANODES
+Partition By: RANGE(f2)
+         # Of Partitions: 3
+         Start With: 2019-01-01
+         Interval Of Partition: 1 MONTH
+
+postgres=#
+</code></pre><p>Explain：</p>
+<ul>
+<li>partition by range (x) is used to specify the partition key. It supports the type of timesamp and int. according to this field value, it calculates which sub table the partition data is distributed in.</li>
+<li>begin( xxx ) is used to specifies the time point to start the partition。</li>
+<li>step(xxx) is used to specified partition has period</li>
+<li>partions(xx) is used to establish the number of partition sub tables during initialization.</li>
+<li>Method of adding partition sub table: ALTER TABLE public.t1_pt ADD PARTITIONS 2;</li>
+</ul>
+<h3 id="13create-hot-and-cold-partition-shard-table">1.3、Create hot and cold partition shard table</h3>
+<img src=../images/1.3shard_cold_hot.EN.png class="img-fluid" />
+OpenTenBase_shard_hot_and_cold_partition_table_1
+<img src=../images/1.3shard_cold_hot_2.EN.png class="img-fluid" />
+OpenTenBase_shard_hot_and_cold_partition_table_2
+<pre tabindex="0"><code>[opentenbase@VM_0_37_centos shell]$ psql -h 172.16.0.42 -p 11387 -d postgres -U opentenbase
+psql (PostgreSQL 10.0 opentenbase V2)
+Type &#34;help&#34; for help.
+
+postgres=# create table public.t1_cold_hot
+(
+f1 int not null,
+f2 timestamp not null,
+f3 varchar(20),
+primary key(f1)
+)
+partition by range (f2)
+begin (timestamp without time zone &#39;2017-01-01 0:0:0&#39;)
+step (interval &#39;12 month&#39;) partitions (4)
+distribute by shard(f1,f2)
+to group default_group cold_group;
+CREATE TABLE
+postgres=# \d+ public.t1_cold_hot
+Table &#34;public.t1_cold_hot&#34;
+Column | Type | Collation | Nullable | Default | Storage | Stats target | Description
+--------+-----------------------------+-----------+----------+---------+----------+--------------+-------------
+f1 | integer | | not null | | plain | |
+f2 | timestamp without time zone | | not null | | plain | |
+f3 | character varying(20) | | | | extended | |
+Indexes:
+&#34;t1_cold_hot_pkey&#34; PRIMARY KEY, btree (f1)
+Distribute By SHARD(f1,f2)
+Hotnodes:dn001 Coldnodes:dn002
+Partition By: RANGE(f2) # Of Partitions: 4
+Start With: 2017-01-01
+Interval Of Partition: 12 MONTH
+
+postgres=#
+</code></pre><p>Explain：</p>
+<ul>
+<li>distribute By SHARD(f1,f2) : The hot and cold partition table needs to specify two fields for routing, namely distribution key and partition key.</li>
+<li>to group default_group cold_group: You need to specify two storage groups, the first is hot data storage group and the second is cold storage group。</li>
+</ul>
+<p>Two groups are required to create the time range cold and hot partition table, and the nodes contained in the cold_group storing cold data need to be identified as cold nodes:</p>
+<pre tabindex="0"><code>
+[opentenbase@VM_0_37_centos shell]$ psql -h 172.16.0.42 -p 11000 -d postgres -U opentenbase
+psql (PostgreSQL 10.0 opentenbase V2)
+Type &#34;help&#34; for help.
+
+postgres=# select pg_set_node_cold_access();
+pg_set_node_cold_access
+
+---
+
+success
+(1 row)
+</code></pre><p>The hot and cold partition table needs to configure the hot and cold partition time parameters and partition level in postgresql.conf:</p>
+<pre tabindex="0"><code>
+cold_hot_sepration_mode = &#39;year&#39;
+enable_cold_seperation = true
+manual_hot_date = &#39;2019-01-01&#39;
+</code></pre><h3 id="14create-repilication-table">1.4、Create repilication table</h3>
+<img src=../images/1.4repilication.EN.png class="img-fluid" />
+OpenTenBase_replicaiton_table
+<pre tabindex="0"><code>
+[opentenbase@VM_0_37_centos shell]$ psql -h 172.16.0.42 -p 11387 -d postgres -U opentenbase
+psql (PostgreSQL 10.0 opentenbase V2)
+Type &#34;help&#34; for help.
+
+postgres=# create table public.t1_rep
+(
+f1 int not null,
+f2 varchar(20),
+primary key(f1)
+)
+distribute by replication ;
+to group default_group;
+CREATE TABLE
+</code></pre><p>Explain：</p>
+<ul>
+<li>Replication tables can be considered for small data scales that often need to join across nodes</li>
+<li>Replication table means that every DN has full data, which is not suitable for large data tables.</li>
+<li>Replication table update performance is low.</li>
+</ul>
+<h2 id="2dml-related-operations">2、DML related operations</h2>
+<h3 id="21insert">2.1、INSERT</h3>
+<ul>
+<li>Insert multiple records</li>
+</ul>
+<pre tabindex="0"><code>
+CREATE TABLE public.t1_insert_mul
+(
+f1 int not null,
+f2 varchar(20),
+primary key(f1)
+) distribute by shard(f1) to group default_group;
+
+postgres=# INSERT INTO t1_insert_mul VALUES(1,&#39;opentenbase&#39;),(2,&#39;pg&#39;);
+INSERT 0 2
+</code></pre><ul>
+<li>Insert for updating</li>
+</ul>
+<pre tabindex="0"><code>
+create table public.t1_conflict
+(
+f1 int not null,
+f2 varchar(20),
+primary key(f1)
+) distribute by shard(f1) to group default_group;
+
+insert into t1_conflict values(1,&#39;opentenbase&#39;) ON CONFLICT (f1) DO UPDATE SET f2 = &#39;opentenbase&#39;;
+
+create table public.t1_conflict
+(
+f1 int not null,
+f2 varchar(20) not null,
+f3 int ,
+primary key(f1,f2)
+) distribute by shard(f1) to group default_group;
+
+insert into t1_conflict values(1,&#39;opentenbase&#39;,2) ON CONFLICT (f1,f2) DO UPDATE SET f3 = 2;
+</code></pre><ul>
+<li>Insert for returning</li>
+</ul>
+<pre tabindex="0"><code>
+create table public.t1_insert_return
+(
+f1 int not null,
+f2 varchar(20) not null default &#39;opentenbase&#39;,
+primary key(f1)
+) distribute by shard(f1) to group default_group;
+
+postgres=# insert into t1_insert_return values(1) returning \*;
+
+f1 | f2  
+----+-------  
+ 1 | opentenbase
+(1 row)
+INSERT 0 1
+</code></pre><ul>
+<li>For more usage of insert, please refer to PostgreSQL usage</li>
+</ul>
+<pre tabindex="0"><code>
+http://www.postgres.cn/docs/10/sql-insert.html
+</code></pre><h3 id="22update">2.2、UPDATE</h3>
+<ul>
+<li>Update based on distribution key condition</li>
+</ul>
+<pre tabindex="0"><code>
+create table public.t1_update_pkey
+(
+f1 int not null,
+f2 varchar(20) not null default &#39;opentenbase&#39;,
+f3 varchar(32),
+primary key(f1)
+) distribute by shard(f1) to group default_group;
+
+postgres=# explain UPDATE t1_update_pkey SET f2=&#39;opentenbase&#39; where f1=1;
+
+                                    QUERY PLAN
+
+---
+
+Remote Fast Query Execution (cost=0.00..0.00 rows=0 width=0)  
+ Node/s: dn001  
+ -&gt; Update on t1_update_pkey (cost=0.15..4.17 rows=1 width=154)  
+ -&gt; Index Scan using t1_update_pkey_pkey on t1_update_pkey (cost=0.15..4.17 rows=1 width=154)  
+ Index Cond: (f1 = 1)
+</code></pre><p>Best performance, good scalability</p>
+<ul>
+<li>Update based on non-distribution key condition</li>
+</ul>
+<pre tabindex="0"><code>
+postgres=# explain UPDATE t1_update_pkey SET f2=&#39;opentenbase&#39; where f3=&#39;pg&#39;; QUERY PLAN
+
+---
+
+Remote Fast Query Execution (cost=0.00..0.00 rows=0 width=0)  
+ Node/s: dn001, dn002  
+ -&gt; Update on t1_update_pkey (cost=0.00..15.12 rows=2 width=154)  
+ -&gt; Seq Scan on t1_update_pkey (cost=0.00..15.12 rows=2 width=154)
+Filter: ((f3)::text = &#39;pg&#39;::text)
+(5 rows)
+</code></pre><p>UPDATE statement will send to all nodes.</p>
+<ul>
+<li>Update partition table based on partition condition</li>
+</ul>
+<pre tabindex="0"><code>
+create table public.t1_pt_update
+( f1 int not null,f2 timestamp not null,f3 varchar(20),primary key(f1) )  
+partition by range (f2) begin (timestamp without time zone &#39;2019-01-01 0:0:0&#39;) step (interval &#39;1 month&#39;) partitions (2) distribute by shard(f1) to group default_group;
+
+## postgres=# explain update t1_pt_update set f3=&#39;opentenbase&#39; where f1=1 and f2&gt;&#39;2019-01-01&#39; and f2&lt;&#39;2019-02-01&#39;; QUERY PLAN
+
+Remote Fast Query Execution (cost=0.00..0.00 rows=0 width=0)  
+ Node/s: dn001  
+ -&gt; Update on t1_pt_update_part_0 (cost=0.15..4.17 rows=1 width=80)  
+ -&gt; Index Scan using t1_pt_update_pkey_part_0 on t1_pt_update_part_0 (cost=0.15..4.17 rows=1 width=80)  
+ Index Cond: (f1 = 1)  
+ Filter: ((f2 &gt; &#39;2019-01-01 00:00:00&#39;::timestamp without time zone) AND (f2 &lt; &#39;2019-02-01 00:00:00&#39;::timestamp without time zone))
+</code></pre><p>Update based on partition condition，best performance, good scalability</p>
+<ul>
+<li>Update partition table without partition condition</li>
+</ul>
+<pre tabindex="0"><code>
+## postgres=# explain update t1_pt_update set f3=&#39;opentenbase&#39; where f1=1; QUERY PLAN
+
+Remote Fast Query Execution (cost=0.00..0.00 rows=0 width=0)  
+ Node/s: dn001  
+ -&gt; Update on t1_pt_update (cost=0.15..4.17 rows=1 width=80)  
+ -&gt; Index Scan using t1_pt_update_pkey_part_0 on t1_pt_update (partition sequence: 0, name: t1_pt_update_part_0) (cost=0.15..2.08 rows=0 width=80)  
+ Index Cond: (f1 = 1)  
+ -&gt; Index Scan using t1_pt_update_pkey_part_1 on t1_pt_update (partition sequence: 1, name: t1_pt_update_part_1) (cost=0.15..2.08 rows=0 width=80)  
+ Index Cond: (f1 = 1)
+(7 rows)
+</code></pre><p>All partition sub tables need to be scanned</p>
+<ul>
+<li>Table association update</li>
+</ul>
+<pre tabindex="0"><code>
+create table public.t1_update_join1
+(
+f1 int not null,f2 varchar(20) not null default &#39;opentenbase&#39;,primary key(f1)
+)
+distribute by shard(f1) to group default_group;
+
+create table public.t1_update_join2
+(
+f1 int not null,f2 varchar(20) not null default &#39;opentenbase&#39;,primary key(f1)
+)
+distribute by shard(f1) to group default_group;
+
+update t1_update_join1 set f2=&#39;pg&#39; from t1_update_join2 where t1_update_join1.f1=t1_update_join2.f1;
+</code></pre><p>Table Association updates can only be based on distribution key associations</p>
+<ul>
+<li>Distribution key, partition key cannot be updated</li>
+</ul>
+<pre tabindex="0"><code>
+create table public.t1_update_pkey
+(
+f1 int not null,f2 varchar(20) not null default &#39;opentenbase&#39;, primary key(f1)
+) distribute by shard(f1) to group default_group;
+
+postgres=# update t1_update_pkey set f1=2 where f1=1;  
+ERROR: Distributed column or partition column &#34;f1&#34; can&#39;t be updated in current version
+Time: 0.910 ms.
+</code></pre><p>The current solution is &ldquo;delete old records and add new records&rdquo;</p>
+<ul>
+<li>Please refer to PostgreSQL for more usage of UPDATE</li>
+</ul>
+<pre tabindex="0"><code>
+http://www.postgres.cn/docs/10/sql-update.html
+</code></pre><h3 id="23delete">2.3、DELETE</h3>
+<ul>
+<li>Return deleted records when deleting</li>
+</ul>
+<pre tabindex="0"><code>
+create table public.t1_delete_return
+(
+f1 int not null,f2 varchar(20) not null default &#39;opentenbase&#39;,primary key(f1)
+)
+distribute by shard(f1) to group default_group;
+
+postgres=# insert into t1_delete_return values(1,&#39;opentenbase&#39;);  
+INSERT 0 1
+
+postgres=# delete from t1_delete_return where f1=1 returning \*;
+
+f1 | f2  
+----+-------  
+ 1 | opentenbase
+(1 row)
+</code></pre><ul>
+<li>
+<p>The optimal usage of update is also suitable for delete</p>
+</li>
+<li>
+<p>Please refer to PostgreSQL for more usage of DELETE</p>
+</li>
+</ul>
+<pre tabindex="0"><code>
+http://www.postgres.cn/docs/10/sql-delete.html
+</code></pre><h3 id="24select">2.4、SELECT</h3>
+<ul>
+<li>Select based on distributed key</li>
+</ul>
+<pre tabindex="0"><code>
+create table public.t1_select
+(
+f1 int not null,f2 varchar(20) not null default &#39;opentenbase&#39;,f3 varchar(32), primary key(f1)
+)
+distribute by shard(f1) to group default_group;
+
+postgres=# explain select \* from t1_select where f1=1; QUERY PLAN
+
+---
+
+Remote Fast Query Execution (cost=0.00..0.00 rows=0 width=0)  
+ Node/s: dn001  
+ -&gt; Index Scan using t1_select_pkey on t1_select (cost=0.15..4.17 rows=1 width=144)  
+ Index Cond: (f1 = 1)
+</code></pre><p>best performance, good scalability</p>
+<ul>
+<li>Select based on non-distributed key</li>
+</ul>
+<pre tabindex="0"><code>
+postgres=# explain select \* from t1_select where f1&lt;3;
+QUERY PLAN
+
+---
+
+Remote Fast Query Execution (cost=0.00..0.00 rows=0 width=0)  
+ Node/s: dn001, dn002  
+ -&gt; Bitmap Heap Scan on t1_select (cost=3.21..14.92 rows=137 width=144)  
+ Recheck Cond: (f1 &lt; 3)  
+ -&gt; Bitmap Index Scan on t1_select_pkey (cost=0.00..3.17 rows=137 width=0)
+Index Cond: (f1 &lt; 3)
+</code></pre><p>The query statement will be sent to all nodes and then summarized in CN.</p>
+<ul>
+<li>Join query based on distributed key</li>
+</ul>
+<pre tabindex="0"><code>
+create table public.t1_select_join1
+( f1 int not null,f2 int,primary key(f1) )
+distribute by shard(f1) to group default_group;
+
+create index t1_select_join1_f2_idx on t1_select_join1(f2);
+
+create table public.t1_select_join2
+( f1 int not null,f2 int,primary key(f1) )
+distribute by shard(f1) to group default_group;
+
+create index t1_select_join2_f2_idx on t1_select_join2(f2);
+
+postgres=# explain select t1_select_join1.\* from t1_select_join1,t1_select_join2 where t1_select_join1.f1=t1_select_join2.f1 and t1_select_join1.f1=1;  
+ QUERY PLAN --------------------------------------------------------------------------------------
+Remote Fast Query Execution (cost=0.00..0.00 rows=0 width=0)  
+ Node/s: dn001  
+ -&gt; Nested Loop (cost=0.30..8.35 rows=1 width=8)  
+ -&gt; Index Scan using t1_select_join1_pkey on t1_select_join1 (cost=0.15..4.17 rows=1 width=8)  
+ Index Cond: (f1 = 1)  
+ -&gt; Index Only Scan using t1_select_join2_pkey on t1_select_join2 (cost=0.15..4.17 rows=1 width=4)  
+ Index Cond: (f1 = 1)
+</code></pre><p>best performance, good scalability</p>
+<ul>
+<li>Join query based on non-distributed key</li>
+</ul>
+<pre tabindex="0"><code>
+postgres=# explain select \* from t1_select_join1,t1_select_join2 where t1_select_join1.f1=t1_select_join2.f2 and t1_select_join1.f2=1 ;  
+ QUERY PLAN ------------------------------------------------------------------------------------------  
+Remote Subquery Scan on all (dn001,dn002) (cost=2.26..33.48 rows=7 width=16)  
+ -&gt; Nested Loop (cost=2.26..33.48 rows=7 width=16)  
+ -&gt; Bitmap Heap Scan on t1_select_join1 (cost=2.13..9.57 rows=7 width=8) Recheck Cond: (f2 = 1)  
+ -&gt; Bitmap Index Scan on t1_select_join1_f2_idx (cost=0.00..2.13 rows=7 width=0)  
+ Index Cond: (f2 = 1)  
+ -&gt; Materialize (cost=100.12..103.45 rows=7 width=8)  
+ -&gt; Remote Subquery Scan on all (dn001,dn002) (cost=100.12..103.44 rows=7 width=8)  
+ Distribute results by S: f2  
+ -&gt; Index Scan using t1_select_join2_f2_idx on t1_select_join2 (cost=0.12..3.35 rows=7 width=8)  
+ Index Cond: (f2 = t1_select_join1.f1)
+</code></pre><p>Need to redistribute data in DN.</p>
+<h3 id="25truncate">2.5、TRUNCATE</h3>
+<ul>
+<li>Truncate of non-partition table</li>
+</ul>
+<pre tabindex="0"><code>
+create table public.t1_delete_truncate
+( f1 int not null,f2 varchar(20) not null default &#39;opentenbase&#39;,primary key(f1) )
+distribute by shard(f1) to group default_group;
+
+insert into t1_delete_truncate select t,t::text from generate_series(1,1000000) as t;
+
+truncate table t1_delete_truncate;
+</code></pre><ul>
+<li>Truncate of partition table</li>
+</ul>
+<pre tabindex="0"><code>
+postgres=# create table public.t1_pt
+(
+f1 int not null,
+f2 timestamp not null,
+f3 varchar(20),
+primary key(f1)
+)
+partition by range (f2)
+begin (timestamp without time zone &#39;2019-01-01 0:0:0&#39;)
+step (interval &#39;1 month&#39;) partitions (3)
+distribute by shard(f1)
+to group default_group;
+
+truncate public.t1_pt partition for (&#39;2019-01-01&#39; ::timestamp without time zone);
+</code></pre><pre tabindex="0"><code></code></pre>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  </div><!-- end Contact Area -->
+<footer id="footer" class="bg-one section-bg">
+  <div class="container">
+    <div class="row wow fadeInUp" data-wow-duration="500ms">
+      <div class="col-xl-12">
+        <br>
+        <!-- copyright --> 
+        <div class="col-lg-9 padding-0" data-wow-duration="500ms">
+          <a href="http://localhost:1313/en/" class="padding-0">
+            <img src="http://localhost:1313/images/logo_footer.png" alt="OpenTenBase" height="38"/>
+          </a>
+        </div>
+        <div class="copyright">
+          <div>Copyright © 2013 - 2023 Tencent Cloud. All Rights Reserved. 腾讯云 版权所有</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- /footer -->
+
+<!-- Google Map API -->
+
+
+<!-- JS Plugins -->
+
+<script src="http://localhost:1313/plugins/jquery/jquery.min.js"></script>
+
+<script src="http://localhost:1313/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="http://localhost:1313/plugins/slick/slick.min.js"></script>
+
+<script src="http://localhost:1313/plugins/shuffle/shuffle.min.js"></script>
+
+<script src="http://localhost:1313/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+<script src="http://localhost:1313/plugins/lazy-load/lozad.min.js"></script>
+
+<script src="http://localhost:1313/plugins/google-map/map.js"></script>
+
+
+<!-- Main Script -->
+
+<script src="http://localhost:1313/js/script.min.329fb3531b4e8efc927e85be20ebfd8edeee826e790bef0b540ad8b75737f8a306f3b43772a7102531d4b631a7811e0a.js" integrity="sha384-Mp&#43;zUxtOjvySfoW&#43;IOv9jt7ugm55C&#43;8LVArYt1c3&#43;KMG87Q3cqcQJTHUtjGngR4K"></script>
+
+
+
+</body>
+
+</html>

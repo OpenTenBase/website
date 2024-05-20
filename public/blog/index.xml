@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on OpenTenBase</title>
+    <link>http://localhost:1313/blog/</link>
+    <description>Recent content in Blogs on OpenTenBase</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 25 Sep 2023 08:00:36 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>基本使用</title>
+      <link>http://localhost:1313/blog/03-basic-use/</link>
+      <pubDate>Mon, 25 Sep 2023 08:00:36 +0800</pubDate>
+      <guid>http://localhost:1313/blog/03-basic-use/</guid>
+      <description>在快速入门文章中我们介绍了 OpenTenBase 的架构、源码编译安装、集群运行状态、启动停止等内容。 在应用接入</description>
+    </item>
+    <item>
+      <title>应用接入指南</title>
+      <link>http://localhost:1313/blog/02-access/</link>
+      <pubDate>Mon, 25 Sep 2023 08:00:36 +0800</pubDate>
+      <guid>http://localhost:1313/blog/02-access/</guid>
+      <description>在快速入门文章中我们介绍了 OpenTenBase 的架构、源码编译安装、集群运行状态、启动停止等内容。 本篇将介绍</description>
+    </item>
+    <item>
+      <title>快速入门</title>
+      <link>http://localhost:1313/blog/01-quickstart/</link>
+      <pubDate>Thu, 20 Jul 2023 08:00:36 +0800</pubDate>
+      <guid>http://localhost:1313/blog/01-quickstart/</guid>
+      <description>什么是 OpenTenBase OpenTenBase 是一个提供写可靠性，多主节点数据同步的关系数据库集群平台。你可以将 OpenTenBase 配置一台或者</description>
+    </item>
+  </channel>
+</rss>

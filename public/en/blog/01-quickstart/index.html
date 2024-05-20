@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8">
+	<title>Quick Start</title>
+
+	<!-- mobile responsive meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="This is quickstart of OpenTenBase">
+	
+	<meta name="author" content="Themefisher">
+	
+	
+        <meta name="theme-name" content="meghna-hugo" />
+	<meta name="generator" content="Hugo 0.126.1">
+
+	<!-- plugins -->
+	
+	<link rel="stylesheet" href="http://localhost:1313/plugins/bootstrap/bootstrap.min.css">
+	
+	<link rel="stylesheet" href="http://localhost:1313/plugins/themify-icons/themify-icons.css">
+	
+	<link rel="stylesheet" href="http://localhost:1313/plugins/magnific-popup/magnific-popup.css">
+	
+	<link rel="stylesheet" href="http://localhost:1313/plugins/slick/slick.css">
+	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anaheim%7cQuattrocento&#43;Sans:400,700&amp;display=swap">
+	
+
+	<!-- Main Stylesheet -->
+	
+	<link rel="stylesheet" href="http://localhost:1313/css/style.min.css" media="screen">
+
+	<!-- Custom stylesheet - for your changes -->
+	
+  <link rel="stylesheet" href="http://localhost:1313/css/custom.min.css" media="screen">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" type="image/x-icon">
+	<link rel="icon" href="http://localhost:1313/images/favicon.png" type="image/x-icon">
+
+	
+
+</head>
+
+
+<body id="body" data-spy="scroll" data-target=".navbar" data-offset="55">
+  <div id="content">
+    
+
+
+<section class="sticky-top navigation">
+  <div class="container padding-0">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand p-0" href="/en">
+        
+        <img
+          class="lozad navigation-logo-layout"
+          data-src="http://localhost:1313/images/logo.png"
+          alt="OpenTenBase"
+          height="42"
+        />
+        
+      </a>
+
+      <button
+        class="navbar-toggler rounded-0"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse title-layout" id="navigation">
+        <ul class="navbar-nav ml-auto">
+          
+               
+          <li class="nav-item navbar-brand">
+            <a
+              class="nav-link"
+              
+              href="/en#news"
+            >News</a
+            >
+          </li>
+               
+          <li class="nav-item navbar-brand">
+            <a
+              class="nav-link"
+              
+              href="/en#blog"
+            >Blog</a
+            >
+          </li>
+               
+          <li class="nav-item navbar-brand">
+            <a
+              class="nav-link"
+              
+              href="/en#event"
+            >Event</a
+            >
+          </li>
+               
+          <li class="nav-item navbar-brand">
+            <a
+              class="nav-link"
+              target="_blank"
+              rel="noopener"
+              
+              href="https://docs.opentenbase.org/en/"
+            >Document</a
+            >
+          </li>
+               
+          <li class="nav-item navbar-brand">
+            <a
+              class="nav-link"
+              target="_blank"
+              rel="noopener"
+              
+              href="https://github.com/OpenTenBase/OpenTenBase/tags"
+            >Download</a
+            >
+          </li>
+               
+          <li class="nav-item navbar-brand">
+            <a
+              class="nav-link"
+              target="_blank"
+              rel="noopener"
+              
+              href="https://github.com/OpenTenBase/OpenTenBase"
+            >Code</a
+            >
+          </li>
+           
+        </ul>
+        
+        <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <option id="en" value="http://localhost:1313/en/blog/01-quickstart/" selected>En
+          </option>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <option id="cn" value="http://localhost:1313/blog/01-quickstart/">中文</option>
+          
+          
+          
+          
+          
+          
+        </select>
+        
+      </div>
+    </nav>
+  </div>
+</section>
+
+
+<section class="section bg-one-single">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center ">
+        <p class="title h2">Quick Start</p>
+        <ul class="list-inline mb-50">
+          <li class="list-inline-item">
+            <a class="btn btn-link padding-0" href="/en/author/opentenbase/">OpenTenBase
+            </a>
+          </li>
+          <li class="list-inline-item">Thursday, Jul 20, 2023</li>
+        </ul>
+
+      </div>
+      <div class="col-lg-8 offset-lg-2">
+        <div class="post-single-content">
+          <h2 id="whats-opentenbase">What&rsquo;s OpenTenBase</h2>
+<p>OpenTenBase is a relational database cluster platform that provides write reliability and multi node data synchronization. You can configure OpenTenBase on one or more hosts and store OpenTenBase data on multiple physical hosts. There are two ways to store data tables: distributed or replicated. When sending query SQL to OpenTenBase, OpenTenBase will automatically send query statements to data nodes and get the final results.</p>
+<p>OpenTenBase is a distributed cluster architecture (as shown in the figure below), which is a distributed share nothing architecture mode, each node is independent and processes its own data. After processing, the results may be summarized to the upper layer or transferred between nodes. Each processing unit communicates with each other through the network protocol, with better parallel processing and expansion ability, which also means that the OpenTenBase cluster can be deployed on the basic x86 server.</p>
+<img src=../images/OpenTenBase_demo.EN.png class="img-fluid" />
+OpenTenBase architecture
+<p>Here are three modules of OpenTenBase</p>
+<ul>
+<li>
+<p><strong>Coordinator Node: (CN for short)</strong></p>
+<p>Application access portal is responsible for data distribution and query planning. Multiple nodes are in the same location, and each node provides the same database view. In terms of function, CN only stores the global metadata of the system, not the actual user data.</p>
+</li>
+<li>
+<p><strong>Datanode Node: (DN for short)</strong></p>
+<p>Each DN stores the partition of user data. In function, DN node is responsible for completing the request of executing CN distribution.</p>
+</li>
+<li>
+<p><strong>GTM Node: (Global Transaction Manager)</strong></p>
+<p>GTM is responsible for the management of cluster transaction information, as well as the global objects of the cluster, such as sequence.</p>
+</li>
+</ul>
+<p>Next, let&rsquo;s show how to build a OpenTenBase cluster environment from the source code</p>
+<h2 id="opentenbase-source-code-compilation-and-installation">OpenTenBase source code compilation and installation</h2>
+<h3 id="system-requirements">System Requirements:</h3>
+<p>Memory: 4G RAM minimum</p>
+<p>OS: TencentOS 2, TencentOS 3, OpenCloudOS, CentOS 7, CentOS 8, Ubuntu</p>
+<h3 id="dependence">Dependence</h3>
+<p><code> yum -y install gcc make readline-devel zlib-devel openssl-devel uuid-devel bison flex git</code></p>
+<p>or</p>
+<p><code> apt install -y gcc make libreadline-dev zlib1g-dev libssl-dev libossp-uuid-dev bison flex git</code></p>
+<ul>
+<li>
+<p><strong>create user</strong></p>
+<p>Note: all machines that need to install OpenTenBase cluster need to create</p>
+</li>
+</ul>
+<pre tabindex="0"><code>mkdir /data
+useradd -d /data/opentenbase -s /bin/bash -m opentenbase
+passwd opentenbase # set password
+</code></pre><ul>
+<li><strong>get source code</strong></li>
+</ul>
+<pre tabindex="0"><code>git clone https://github.com/OpenTenBase/OpenTenBase
+</code></pre><ul>
+<li><strong>source code compilation</strong></li>
+</ul>
+<pre tabindex="0"><code>cd ${SOURCECODE_PATH}
+rm -rf ${INSTALL_PATH}/opentenbase_bin_v2.0
+chmod +x configure*
+./configure --prefix=${INSTALL_PATH}/opentenbase_bin_v2.0  --enable-user-switch --with-openssl  --with-ossp-uuid CFLAGS=-g
+make clean
+make -sj
+make install
+chmod +x contrib/pgxc_ctl/make_signature
+cd contrib
+make -sj
+make install
+</code></pre><p>In this paper, the above two parameters are as follows</p>
+<pre tabindex="0"><code>${SOURCECODE_PATH}=/data/opentenbase/OpenTenBase
+${INSTALL_PATH}=/data/opentenbase/install
+</code></pre><ul>
+<li>
+<p><strong>cluster installation</strong></p>
+<ul>
+<li><strong>cluster planning</strong></li>
+</ul>
+<p>Next, set up a cluster of 1 GTM master, 1 GTM standby, 2 CN master (the CN master is equivalent, so there is no need to standy CN), 2 DN master, and 2 DN standby on two servers. This cluster is the minimum configuration with disaster tolerance capability.</p>
+</li>
+</ul>
+<pre tabindex="0"><code>host1：10.215.147.158
+host2：10.240.138.159
+</code></pre><p>planning is as follows：</p>
+<table>
+<thead>
+<tr>
+<th>node name</th>
+<th>IP</th>
+<th>data directory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GTM master</td>
+<td>10.215.147.158</td>
+<td>/data/opentenbase/data/gtm</td>
+</tr>
+<tr>
+<td>GTM slave</td>
+<td>10.240.138.159</td>
+<td>/data/opentenbase/data/gtm</td>
+</tr>
+<tr>
+<td>CN1</td>
+<td>10.215.147.158</td>
+<td>/data/opentenbase/data/coord</td>
+</tr>
+<tr>
+<td>CN2</td>
+<td>10.240.138.159</td>
+<td>/data/opentenbase/data/coord</td>
+</tr>
+<tr>
+<td>DN1 master</td>
+<td>10.215.147.158</td>
+<td>/data/opentenbase/data/dn001</td>
+</tr>
+<tr>
+<td>DN1 slave</td>
+<td>10.240.138.159</td>
+<td>/data/opentenbase/data/dn001</td>
+</tr>
+<tr>
+<td>DN2 master</td>
+<td>10.240.138.159</td>
+<td>/data/opentenbase/data/dn002</td>
+</tr>
+<tr>
+<td>DN2 slave</td>
+<td>10.215.147.158</td>
+<td>/data/opentenbase/data/dn002</td>
+</tr>
+</tbody>
+</table>
+<p>Sketch Map:</p>
+<img src=../images/node_ip.png class="img-fluid" />
+OpenTenBase Deploy Sketch Map
+<ul>
+<li><strong>Disable SELinux and firewall (optinal)</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>vi /etc/selinux/config <span style="color:#75715e"># disable SELinux, change SELINUX=enforcing to SELINUX=disabled</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># disable firewall, for Ubuntu, change firewalld to ufw</span>
+</span></span><span style="display:flex;"><span>systemctl disable firewalld
+</span></span><span style="display:flex;"><span>systemctl stop firewalld
+</span></span></code></pre></div><ul>
+<li><strong>SSH mutual trust configuration between machines</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>su opentenbase
+</span></span><span style="display:flex;"><span>ssh-keygen -t rsa
+</span></span><span style="display:flex;"><span>ssh-copy-id -i ~/.ssh/id_rsa.pub destination-user@destination-server
+</span></span></code></pre></div><p>Reference resources: <a href="https://blog.csdn.net/chenghuikai/article/details/52807074">Linux ssh mutual trust</a></p>
+<ul>
+<li><strong>Environment variable configuration</strong></li>
+</ul>
+<p>All machines in the cluster need to be configured</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#f92672">[</span>opentenbase@localhost ~<span style="color:#f92672">]</span>$ vim ~/.bashrc
+</span></span><span style="display:flex;"><span>export OPENTENBASE_HOME<span style="color:#f92672">=</span>/data/opentenbase/install/opentenbase_bin_v2.0
+</span></span><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span>$OPENTENBASE_HOME/bin:$PATH
+</span></span><span style="display:flex;"><span>export LD_LIBRARY_PATH<span style="color:#f92672">=</span>$OPENTENBASE_HOME/lib:<span style="color:#e6db74">${</span>LD_LIBRARY_PATH<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>export LC_ALL<span style="color:#f92672">=</span>C
+</span></span></code></pre></div><p>Above, the required basic environment has been configured, and you can enter the cluster initialization stage. For the convenience of users, OpenTenBase provides special configuration and operation tools: <strong>pgxc_ctl</strong> to help users quickly build and manage clusters. Here, you need to write the IP, port and data directory of the nodes mentioned above into the configuration file pgxc_ctl.conf</p>
+<ul>
+<li><strong>Initialization configuration file pgxc_ctl.conf</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#f92672">[</span>opentenbase@localhost ~<span style="color:#f92672">]</span>$ mkdir /data/opentenbase/pgxc_ctl
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>opentenbase@localhost ~<span style="color:#f92672">]</span>$ cd /data/opentenbase/pgxc_ctl
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>opentenbase@localhost ~/pgxc_ctl<span style="color:#f92672">]</span>$ vim pgxc_ctl.conf
+</span></span></code></pre></div><p>The following shows the pgxc_ctl.conf file content written using the IP, port, database directory, binary directory and other planning values described above. In practice, we only need to configure it according to our own actual situation.</p>
+<p>We can also download and rename it to <code>pgxc_ctl.conf</code> and configure it according to our own actual situation.</p>
+<p><a href="https://docs.opentenbase.org/guide/pgxc_ctl_double.conf">Download Double Node Conf</a></p>
+<p><a href="https://docs.opentenbase.org/guide/pgxc_ctl_single.conf">Download Single Node Conf</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e"># Double Node Config</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>IP_1<span style="color:#f92672">=</span>10.215.147.158
+</span></span><span style="display:flex;"><span>IP_2<span style="color:#f92672">=</span>10.240.138.159
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pgxcInstallDir<span style="color:#f92672">=</span>/data/opentenbase/install/opentenbase_bin_v2.0
+</span></span><span style="display:flex;"><span>pgxcOwner<span style="color:#f92672">=</span>opentenbase
+</span></span><span style="display:flex;"><span>defaultDatabase<span style="color:#f92672">=</span>postgres
+</span></span><span style="display:flex;"><span>pgxcUser<span style="color:#f92672">=</span>$pgxcOwner
+</span></span><span style="display:flex;"><span>tmpDir<span style="color:#f92672">=</span>/tmp
+</span></span><span style="display:flex;"><span>localTmpDir<span style="color:#f92672">=</span>$tmpDir
+</span></span><span style="display:flex;"><span>configBackup<span style="color:#f92672">=</span>n
+</span></span><span style="display:flex;"><span>configBackupHost<span style="color:#f92672">=</span>pgxc-linker
+</span></span><span style="display:flex;"><span>configBackupDir<span style="color:#f92672">=</span>$HOME/pgxc
+</span></span><span style="display:flex;"><span>configBackupFile<span style="color:#f92672">=</span>pgxc_ctl.bak
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#---- GTM ----------</span>
+</span></span><span style="display:flex;"><span>gtmName<span style="color:#f92672">=</span>gtm
+</span></span><span style="display:flex;"><span>gtmMasterServer<span style="color:#f92672">=</span>$IP_1
+</span></span><span style="display:flex;"><span>gtmMasterPort<span style="color:#f92672">=</span><span style="color:#ae81ff">50001</span>
+</span></span><span style="display:flex;"><span>gtmMasterDir<span style="color:#f92672">=</span>/data/opentenbase/data/gtm
+</span></span><span style="display:flex;"><span>gtmExtraConfig<span style="color:#f92672">=</span>none
+</span></span><span style="display:flex;"><span>gtmMasterSpecificExtraConfig<span style="color:#f92672">=</span>none
+</span></span><span style="display:flex;"><span>gtmSlave<span style="color:#f92672">=</span>y
+</span></span><span style="display:flex;"><span>gtmSlaveServer<span style="color:#f92672">=</span>$IP_2
+</span></span><span style="display:flex;"><span>gtmSlavePort<span style="color:#f92672">=</span><span style="color:#ae81ff">50001</span>
+</span></span><span style="display:flex;"><span>gtmSlaveDir<span style="color:#f92672">=</span>/data/opentenbase/data/gtm
+</span></span><span style="display:flex;"><span>gtmSlaveSpecificExtraConfig<span style="color:#f92672">=</span>none
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#---- Coordinators -------</span>
+</span></span><span style="display:flex;"><span>coordMasterDir<span style="color:#f92672">=</span>/data/opentenbase/data/coord
+</span></span><span style="display:flex;"><span>coordArchLogDir<span style="color:#f92672">=</span>/data/opentenbase/data/coord_archlog
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>coordNames<span style="color:#f92672">=(</span>cn001 cn002 <span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>coordPorts<span style="color:#f92672">=(</span><span style="color:#ae81ff">30004</span> <span style="color:#ae81ff">30004</span> <span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>poolerPorts<span style="color:#f92672">=(</span><span style="color:#ae81ff">31110</span> <span style="color:#ae81ff">31110</span> <span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>coordPgHbaEntries<span style="color:#f92672">=(</span>0.0.0.0/0<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>coordMasterServers<span style="color:#f92672">=(</span>$IP_1 $IP_2<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>coordMasterDirs<span style="color:#f92672">=(</span>$coordMasterDir $coordMasterDir<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>coordMaxWALsernder<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>coordMaxWALSenders<span style="color:#f92672">=(</span>$coordMaxWALsernder $coordMaxWALsernder <span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>coordSlave<span style="color:#f92672">=</span>n
+</span></span><span style="display:flex;"><span>coordSlaveSync<span style="color:#f92672">=</span>n
+</span></span><span style="display:flex;"><span>coordArchLogDirs<span style="color:#f92672">=(</span>$coordArchLogDir $coordArchLogDir<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>coordExtraConfig<span style="color:#f92672">=</span>coordExtraConfig
+</span></span><span style="display:flex;"><span>cat &gt; $coordExtraConfig <span style="color:#e6db74">&lt;&lt;EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">#================================================
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Added to all the coordinator postgresql.conf
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Original: $coordExtraConfig
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">include_if_exists = &#39;/data/opentenbase/global/global_opentenbase.conf&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">wal_level = replica
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">wal_keep_segments = 256
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">max_wal_senders = 4
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">archive_mode = on
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">archive_timeout = 1800
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">archive_command = &#39;echo 0&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">log_truncate_on_rotation = on
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">log_filename = &#39;postgresql-%M.log&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">log_rotation_age = 4h
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">log_rotation_size = 100MB
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">hot_standby = on
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">wal_sender_timeout = 30min
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">wal_receiver_timeout = 30min
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">shared_buffers = 1024MB
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">max_pool_size = 2000
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">log_statement = &#39;ddl&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">log_destination = &#39;csvlog&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">logging_collector = on
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">log_directory = &#39;pg_log&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">listen_addresses = &#39;*&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">max_connections = 2000
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>coordSpecificExtraConfig<span style="color:#f92672">=(</span>none none<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>coordExtraPgHba<span style="color:#f92672">=</span>coordExtraPgHba
+</span></span><span style="display:flex;"><span>cat &gt; $coordExtraPgHba <span style="color:#e6db74">&lt;&lt;EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">local   all             all                                     trust
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">host    all             all             0.0.0.0/0               trust
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">host    replication     all             0.0.0.0/0               trust
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">host    all             all             ::1/128                 trust
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">host    replication     all             ::1/128                 trust
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>coordSpecificExtraPgHba<span style="color:#f92672">=(</span>none none<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>coordAdditionalSlaves<span style="color:#f92672">=</span>n
+</span></span><span style="display:flex;"><span>cad1_Sync<span style="color:#f92672">=</span>n
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#---- Datanodes ---------------------</span>
+</span></span><span style="display:flex;"><span>dn1MstrDir<span style="color:#f92672">=</span>/data/opentenbase/data/dn001
+</span></span><span style="display:flex;"><span>dn2MstrDir<span style="color:#f92672">=</span>/data/opentenbase/data/dn002
+</span></span><span style="display:flex;"><span>dn1SlvDir<span style="color:#f92672">=</span>/data/opentenbase/data/dn001
+</span></span><span style="display:flex;"><span>dn2SlvDir<span style="color:#f92672">=</span>/data/opentenbase/data/dn002
+</span></span><span style="display:flex;"><span>dn1ALDir<span style="color:#f92672">=</span>/data/opentenbase/data/datanode_archlog
+</span></span><span style="display:flex;"><span>dn2ALDir<span style="color:#f92672">=</span>/data/opentenbase/data/datanode_archlog
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>primaryDatanode<span style="color:#f92672">=</span>dn001
+</span></span><span style="display:flex;"><span>datanodeNames<span style="color:#f92672">=(</span>dn001 dn002<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>datanodePorts<span style="color:#f92672">=(</span><span style="color:#ae81ff">40004</span> 40004<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>datanodePoolerPorts<span style="color:#f92672">=(</span><span style="color:#ae81ff">41110</span> 41110<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>datanodePgHbaEntries<span style="color:#f92672">=(</span>0.0.0.0/0<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>datanodeMasterServers<span style="color:#f92672">=(</span>$IP_1 $IP_2<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>datanodeMasterDirs<span style="color:#f92672">=(</span>$dn1MstrDir $dn2MstrDir<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>dnWALSndr<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>datanodeMaxWALSenders<span style="color:#f92672">=(</span>$dnWALSndr $dnWALSndr<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>datanodeSlave<span style="color:#f92672">=</span>y
+</span></span><span style="display:flex;"><span>datanodeSlaveServers<span style="color:#f92672">=(</span>$IP_2 $IP_1<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>datanodeSlavePorts<span style="color:#f92672">=(</span><span style="color:#ae81ff">50004</span> 54004<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>datanodeSlavePoolerPorts<span style="color:#f92672">=(</span><span style="color:#ae81ff">51110</span> 51110<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>datanodeSlaveSync<span style="color:#f92672">=</span>n
+</span></span><span style="display:flex;"><span>datanodeSlaveDirs<span style="color:#f92672">=(</span>$dn1SlvDir $dn2SlvDir<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>datanodeArchLogDirs<span style="color:#f92672">=(</span>$dn1ALDir/dn001 $dn2ALDir/dn002<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>datanodeExtraConfig<span style="color:#f92672">=</span>datanodeExtraConfig
+</span></span><span style="display:flex;"><span>cat &gt; $datanodeExtraConfig <span style="color:#e6db74">&lt;&lt;EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">#================================================
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Added to all the coordinator postgresql.conf
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"># Original: $datanodeExtraConfig
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">include_if_exists = &#39;/data/opentenbase/global/global_opentenbase.conf&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">listen_addresses = &#39;*&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">wal_level = replica
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">wal_keep_segments = 256
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">max_wal_senders = 4
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">archive_mode = on
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">archive_timeout = 1800
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">archive_command = &#39;echo 0&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">log_directory = &#39;pg_log&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">logging_collector = on
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">log_truncate_on_rotation = on
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">log_filename = &#39;postgresql-%M.log&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">log_rotation_age = 4h
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">log_rotation_size = 100MB
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">hot_standby = on
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">wal_sender_timeout = 30min
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">wal_receiver_timeout = 30min
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">shared_buffers = 1024MB
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">max_connections = 4000
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">max_pool_size = 4000
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">log_statement = &#39;ddl&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">log_destination = &#39;csvlog&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">wal_buffers = 1GB
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>datanodeSpecificExtraConfig<span style="color:#f92672">=(</span>none none<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>datanodeExtraPgHba<span style="color:#f92672">=</span>datanodeExtraPgHba
+</span></span><span style="display:flex;"><span>cat &gt; $datanodeExtraPgHba <span style="color:#e6db74">&lt;&lt;EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">local   all             all                                     trust
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">host    all             all             0.0.0.0/0               trust
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">host    replication     all             0.0.0.0/0               trust
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">host    all             all             ::1/128                 trust
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">host    replication     all             ::1/128                 trust
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>datanodeSpecificExtraPgHba<span style="color:#f92672">=(</span>none none<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>datanodeAdditionalSlaves<span style="color:#f92672">=</span>n
+</span></span><span style="display:flex;"><span>walArchive<span style="color:#f92672">=</span>n
+</span></span></code></pre></div><ul>
+<li><strong>Distribute binary package</strong></li>
+</ul>
+<p>After writing the configuration file, you need to deploy the binary package to the physical machine where all nodes are located. This can be done by executing the <strong>deploy all</strong> command with pgxc_ctl tool.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#f92672">[</span>opentenbase@localhost ~/pgxc_ctl<span style="color:#f92672">]</span>$ pgxc_ctl
+</span></span><span style="display:flex;"><span>/usr/bin/bash
+</span></span><span style="display:flex;"><span>Installing pgxc_ctl_bash script as /data/opentenbase/pgxc_ctl/pgxc_ctl_bash.
+</span></span><span style="display:flex;"><span>Installing pgxc_ctl_bash script as /data/opentenbase/pgxc_ctl/pgxc_ctl_bash.
+</span></span><span style="display:flex;"><span>Reading configuration using /data/opentenbase/pgxc_ctl/pgxc_ctl_bash --home /data/opentenbase/pgxc_ctl --configuration /data/opentenbase/pgxc_ctl/pgxc_ctl.conf
+</span></span><span style="display:flex;"><span>Finished reading configuration.
+</span></span><span style="display:flex;"><span>   ******** PGXC_CTL START ***************
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Current directory: /data/opentenbase/pgxc_ctl
+</span></span><span style="display:flex;"><span>PGXC deploy all
+</span></span><span style="display:flex;"><span>Deploying Postgres-XL components to all the target servers.
+</span></span><span style="display:flex;"><span>Prepare tarball to deploy ...
+</span></span><span style="display:flex;"><span>Deploying to the server 10.215.147.158.
+</span></span><span style="display:flex;"><span>Deploying to the server 10.240.138.159.
+</span></span><span style="display:flex;"><span>Deployment <span style="color:#66d9ef">done</span>.
+</span></span></code></pre></div><p>Log in to all nodes and check whether the binary package is distributed</p>
+<pre tabindex="0"><code>[opentenbase@localhost ~/install]$ ls /data/opentenbase/install/opentenbase_bin_v2.0
+bin  include  lib  share
+</code></pre><ul>
+<li>execute <strong>init all</strong> command to complete cluster initialization</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#f92672">[</span>opentenbase@localhost ~<span style="color:#f92672">]</span>$ pgxc_ctl
+</span></span><span style="display:flex;"><span>/usr/bin/bash
+</span></span><span style="display:flex;"><span>Installing pgxc_ctl_bash script as /data/opentenbase/pgxc_ctl/pgxc_ctl_bash.
+</span></span><span style="display:flex;"><span>Installing pgxc_ctl_bash script as /data/opentenbase/pgxc_ctl/pgxc_ctl_bash.
+</span></span><span style="display:flex;"><span>Reading configuration using /data/opentenbase/pgxc_ctl/pgxc_ctl_bash --home /data/opentenbase/pgxc_ctl --configuration /data/opentenbase/pgxc_ctl/pgxc_ctl.conf
+</span></span><span style="display:flex;"><span>Finished reading configuration.
+</span></span><span style="display:flex;"><span>   ******** PGXC_CTL START ***************
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Current directory: /data/opentenbase/pgxc_ctl
+</span></span><span style="display:flex;"><span>PGXC init all
+</span></span><span style="display:flex;"><span>Initialize GTM master
+</span></span><span style="display:flex;"><span>....
+</span></span><span style="display:flex;"><span>....
+</span></span><span style="display:flex;"><span>Initialize datanode slave dn001
+</span></span><span style="display:flex;"><span>Initialize datanode slave dn002
+</span></span><span style="display:flex;"><span>mkdir: cannot create directory <span style="color:#e6db74">&#39;/data1/opentenbase&#39;</span>: Permission denied
+</span></span><span style="display:flex;"><span>chmod: cannot access <span style="color:#e6db74">&#39;/data1/opentenbase/data/dn001&#39;</span>: No such file or directory
+</span></span><span style="display:flex;"><span>pg_ctl: directory <span style="color:#e6db74">&#34;/data1/opentenbase/data/dn001&#34;</span> does not exist
+</span></span><span style="display:flex;"><span>pg_basebackup: could not create directory <span style="color:#e6db74">&#34;/data1/opentenbase&#34;</span>: Permission denied
+</span></span></code></pre></div><ul>
+<li><strong>Installation error handling</strong></li>
+</ul>
+<p>Generally, if there is an error in initializing the cluster, the terminal will print out the error log. You can look up the error reason and change the configuration, or through the error log in &lsquo;/data/OpenTenBase/pgxc_ctl/pgxc_log&rsquo; path to check the error in the configuration file</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#f92672">[</span>opentenbase@localhost ~<span style="color:#f92672">]</span>$ ll ~/pgxc_ctl/pgxc_log/
+</span></span><span style="display:flex;"><span>total <span style="color:#ae81ff">184</span>
+</span></span><span style="display:flex;"><span>-rw-rw-r-- <span style="color:#ae81ff">1</span> opentenbase opentenbase <span style="color:#ae81ff">81123</span> Nov <span style="color:#ae81ff">13</span> 17:22 14105_pgxc_ctl.log
+</span></span><span style="display:flex;"><span>-rw-rw-r-- <span style="color:#ae81ff">1</span> opentenbase opentenbase  <span style="color:#ae81ff">2861</span> Nov <span style="color:#ae81ff">13</span> 17:58 15762_pgxc_ctl.log
+</span></span><span style="display:flex;"><span>-rw-rw-r-- <span style="color:#ae81ff">1</span> opentenbase opentenbase <span style="color:#ae81ff">14823</span> Nov <span style="color:#ae81ff">14</span> 07:59 16671_pgxc_ctl.log
+</span></span><span style="display:flex;"><span>-rw-rw-r-- <span style="color:#ae81ff">1</span> opentenbase opentenbase  <span style="color:#ae81ff">2721</span> Nov <span style="color:#ae81ff">13</span> 16:52 18891_pgxc_ctl.log
+</span></span><span style="display:flex;"><span>-rw-rw-r-- <span style="color:#ae81ff">1</span> opentenbase opentenbase  <span style="color:#ae81ff">1409</span> Nov <span style="color:#ae81ff">13</span> 16:20 22603_pgxc_ctl.log
+</span></span><span style="display:flex;"><span>-rw-rw-r-- <span style="color:#ae81ff">1</span> opentenbase opentenbase <span style="color:#ae81ff">60043</span> Nov <span style="color:#ae81ff">13</span> 16:33 28932_pgxc_ctl.log
+</span></span><span style="display:flex;"><span>-rw-rw-r-- <span style="color:#ae81ff">1</span> opentenbase opentenbase <span style="color:#ae81ff">15671</span> Nov <span style="color:#ae81ff">14</span> 07:57 6849_pgxc_ctl.log
+</span></span></code></pre></div><p>By running pgxc_ctl tool, execute <strong>clean all</strong> command to delete the initialized file. Then modify the pgxc_ctl.conf file，and execute the <strong>init all</strong> command to reinitialize.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#f92672">[</span>opentenbase@localhost ~<span style="color:#f92672">]</span>$ pgxc_ctl
+</span></span><span style="display:flex;"><span>/usr/bin/bash
+</span></span><span style="display:flex;"><span>Installing pgxc_ctl_bash script as /data/opentenbase/pgxc_ctl/pgxc_ctl_bash.
+</span></span><span style="display:flex;"><span>Installing pgxc_ctl_bash script as /data/opentenbase/pgxc_ctl/pgxc_ctl_bash.
+</span></span><span style="display:flex;"><span>Reading configuration using /data/opentenbase/pgxc_ctl/pgxc_ctl_bash --home /data/opentenbase/pgxc_ctl --configuration /data/opentenbase/pgxc_ctl/pgxc_ctl.conf
+</span></span><span style="display:flex;"><span>Finished reading configuration.
+</span></span><span style="display:flex;"><span>   ******** PGXC_CTL START ***************
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Current directory: /data/opentenbase/pgxc_ctl
+</span></span><span style="display:flex;"><span>PGXC clean all
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>opentenbase@localhost ~<span style="color:#f92672">]</span>$ pgxc_ctl
+</span></span><span style="display:flex;"><span>/usr/bin/bash
+</span></span><span style="display:flex;"><span>Installing pgxc_ctl_bash script as /data/opentenbase/pgxc_ctl/pgxc_ctl_bash.
+</span></span><span style="display:flex;"><span>Installing pgxc_ctl_bash script as /data/opentenbase/pgxc_ctl/pgxc_ctl_bash.
+</span></span><span style="display:flex;"><span>Reading configuration using /data/opentenbase/pgxc_ctl/pgxc_ctl_bash --home /data/opentenbase/pgxc_ctl --configuration /data/opentenbase/pgxc_ctl/pgxc_ctl.conf
+</span></span><span style="display:flex;"><span>Finished reading configuration.
+</span></span><span style="display:flex;"><span>   ******** PGXC_CTL START ***************
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Current directory: /data/opentenbase/pgxc_ctl
+</span></span><span style="display:flex;"><span>PGXC init all
+</span></span><span style="display:flex;"><span>Initialize GTM master
+</span></span><span style="display:flex;"><span>EXECUTE DIRECT ON <span style="color:#f92672">(</span>dn002<span style="color:#f92672">)</span> <span style="color:#e6db74">&#39;ALTER NODE dn002 WITH (TYPE=&#39;&#39;datanode&#39;&#39;, 	HOST=&#39;&#39;10.240.138.159&#39;&#39;, PORT=40004, PREFERRED)&#39;</span>;
+</span></span><span style="display:flex;"><span>EXECUTE DIRECT
+</span></span><span style="display:flex;"><span>EXECUTE DIRECT ON <span style="color:#f92672">(</span>dn002<span style="color:#f92672">)</span> <span style="color:#e6db74">&#39;SELECT pgxc_pool_reload()&#39;</span>;
+</span></span><span style="display:flex;"><span> pgxc_pool_reload
+</span></span><span style="display:flex;"><span>------------------
+</span></span><span style="display:flex;"><span> t
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> row<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Done.
+</span></span></code></pre></div><ul>
+<li>
+<p><strong>Show cluster status</strong></p>
+<p>When the above output is found, the cluster is OK. In addition, you can show the cluster status through the <strong>monitor all</strong> command of the pgxc_ctl tool</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#f92672">[</span>opentenbase@localhost ~/pgxc_ctl<span style="color:#f92672">]</span>$ pgxc_ctl
+</span></span><span style="display:flex;"><span>/usr/bin/bash
+</span></span><span style="display:flex;"><span>Installing pgxc_ctl_bash script as /data/opentenbase/pgxc_ctl/pgxc_ctl_bash.
+</span></span><span style="display:flex;"><span>Installing pgxc_ctl_bash script as /data/opentenbase/pgxc_ctl/pgxc_ctl_bash.
+</span></span><span style="display:flex;"><span>Reading configuration using /data/opentenbase/pgxc_ctl/pgxc_ctl_bash --home /data/opentenbase/pgxc_ctl --configuration /data/opentenbase/pgxc_ctl/pgxc_ctl.conf
+</span></span><span style="display:flex;"><span>Finished reading configuration.
+</span></span><span style="display:flex;"><span>   ******** PGXC_CTL START ***************
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Current directory: /data/opentenbase/pgxc_ctl
+</span></span><span style="display:flex;"><span>PGXC monitor all
+</span></span><span style="display:flex;"><span>Running: gtm master
+</span></span><span style="display:flex;"><span>Not running: gtm slave
+</span></span><span style="display:flex;"><span>Running: coordinator master cn001
+</span></span><span style="display:flex;"><span>Running: coordinator master cn002
+</span></span><span style="display:flex;"><span>Running: datanode master dn001
+</span></span><span style="display:flex;"><span>Running: datanode slave dn001
+</span></span><span style="display:flex;"><span>Running: datanode master dn002
+</span></span><span style="display:flex;"><span>Not running: datanode slave dn002
+</span></span></code></pre></div><p>If the replication mode between the master and slave nodes is not synchronous replication (meaning asynchronous replication), the failure of GTM salve and DN slave will not affect the access.</p>
+<ul>
+<li>
+<p><strong>cluster access</strong></p>
+<p>There is basically no difference between accessing OpenTenBase cluster and PostgreSQL. We can access database cluster through any CN: for example, we can view the topology of the cluster by connecting CN node to select pgxc_node table (the standby node will not be shown in pgxc_node under the current configuration).<br>
+The example of accessing through psql under the Linux command line is as follows:</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>[opentenbase<span style="color:#f92672">@</span>localhost <span style="color:#f92672">~/</span>pgxc_ctl]<span style="color:#960050;background-color:#1e0010">$</span> psql <span style="color:#f92672">-</span>h <span style="color:#ae81ff">10</span>.<span style="color:#ae81ff">215</span>.<span style="color:#ae81ff">147</span>.<span style="color:#ae81ff">158</span> <span style="color:#f92672">-</span>p <span style="color:#ae81ff">30004</span> <span style="color:#f92672">-</span>d postgres <span style="color:#f92672">-</span>U opentenbase
+</span></span><span style="display:flex;"><span>psql (PostgreSQL <span style="color:#ae81ff">10</span>.<span style="color:#ae81ff">0</span> opentenbase V2)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Type</span> <span style="color:#e6db74">&#34;help&#34;</span> <span style="color:#66d9ef">for</span> help.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>postgres<span style="color:#f92672">=#</span> <span style="color:#960050;background-color:#1e0010">\</span>d
+</span></span><span style="display:flex;"><span>Did <span style="color:#66d9ef">not</span> find <span style="color:#66d9ef">any</span> relations.
+</span></span><span style="display:flex;"><span>postgres<span style="color:#f92672">=#</span> <span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> pgxc_node;
+</span></span><span style="display:flex;"><span> node_name <span style="color:#f92672">|</span> node_type <span style="color:#f92672">|</span> node_port <span style="color:#f92672">|</span>   node_host    <span style="color:#f92672">|</span> nodeis_primary <span style="color:#f92672">|</span> nodeis_preferred <span style="color:#f92672">|</span>  node_id   <span style="color:#f92672">|</span> node_cluster_name
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-----------+-----------+-----------+----------------+----------------+------------------+------------+-------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> gtm       <span style="color:#f92672">|</span> <span style="color:#66d9ef">G</span>         <span style="color:#f92672">|</span>     <span style="color:#ae81ff">50001</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">10</span>.<span style="color:#ae81ff">215</span>.<span style="color:#ae81ff">147</span>.<span style="color:#ae81ff">158</span> <span style="color:#f92672">|</span> t              <span style="color:#f92672">|</span> f                <span style="color:#f92672">|</span>  <span style="color:#ae81ff">428125959</span> <span style="color:#f92672">|</span> opentenbase_cluster
+</span></span><span style="display:flex;"><span> cn001     <span style="color:#f92672">|</span> <span style="color:#66d9ef">C</span>         <span style="color:#f92672">|</span>     <span style="color:#ae81ff">30004</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">10</span>.<span style="color:#ae81ff">215</span>.<span style="color:#ae81ff">147</span>.<span style="color:#ae81ff">158</span> <span style="color:#f92672">|</span> f              <span style="color:#f92672">|</span> f                <span style="color:#f92672">|</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">264077367</span> <span style="color:#f92672">|</span> opentenbase_cluster
+</span></span><span style="display:flex;"><span> cn002     <span style="color:#f92672">|</span> <span style="color:#66d9ef">C</span>         <span style="color:#f92672">|</span>     <span style="color:#ae81ff">30004</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">10</span>.<span style="color:#ae81ff">240</span>.<span style="color:#ae81ff">138</span>.<span style="color:#ae81ff">159</span> <span style="color:#f92672">|</span> f              <span style="color:#f92672">|</span> f                <span style="color:#f92672">|</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">674870440</span> <span style="color:#f92672">|</span> opentenbase_cluster
+</span></span><span style="display:flex;"><span> dn001     <span style="color:#f92672">|</span> D         <span style="color:#f92672">|</span>     <span style="color:#ae81ff">40004</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">10</span>.<span style="color:#ae81ff">215</span>.<span style="color:#ae81ff">147</span>.<span style="color:#ae81ff">158</span> <span style="color:#f92672">|</span> t              <span style="color:#f92672">|</span> t                <span style="color:#f92672">|</span> <span style="color:#ae81ff">2142761564</span> <span style="color:#f92672">|</span> opentenbase_cluster
+</span></span><span style="display:flex;"><span> dn002     <span style="color:#f92672">|</span> D         <span style="color:#f92672">|</span>     <span style="color:#ae81ff">40004</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">10</span>.<span style="color:#ae81ff">240</span>.<span style="color:#ae81ff">138</span>.<span style="color:#ae81ff">159</span> <span style="color:#f92672">|</span> f              <span style="color:#f92672">|</span> f                <span style="color:#f92672">|</span>  <span style="color:#f92672">-</span><span style="color:#ae81ff">17499968</span> <span style="color:#f92672">|</span> opentenbase_cluster
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">5</span> <span style="color:#66d9ef">rows</span>)
+</span></span></code></pre></div><ul>
+<li>Before using the database, you need to <strong>create the default group and sharding group</strong></li>
+</ul>
+<p>OpenTenBase uses datanode group to increase the management flexibility of nodes. A default group is required to be used, so it needs to be created in advance. In general, all datanode nodes will be added to the default group.</p>
+<p>On the other hand, in order to increase the flexibility of OpenTenBase data distribution, an intermediate logic layer is added to maintain the mapping of data records to physical nodes, which is called sharding. Therefore, sharding needs to be created in advance. The command is as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>postgres<span style="color:#f92672">=#</span> <span style="color:#66d9ef">create</span> <span style="color:#66d9ef">default</span> node <span style="color:#66d9ef">group</span> default_group  <span style="color:#66d9ef">with</span> (dn001,dn002);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> NODE <span style="color:#66d9ef">GROUP</span>
+</span></span><span style="display:flex;"><span>postgres<span style="color:#f92672">=#</span> <span style="color:#66d9ef">create</span> sharding <span style="color:#66d9ef">group</span> <span style="color:#66d9ef">to</span> <span style="color:#66d9ef">group</span> default_group;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> SHARDING <span style="color:#66d9ef">GROUP</span>
+</span></span></code></pre></div><ul>
+<li>Create database, user, table, insert/delete/update/select, etc</li>
+</ul>
+<p>Now you can access the database cluster just like you can use a stand-alone database</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>postgres<span style="color:#f92672">=#</span> <span style="color:#66d9ef">create</span> <span style="color:#66d9ef">database</span> test;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">DATABASE</span>
+</span></span><span style="display:flex;"><span>postgres<span style="color:#f92672">=#</span> <span style="color:#66d9ef">create</span> <span style="color:#66d9ef">user</span> test <span style="color:#66d9ef">with</span> password <span style="color:#e6db74">&#39;test&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">ROLE</span>
+</span></span><span style="display:flex;"><span>postgres<span style="color:#f92672">=#</span> <span style="color:#66d9ef">alter</span> <span style="color:#66d9ef">database</span> test <span style="color:#66d9ef">owner</span> <span style="color:#66d9ef">to</span> test;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">DATABASE</span>
+</span></span><span style="display:flex;"><span>postgres<span style="color:#f92672">=#</span> <span style="color:#960050;background-color:#1e0010">\</span><span style="color:#66d9ef">c</span> test test
+</span></span><span style="display:flex;"><span>You <span style="color:#66d9ef">are</span> now connected <span style="color:#66d9ef">to</span> <span style="color:#66d9ef">database</span> <span style="color:#e6db74">&#34;test&#34;</span> <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">user</span> <span style="color:#e6db74">&#34;test&#34;</span>.
+</span></span><span style="display:flex;"><span>test<span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> foo(id bigint, str text) distribute <span style="color:#66d9ef">by</span> shard(id);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span>
+</span></span><span style="display:flex;"><span>test<span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">insert</span> <span style="color:#66d9ef">into</span> foo <span style="color:#66d9ef">values</span>(<span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;tencent&#39;</span>), (<span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;shenzhen&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">COPY</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>test<span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> foo;
+</span></span><span style="display:flex;"><span> id <span style="color:#f92672">|</span>   str
+</span></span><span style="display:flex;"><span><span style="color:#75715e">----+----------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#ae81ff">1</span> <span style="color:#f92672">|</span> tencent
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">2</span> <span style="color:#f92672">|</span> shenzhen
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">2</span> <span style="color:#66d9ef">rows</span>)
+</span></span></code></pre></div><ul>
+<li>
+<p><strong>stop cluster</strong></p>
+<p>Stop the cluster through the <strong>stop all</strong> command of pgxc_ctl tool.<br>
+The <strong>stop all</strong> command can be followed by the parameter <strong>-m fast</strong> or <strong>-m immediate</strong> to decide how to stop each node</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>PGXC stop all -m fast
+</span></span><span style="display:flex;"><span>Stopping all the coordinator masters.
+</span></span><span style="display:flex;"><span>Stopping coordinator master cn001.
+</span></span><span style="display:flex;"><span>Stopping coordinator master cn002.
+</span></span><span style="display:flex;"><span>Done.
+</span></span><span style="display:flex;"><span>Stopping all the datanode slaves.
+</span></span><span style="display:flex;"><span>Stopping datanode slave dn001.
+</span></span><span style="display:flex;"><span>Stopping datanode slave dn002.
+</span></span><span style="display:flex;"><span>pg_ctl: PID file <span style="color:#e6db74">&#34;/data/opentenbase/data/dn002/postmaster.pid&#34;</span> does not exist
+</span></span><span style="display:flex;"><span>Is server running?
+</span></span><span style="display:flex;"><span>Stopping all the datanode masters.
+</span></span><span style="display:flex;"><span>Stopping datanode master dn001.
+</span></span><span style="display:flex;"><span>Stopping datanode master dn002.
+</span></span><span style="display:flex;"><span>Done.
+</span></span><span style="display:flex;"><span>Stop GTM slave
+</span></span><span style="display:flex;"><span>waiting <span style="color:#66d9ef">for</span> server to shut down..... <span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>server stopped
+</span></span><span style="display:flex;"><span>Stop GTM master
+</span></span><span style="display:flex;"><span>waiting <span style="color:#66d9ef">for</span> server to shut down.... <span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>server stopped
+</span></span><span style="display:flex;"><span>PGXC monitor all
+</span></span><span style="display:flex;"><span>Not running: gtm master
+</span></span><span style="display:flex;"><span>Not running: gtm slave
+</span></span><span style="display:flex;"><span>Not running: coordinator master cn001
+</span></span><span style="display:flex;"><span>Not running: coordinator master cn002
+</span></span><span style="display:flex;"><span>Not running: datanode master dn001
+</span></span><span style="display:flex;"><span>Not running: datanode slave dn001
+</span></span><span style="display:flex;"><span>Not running: datanode master dn002
+</span></span><span style="display:flex;"><span>Not running: datanode slave dn002
+</span></span></code></pre></div><ul>
+<li>
+<p><strong>start cluster</strong></p>
+<p>Start the cluster through the <strong>start all</strong> command of pgxc_ctl tool.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#f92672">[</span>opentenbase@localhost ~<span style="color:#f92672">]</span>$ pgxc_ctl
+</span></span><span style="display:flex;"><span>/usr/bin/bash
+</span></span><span style="display:flex;"><span>Installing pgxc_ctl_bash script as /data/opentenbase/pgxc_ctl/pgxc_ctl_bash.
+</span></span><span style="display:flex;"><span>Installing pgxc_ctl_bash script as /data/opentenbase/pgxc_ctl/pgxc_ctl_bash.
+</span></span><span style="display:flex;"><span>Reading configuration using /data/opentenbase/pgxc_ctl/pgxc_ctl_bash --home /data/opentenbase/pgxc_ctl --configuration /data/opentenbase/pgxc_ctl/pgxc_ctl.conf
+</span></span><span style="display:flex;"><span>Finished reading configuration.
+</span></span><span style="display:flex;"><span>   ******** PGXC_CTL START ***************
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Current directory: /data/opentenbase/pgxc_ctl
+</span></span><span style="display:flex;"><span>PGXC start all
+</span></span></code></pre></div><ul>
+<li><strong>Concluding remarks</strong>
+This document is just a quick start guide for users, demonstrating how to build a complete OpenTenBase cluster step by step from the source code. Refer to other documents for OpenTenBase features, use, optimization, problem location, etc.</li>
+</ul>
+
+        </div>
+        
+        
+        
+        
+        
+        
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  </div><!-- end Contact Area -->
+<footer id="footer" class="bg-one section-bg">
+  <div class="container">
+    <div class="row wow fadeInUp" data-wow-duration="500ms">
+      <div class="col-xl-12">
+        <br>
+        <!-- copyright --> 
+        <div class="col-lg-9 padding-0" data-wow-duration="500ms">
+          <a href="http://localhost:1313/en/" class="padding-0">
+            <img src="http://localhost:1313/images/logo_footer.png" alt="OpenTenBase" height="38"/>
+          </a>
+        </div>
+        <div class="copyright">
+          <div>Copyright © 2013 - 2023 Tencent Cloud. All Rights Reserved. 腾讯云 版权所有</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- /footer -->
+
+<!-- Google Map API -->
+
+
+<!-- JS Plugins -->
+
+<script src="http://localhost:1313/plugins/jquery/jquery.min.js"></script>
+
+<script src="http://localhost:1313/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="http://localhost:1313/plugins/slick/slick.min.js"></script>
+
+<script src="http://localhost:1313/plugins/shuffle/shuffle.min.js"></script>
+
+<script src="http://localhost:1313/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+<script src="http://localhost:1313/plugins/lazy-load/lozad.min.js"></script>
+
+<script src="http://localhost:1313/plugins/google-map/map.js"></script>
+
+
+<!-- Main Script -->
+
+<script src="http://localhost:1313/js/script.min.329fb3531b4e8efc927e85be20ebfd8edeee826e790bef0b540ad8b75737f8a306f3b43772a7102531d4b631a7811e0a.js" integrity="sha384-Mp&#43;zUxtOjvySfoW&#43;IOv9jt7ugm55C&#43;8LVArYt1c3&#43;KMG87Q3cqcQJTHUtjGngR4K"></script>
+
+
+
+</body>
+
+</html>

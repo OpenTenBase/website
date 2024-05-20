@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>News on OpenTenBase</title>
+    <link>http://localhost:1313/news/</link>
+    <description>Recent content in News on OpenTenBase</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 18 Jan 2024 16:30:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/news/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>30万奖金！OpenTenBase开源核心贡献挑战赛等你来</title>
+      <link>http://localhost:1313/news/news-post-6/</link>
+      <pubDate>Thu, 18 Jan 2024 16:30:00 +0800</pubDate>
+      <guid>http://localhost:1313/news/news-post-6/</guid>
+      <description>由开放原子开源基金会发起的2023开源和信息消费大赛——首届开放原子开源大赛正式启动啦！大</description>
+    </item>
+    <item>
+      <title>OpenTenBase入选2023中国技术品牌影响力企业榜，深耕开发者生态</title>
+      <link>http://localhost:1313/news/news-post-5/</link>
+      <pubDate>Tue, 26 Dec 2023 16:30:00 +0800</pubDate>
+      <guid>http://localhost:1313/news/news-post-5/</guid>
+      <description>2023年12月26日，中国技术先锋年度评选 | 2023 中国技术品牌影响力企业榜单正式发布。作为中</description>
+    </item>
+    <item>
+      <title>腾讯云向开放原子开源基金会捐赠OpenTenBase，共建国产数据库新生态</title>
+      <link>http://localhost:1313/news/news-post-4/</link>
+      <pubDate>Mon, 18 Dec 2023 21:30:00 +0800</pubDate>
+      <guid>http://localhost:1313/news/news-post-4/</guid>
+      <description>12月16日，在2023开放原子开发者大会上，腾讯云将企业级分布式数据库TDSQL的 社区发</description>
+    </item>
+    <item>
+      <title>OpenTenBase首亮相，腾讯云数据库开源取得重大突破</title>
+      <link>http://localhost:1313/news/news-post-3/</link>
+      <pubDate>Fri, 27 Oct 2023 14:49:36 +0800</pubDate>
+      <guid>http://localhost:1313/news/news-post-3/</guid>
+      <description>10月26日，GOPS 全球运维大会 2023 在上海盛大召开，腾讯云数据库作为业内领先的数据库厂商受</description>
+    </item>
+    <item>
+      <title>开源数据库OpenTenBase获信通院“OSCAR尖峰开源项目优秀案例”奖</title>
+      <link>http://localhost:1313/news/news-post-2/</link>
+      <pubDate>Thu, 21 Sep 2023 16:19:36 +0800</pubDate>
+      <guid>http://localhost:1313/news/news-post-2/</guid>
+      <description>9 月 21 日，OSCAR 开源产业大会上，颁布了“OSCAR 开源尖峰案例”奖项，开源数据库 OpenTenBase 获得</description>
+    </item>
+    <item>
+      <title>腾讯会议、TencentOS入选“年度优秀创新软件产品”目录</title>
+      <link>http://localhost:1313/news/news-post-1/</link>
+      <pubDate>Fri, 01 Sep 2023 16:19:36 +0800</pubDate>
+      <guid>http://localhost:1313/news/news-post-1/</guid>
+      <description>8 月 31 日，中国国际软件博览会（以下简称软博会）在天津举办，会议公布了《2022-2023 年</description>
+    </item>
+  </channel>
+</rss>

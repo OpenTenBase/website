@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on OpenTenBase</title>
+    <link>http://localhost:1313/en/blog/</link>
+    <description>Recent content in Blogs on OpenTenBase</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 25 Sep 2023 08:00:36 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/en/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Basic Usage</title>
+      <link>http://localhost:1313/en/blog/03-basic-use/</link>
+      <pubDate>Mon, 25 Sep 2023 08:00:36 +0800</pubDate>
+      <guid>http://localhost:1313/en/blog/03-basic-use/</guid>
+      <description>In &amp;lt; Quick Start &amp;gt; article, we introduced opentenbase architecture, source code compilation and installation, cluster running status, startup and stop, etc.&#xA;This article will introduce the creation of shard table, hot and cold partition table, replication table and basic DML operation in opentenbase.</description>
+    </item>
+    <item>
+      <title>Quick Start</title>
+      <link>http://localhost:1313/en/blog/01-quickstart/</link>
+      <pubDate>Thu, 20 Jul 2023 08:00:36 +0800</pubDate>
+      <guid>http://localhost:1313/en/blog/01-quickstart/</guid>
+      <description>What&amp;rsquo;s OpenTenBase OpenTenBase is a relational database cluster platform that provides write reliability and multi node data synchronization. You can configure OpenTenBase on one or more hosts and store OpenTenBase data on multiple physical hosts. There are two ways to store data tables: distributed or replicated.</description>
+    </item>
+  </channel>
+</rss>
