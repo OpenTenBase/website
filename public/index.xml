@@ -6,8 +6,22 @@
     <description>Recent content on OpenTenBase</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 29 Apr 2024 14:43:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 27 May 2024 19:12:00 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenAtom OpenTenBase社区委员会正式成立</title>
+      <link>http://localhost:1313/news/news-post-8/</link>
+      <pubDate>Mon, 27 May 2024 19:12:00 +0800</pubDate>
+      <guid>http://localhost:1313/news/news-post-8/</guid>
+      <description>在2023年12月的开放原子开发者大会上，腾讯云将企业级分布式数据库TDSQL的社区发行版</description>
+    </item>
+    <item>
+      <title>OpenTenBase开源之夏宣讲会来袭，数据库学习不容错过</title>
+      <link>http://localhost:1313/event/event-post-5/</link>
+      <pubDate>Fri, 17 May 2024 18:05:00 +0800</pubDate>
+      <guid>http://localhost:1313/event/event-post-5/</guid>
+      <description>OpenAtom OpenTenBase是由开放原子开源基金会孵化及运营的开源项目，是一款企业级的分布式H</description>
+    </item>
     <item>
       <title>开源之夏2024，OpenTenBase邀你共赴数据库开发之旅！</title>
       <link>http://localhost:1313/event/event-post-4/</link>
@@ -20,13 +34,6 @@
       <link>http://localhost:1313/news/news-post-7/</link>
       <pubDate>Tue, 23 Apr 2024 15:19:00 +0800</pubDate>
       <guid>http://localhost:1313/news/news-post-7/</guid>
-      <description>4月17日，开放原子开源大赛南京站“OpenAtom OpenTenBase开源核心贡献挑战</description>
-    </item>
-    <item>
-      <title>30万奖金花落谁家？OpenTenBase开源核心贡献挑战赛精彩收官</title>
-      <link>http://localhost:1313/news/news-post-8/</link>
-      <pubDate>Tue, 23 Apr 2024 15:19:00 +0800</pubDate>
-      <guid>http://localhost:1313/news/news-post-8/</guid>
       <description>4月17日，开放原子开源大赛南京站“OpenAtom OpenTenBase开源核心贡献挑战</description>
     </item>
     <item>
