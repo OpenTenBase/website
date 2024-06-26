@@ -14,24 +14,41 @@ OpenAtom OpenTenBase（以下简称“OpenTenBase”）将在本次“就业技�
 本次活动限定全日制高校在校大学生免费报名，欢迎广大高校学子积极参与！成功报名学习完整课程并通过结项考核（OpenTenBase体验测评）的学生将获得结项证书，表现突出的学生还将获得精美礼品！
 
 **OpenTenBase入门课培训与考核日程**
+
 📅 报名时间：5月24日至6月9日
+
 🎥 课程培训：6月4日，10日，18日，27日19:30-20:00
+
 报名学生将通过收到的课程腾讯会议链接观看学习，届时OpenTenBase视频号将进行同步直播
+
 📝 提交考核：即日起至6月28日
+
 🏅 证书发放：7月3日
 
 **结项考核（OpenTenBase体验测评）提交说明**
+
 第一步：
+
 将OpenTenBase Fork到本地仓库，对OpenTenBase进行安装、体验与测评。别忘了给仓库点个Star⭐
+
 （1）AtomGit地址：
+
 🔗https://atomgit.com/opentenbase/OpenTenBase
+
 （2）GitHub地址：
+
 🔗https://github.com/OpenTenBase/OpenTenBase
+
 第二步：
+
 Fork本次考核测评的仓库
+
 🔗https://atomgit.com/evaluation/OpenTenBase_Evaluation
+
 在自己Fork的仓库的根目录下创建以自己AtomGit 账户下的Username为名字的目录，在此目录下提交测评文档，并向官方仓库创建change request（需在change request中注明报名课程时填写的姓名/昵称）。
+
 第三步：
+
 分享学习心得文章到CSDN、InfoQ或者个人公众号
 
 **结项考核（OpenTenBase体验测评）评分标准**
