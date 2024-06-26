@@ -12,13 +12,19 @@ OpenAtom OpenTenBase是由开放原子开源基金会孵化及运营的开源项
 OpenTenBase社区为开源之夏2024带来了两个进阶项目，这两个项目以商业数据库兼容为出发点，在OpenTenBase内核中实现两个新特性。通过结项考核的学生将获得结项奖金（税前12000元人民币）、结项证书，更有机会获选优秀学生。
 
 项目一：在 OpenTenBase 中实现指定的兼容 Oracle 风格的 partition by 语法
+
 项目难度：进阶
+
 项目简述：为方便数据库的切换迁移，在 OpenTenBase 中实现兼容 Oracle 风格的指定分区语法。
+
 链接：https://summer-ospp.ac.cn/org/prodetail/248ec0447?list=org&navpage=org
 
 项目二：使用 hyperloglog 算法实现 approx_count_distinct 函数
+
 项目难度：进阶
+
 项目简述：在 OpenTenBase 中，使用 hyperloglog 算法实现兼容 Oracle 的 approx_count_distinct 函数。该函数对参数列去重后的行数进行计算，返回行数值，且该值是近似值，该函数可以用于进一步计算被引用的列的选择性。
+
 链接：https://summer-ospp.ac.cn/org/prodetail/248ec0500?list=org&navpage=org
 
 5月21日（周二）19:30-20:30，OpenTenBase开源之夏宣讲会将邀请腾讯分布式数据库研发工程师杨欣妍、腾讯开源专家董宾，介绍OpenTenBase社区和两个开源之夏项目，更设置现场答疑环节，欢迎同学们添加OpenTenBase小助手蓓蓓（微信号：OpenTenBase）进群交流提问，关注参与本次宣讲直播！
