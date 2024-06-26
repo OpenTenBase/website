@@ -6,8 +6,15 @@
     <description>Recent content in News on OpenTenBase</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 18 Jan 2024 16:30:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 23 Apr 2024 15:19:00 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/news/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>30万奖金花落谁家？OpenTenBase开源核心贡献挑战赛精彩收官</title>
+      <link>http://localhost:1313/news/news-post-7/</link>
+      <pubDate>Tue, 23 Apr 2024 15:19:00 +0800</pubDate>
+      <guid>http://localhost:1313/news/news-post-7/</guid>
+      <description>4月17日，开放原子开源大赛南京站“OpenAtom OpenTenBase开源核心贡献挑战</description>
+    </item>
     <item>
       <title>30万奖金！OpenTenBase开源核心贡献挑战赛等你来</title>
       <link>http://localhost:1313/news/news-post-6/</link>

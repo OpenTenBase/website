@@ -31,11 +31,11 @@
     <loc>http://localhost:1313/event/event-post-4/</loc>
     <lastmod>2024-04-29T14:43:00+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/news/news-post-6/</loc>
-    <lastmod>2024-01-18T16:30:00+08:00</lastmod>
+    <loc>http://localhost:1313/news/news-post-7/</loc>
+    <lastmod>2024-04-23T15:19:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/news/</loc>
-    <lastmod>2024-01-18T16:30:00+08:00</lastmod>
+    <lastmod>2024-04-23T15:19:00+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
@@ -46,6 +46,9 @@
                 hreflang="zh-cn"
                 href="http://localhost:1313/news/"
                 />
+  </url><url>
+    <loc>http://localhost:1313/news/news-post-6/</loc>
+    <lastmod>2024-01-18T16:30:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/news/news-post-5/</loc>
     <lastmod>2023-12-26T16:30:00+08:00</lastmod>
