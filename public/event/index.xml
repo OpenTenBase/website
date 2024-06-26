@@ -6,8 +6,15 @@
     <description>Recent content in Events on OpenTenBase</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 17 May 2024 18:05:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 03 Jun 2024 18:45:00 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/event/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>4天直播，助你快速入门OpenTenBase，增强就业优势！</title>
+      <link>http://localhost:1313/event/event-post-6/</link>
+      <pubDate>Mon, 03 Jun 2024 18:45:00 +0800</pubDate>
+      <guid>http://localhost:1313/event/event-post-6/</guid>
+      <description>开放原子开源基金会联合腾讯公司发起的“开放原子校源行”公益项目，近期启动“就业技能培训系列</description>
+    </item>
     <item>
       <title>OpenTenBase开源之夏宣讲会来袭，数据库学习不容错过</title>
       <link>http://localhost:1313/event/event-post-5/</link>
