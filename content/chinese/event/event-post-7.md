@@ -45,7 +45,7 @@ OpenTenBase是由开放原子开源基金会孵化及运营的开源项目，是
 
 **现在报名：扫描海报二维码或点击阅读原文**
 
-<img src=../images/event-post-7-01.jpg class="img-fluid"  />
+<img src=../images/event-post-7-01.png class="img-fluid"  />
 
 加入OpenTenBase交流群：添加小助手蓓蓓（微信号：OpenTenBase）
 OpenTenBase开源地址：
