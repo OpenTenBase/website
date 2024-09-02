@@ -110,53 +110,53 @@ https://github.com/OpenTenBase/OpenTenBase/releases/tag/v2.5.0
 
 上文中，我们在10.60.143.28编译好一份二级制包，现在要把它同步到集群所有服务器，这个可以使用pgxc\_ctl工具，执行deploy all命令来完成。
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20240829_2e16cd92-65aa-11ef-ac79-fa163eb4f6be.png)
+<img src=../images/news-post-9-02.png class="img-fluid" /><br/>
 
 执行init all命令，完成集群初始化命令：
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20240829_2e2c3aa6-65aa-11ef-ac79-fa163eb4f6be.png)
+<img src=../images/news-post-9-03.png class="img-fluid" /><br/>
 
 执行成功最终会输出：
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20240829_2e3ff10e-65aa-11ef-ac79-fa163eb4f6be.png)
+<img src=../images/news-post-9-04.png class="img-fluid" /><br/>
 
 **查看集群状态**
 ==========
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20240829_2e4caf02-65aa-11ef-ac79-fa163eb4f6be.png)
+<img src=../images/news-post-9-05.png class="img-fluid" /><br/>
 
 访问OpenTenBase和访问单机PostgreSQL基本无差别，我们可以通过任意一个CN访问数据库集群：
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20240829_2e5cd738-65aa-11ef-ac79-fa163eb4f6be.png)
+<img src=../images/news-post-9-06.png class="img-fluid" /><br/>
 
 OpenTenBase使用datanode group来增加节点的管理灵活度，要求有一个default group才能使用，因此需要预先创建；一般情况下，会将节点的所有datanode节点加入到default group里 另外一方面，OpenTenBase的数据分布为了增加灵活度，加了中间逻辑层来维护数据记录到物理节点的映射，我们叫sharding，所以需要预先创建sharding，命令如下：
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20240829_2e6a747e-65aa-11ef-ac79-fa163eb4f6be.png)
+<img src=../images/news-post-9-07.png class="img-fluid" /><br/>
 
 **访问**
 ======
 
 至此，就可以跟使用单机数据库一样来访问数据库集群了，创建数据库，用户，创建表，增删查改等操作：
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20240829_2e80a384-65aa-11ef-ac79-fa163eb4f6be.png)
+<img src=../images/news-post-9-08.png class="img-fluid" /><br/>
 
 启停
 ==
 
 通过pgxc\_ctl工具的 stop all 命令来停止集群，stop all 后面可以加上参数 -m fast 或者是 -m immediate 来决定如何停止各个节点。
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20240829_2ea5b20a-65aa-11ef-ac79-fa163eb4f6be.png)
+<img src=../images/news-post-9-09.png class="img-fluid" /><br/>
 
 通过pgxc\_ctl工具的start all命令来启动集群  
 start all
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20240829_2ebc618a-65aa-11ef-ac79-fa163eb4f6be.png)
+<img src=../images/news-post-9-10.png class="img-fluid" /><br/>
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20240829_2ecb2788-65aa-11ef-ac79-fa163eb4f6be.png)
+<img src=../images/news-post-9-11.png class="img-fluid" /><br/>
 
 我们目前正在积极征集OpenTenBase的用户使用案例，如果您有相关使用经验，欢迎提交给我们。也期待您加入OpenTenBase社区，跟我们共同推动项目发展！
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20240829_2edcb8cc-65aa-11ef-ac79-fa163eb4f6be.png)
+<img src=../images/news-post-9-12.png class="img-fluid" /><br/>
 
 **官网：** https://www.opentenbase.org/
 
