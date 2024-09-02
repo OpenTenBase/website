@@ -2,7 +2,7 @@
 title: "贡献案例 | 跟随社区委员会成员实现OpenTenBase高效部署"
 date: 2024-08-27T14:48:00+08:00
 #image_webp: images/news/news-post-2.webp
-image: news/images/news-post-9.jpg
+image: images/news/news-post-9.jpg
 author: OpenTenBase
 description: ""
 ---
