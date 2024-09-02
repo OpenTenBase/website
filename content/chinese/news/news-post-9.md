@@ -60,7 +60,7 @@ https://github.com/OpenTenBase/OpenTenBase/releases/tag/v2.5.0
 
 编译成功后可以去 data/opentenbase/install/opentenbase\_bin\_v2.0 看到编译的结果：
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20240829_2e04c944-65aa-11ef-ac79-fa163eb4f6be.png)
+![1](https://oss-emcsprod-public.modb.pro/image/auto/modb_20240829_2e04c944-65aa-11ef-ac79-fa163eb4f6be.png)
 
 然后我们配置下用到的机器之间的互信，基本的步骤：  
 
