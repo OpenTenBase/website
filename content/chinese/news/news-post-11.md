@@ -2,12 +2,10 @@
 title: "OpenTenBase社区贡献案例：如何通过修改代码增强现有SQL语法"
 date: 2024-08-29T09:34:00+08:00
 #image_webp: images/news/news-post-2.webp
-image: images/news/news-post-10.jpg
+image: images/news/news-post-11.jpg
 author: OpenTenBase
 description: ""
 ---
-
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20240829_87d1a3d4-65aa-11ef-862e-fa163eb4f6be.png)
 
 **贡献者介绍**
 ---------
@@ -31,7 +29,7 @@ OpenTenBase是腾讯云数据库团队在PostgreSQL基础上研发的企业级�
 
 在这个案例中，使用VMware Workstation创建了两台虚拟机，系统为CentOS 7（1511）。考虑到CentOS 7目前已停止维护，后续对此案例的实现可以使用OpenTenBase推荐的操作系统，如TencentOS 2, TencentOS 3, OpenCloudOS, Ubuntu。虚拟机的硬件设备设置如图一。
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20240829_87eaaaa0-65aa-11ef-862e-fa163eb4f6be.png)
+<img src=../images/news-post-11-1.png class="img-fluid" /><br/>
 
 图 1 虚拟机的硬件设备设置
 
