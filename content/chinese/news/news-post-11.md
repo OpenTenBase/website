@@ -52,11 +52,20 @@ OpenTenBase的部署可以参考官方文档https://docs.opentenbase.org/guide/0
 
 <img src=../images/news-post-11-4.png class="img-fluid" /><br/>
 
-    1.cd ${SOURCECODE_PATH}  
-
-上述代码中的两个参数如下所示
-
-    ${SOURCECODE_PATH}=/data/opentenbase/OpenTenBase
+1.	cd ${SOURCECODE_PATH}  
+2.	rm -rf ${INSTALL_PATH}/opentenbase_bin_v2.0  
+3.	chmod +x configure*  
+4.	./configure --prefix=${INSTALL_PATH}/opentenbase_bin_v2.0  --enable-user-switch --with-openssl  --with-ossp-uuid CFLAGS=-g  
+5.	make clean  
+6.	make -sj  
+7.	make install  
+8.	chmod +x contrib/pgxc_ctl/make_signature  
+9.	cd contrib  
+10.	make -sj  
+11.	make install  （完成安装）
+12.	上述代码中的两个参数如下所示
+13.	${SOURCECODE_PATH}=/data/opentenbase/OpenTenBase
+14.	${INSTALL_PATH}=/data/opentenbase/install
 
 下面以两台服务器上搭建1GTM主，1GTM备，2CN主（CN主之间对等，因此无需备CN），2DN主，2DN备的集群，该集群为具备容灾能力的最小配置。
 
