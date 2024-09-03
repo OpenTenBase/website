@@ -232,8 +232,6 @@ coordSpecificExtraConfig=(none none)
 coordExtraPgHba=coordExtraPgHba  
 cat > $coordExtraPgHba <<EOF  
   
-||||||
-|----|----|----|----|----|
 |local|all|all||trust|
 |host|all|all|0.0.0.0/0|trust|
 |host|replication|all|0.0.0.0/0|trust|
@@ -315,8 +313,6 @@ datanodeSpecificExtraConfig=(none none none)
 datanodeExtraPgHba=datanodeExtraPgHba  
 cat > $datanodeExtraPgHba <<EOF  
   
-||||||
-|----|----|----|----|----|
 |local|all|all||trust|
 |host|all|all|0.0.0.0/0|trust|
 |host|replication|all|0.0.0.0/0|trust|
