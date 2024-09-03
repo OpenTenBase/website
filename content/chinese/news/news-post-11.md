@@ -88,8 +88,10 @@ OpenTenBase的部署可以参考官方文档https://docs.opentenbase.org/guide/0
 |DN2 slave|192.168.17.128|/data/opentenbase/data/dn002|
 
 禁用SELinux和防火墙：
-
-    1.vi etc/selinux/config   
+    
+1.vi /etc/selinux/config   
+2.systemctl disable firewalld  
+3.systemctl stop firewalld   
 
 执行vi /etc/selinux/config后，将文件中SELINUX=enforcing修改为SELINUX=disabled，如下图所示
 
@@ -101,13 +103,19 @@ OpenTenBase的部署可以参考官方文档https://docs.opentenbase.org/guide/0
 
 配置机器间的ssh互信：
 
-    1.su opentenbase  
+1.su opentenbase  
+2.ssh-keygen -t rsa  
+3.ssh-copy-id -i ~/.ssh/id_rsa.pub destination-user@destination-server
 
 对于两台机器组成的集群，第三行代码（ssh-copy-id）在每台机器上要执行两次，即对本机和另一台机器进行ssh配置，详细内容见图4。
 
 之后，在集群中的所有机器上进行配置环境变量：
 
-    1.[opentenbase@localhost ~]$ vim ~/.bashrc  
+1.[opentenbase@localhost ~]$ vim ~/.bashrc  
+2.export OPENTENBASE_HOME=/data/opentenbase/install/opentenbase_bin_v2.0  
+3.export PATH=$OPENTENBASE_HOME/bin:$PATH  
+4.export LD_LIBRARY_PATH=$OPENTENBASE_HOME/lib:${LD_LIBRARY_PATH}  
+5.export LC_ALL=C
 
 <img src=../images/news-post-11-7.png class="img-fluid" /><br/>
 
@@ -118,8 +126,10 @@ OpenTenBase的部署可以参考官方文档https://docs.opentenbase.org/guide/0
 图4 配置ssh互信
 
 之后，初始化pgxc\_ctl.conf文件：
-
-    1.[opentenbase@localhost ~]$ mkdir /data/opentenbase/pgxc_ctl  
+ 
+1.[opentenbase@localhost ~]$ mkdir /data/opentenbase/pgxc_ctl
+2.[opentenbase@localhost ~]$ cd /data/opentenbase/pgxc_ctl  
+3.[opentenbase@localhost ~/pgxc_ctl]$ vim pgxc_ctl.conf  
 
 <img src=../images/news-post-11-9.png class="img-fluid" /><br/>
 
