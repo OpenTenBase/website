@@ -2,7 +2,7 @@
 title: "社区贡献 | OpenTenBase集群部署初探"
 date: 2024-08-30T12:48:00+08:00
 #image_webp: images/news/news-post-2.webp
-image: images/news/news-post-12.png
+image: images/news/news-post-14.png
 author: OpenTenBase
 description: ""
 ---
