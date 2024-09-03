@@ -174,7 +174,49 @@ pgxc\_ctl.conf文件可以复制官网快速入门文档中的内容，主要修
 
 首先，创建用于回归测试的sql文件，文件路径为：src/test/regress/sql/select\_partition.sql，内容为
 
-    1.--  
+-- 
+-- PARTITION 
+-- 
+CREATE TABLE t_base (
+    id          serial,
+    country     text,
+    task        text,
+    turnover    numeric
+) PARTITION BY LIST (country);
+
+CREATE TABLE t_austria
+    PARTITION OF t_base FOR VALUES IN ('Austria');
+
+CREATE TABLE t_usa
+    PARTITION OF t_base FOR VALUES IN ('USA');
+
+CREATE TABLE t_ger_swiss
+    PARTITION OF t_base FOR VALUES IN ('Germany', 'Switzerland');
+
+CREATE TABLE t_rest PARTITION OF t_base DEFAULT;
+
+INSERT INTO t_base (country, task, turnover)
+VALUES ('Uganda', 'Some task', 200);
+
+INSERT INTO t_base (country, task, turnover)
+VALUES ('USA', 'taskUSA', 2);
+
+INSERT INTO t_base (country, task, turnover)
+VALUES ('Austria', 'taskAustria', 1000);
+
+INSERT INTO t_base (country, task, turnover)
+VALUES ('Germany', 'taskGermany', 500);
+
+INSERT INTO t_base (country, task, turnover)
+VALUES ('Switzerland', 'taskSwiss', 700);
+
+INSERT INTO t_rest (country, task, turnover)
+VALUES ('Canada', 'taskCanada', 300);
+
+select * from t_base partition (t_rest);
+select * from t_base partition (t_austria);
+select * from t_base partition (t_usa);
+select * from t_base partition (t_ger_swiss);
 
 将上述代码与其理想输出写入文件中，这个文件的文件路径为：src/test/regress/expected/select\_partition.out。注意，sql文件与out文件的文件名是一样的。 
 
@@ -192,7 +234,23 @@ src/test/regress/parallel\_schedule
 
 修改之后，需要对OpenTenBase重新进行编译安装，并进行回归测试。
 
-    1.cd ${SOURCECODE_PATH}  
+**安装步骤：**
+1. `cd ${SOURCECODE_PATH}`
+2. `rm -rf ${INSTALL_PATH}/opentenbase_bin_v2.0`
+3. `chmod +x configure*`
+4. `../configure --prefix=${INSTALL_PATH}/opentenbase_bin_v2.0 --enable-user-switch --with-openssl --with-ossp-uuid CFLAGS=-g`
+5. `make check`（回归测试）
+6. `make clean`
+7. `make -sj`
+8. `make install`
+9. `chmod +x contrib/pgxc_ctl/make_signature`
+10. `cd contrib`
+11. `make -sj`
+12. `make install`（完成安装）
+
+**参数说明：**
+1. `${SOURCECODE_PATH}=/data/opentenbase/OpenTenBase`
+2. `${INSTALL_PATH}=/data/opentenbase/install`
 
 修改后的回归测试输出如图12，可见添加的测试内容成功运行，且没有引入其他的错误。 
 
