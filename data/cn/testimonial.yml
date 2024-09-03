@@ -9,9 +9,9 @@ testimonial:
   testimonial_item:
 
     # testimonial item loop
-    - name: "冯冠霖"
-      position : "开放原子开源基金会秘书长"
-      content: "很高兴看到腾讯能够把多年研发打磨、通过海量业务场景考验的基础软件数据库项目OpenTenBase开源并捐赠到基金会，未来基金会将秉持中立开放的态度，与业界一起将OpenTenBase打造成为具有全球影响力的优秀开源项目。"
+    - name: "程晓明"
+      position : "开放原子开源基金会理事长"
+      content: "OpenTenBase社区委员会的成立，是OpenTenBase以开放中立的方式进行开源治理的重要一环。在此，衷心感谢社区各成员单位对OpenTenBase项目的积极参与和大力支持。未来，我们将持续支持OpenTenBase社区委员会秉承开放治理的理念，紧密连接数据库核心开发者、生态构建者和广大用户，建立一个开放、包容且充满活力的协作平台，推动数据库技术创新，致力于将OpenTenBase打造成为立足中国、面向全球的开放数字基础设施的坚实数据底座。同时，我们也热切期盼更多有志于开源事业的企业能够积极加入，共同为OpenTenBase的蓬勃发展贡献力量。"
       
     # testimonial item loop
     - name: "王义成"
