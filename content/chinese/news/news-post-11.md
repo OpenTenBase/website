@@ -40,17 +40,17 @@ OpenTenBase的部署可以参考官方文档https://docs.opentenbase.org/guide/0
 
 首先，在虚拟机上安装相关依赖。
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20240829_88025b6e-65aa-11ef-862e-fa163eb4f6be.png)
+<img src=../images/news-post-11-2.png class="img-fluid" /><br/>
 
 图2 相关依赖安装 
 
 在OpenTenBase集群中的所有系统上创建opentenbase用户，之后的有关opentenbase的步骤都要切换到opentenbase用户下再进行操作。
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20240829_88176de2-65aa-11ef-862e-fa163eb4f6be.png)
+<img src=../images/news-post-11-3.png class="img-fluid" /><br/>
 
 之后，下载源码并进行编译安装（这里使用GitHub，也可以使用AtomGit和Gitee网址）
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20240829_882573a6-65aa-11ef-862e-fa163eb4f6be.png)
+<img src=../images/news-post-11-4.png class="img-fluid" /><br/>
 
     1.cd ${SOURCECODE_PATH}  
 
