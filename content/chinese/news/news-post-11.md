@@ -2,7 +2,7 @@
 title: "OpenTenBase社区贡献案例：如何通过修改代码增强现有SQL语法"
 date: 2024-08-29T09:34:00+08:00
 #image_webp: images/news/news-post-2.webp
-image: images/news/news-post-11.jpg
+image: images/news/news-post-11.png
 author: OpenTenBase
 description: ""
 ---
