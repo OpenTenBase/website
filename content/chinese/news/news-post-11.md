@@ -69,69 +69,23 @@ OpenTenBase的部署可以参考官方文档https://docs.opentenbase.org/guide/0
 
 下面以两台服务器上搭建1GTM主，1GTM备，2CN主（CN主之间对等，因此无需备CN），2DN主，2DN备的集群，该集群为具备容灾能力的最小配置。
 
-OpenTenBase1
-
-192.168.17.128
-
-OpenTenBase2
-
-192.168.17.129
+|名称|IP 地址|
+|----|----|
+|Opentenbase1|192.168.17.128|
+|Opentenbase2|192.168.17.129|
 
 集群规划如下：
 
-节点
-
-机器IP
-
-目录
-
-GTM master 
-
-192.168.17.128
-
-/data/opentenbase/data/gtm
-
-GTM slave
-
-192.168.17.129
-
-/data/opentenbase/data/gtm
-
-CN1
-
-192.168.17.128
-
-/data/opentenbase/data/coord
-
-CN2
-
-192.168.17.129
-
-/data/opentenbase/data/coord
-
-DN1 master
-
-192.168.17.128
-
-/data/opentenbase/data/dn001
-
-DN1 slave
-
-192.168.17.129
-
-/data/opentenbase/data/dn001
-
-DN2 master
-
-192.168.17.129
-
-/data/opentenbase/data/dn002
-
-DN2 slave
-
-192.168.17.128
-
-/data/opentenbase/data/dn002
+|节点|机器 IP|目录|
+|----|----|----|
+|GTM master|192.168.17.128|/data/opentenbase/data/gtm|
+|GTM slave|192.168.17.129|/data/opentenbase/data/gtm|
+|CN1|192.168.17.128|/data/opentenbase/data/coord|
+|CN2|192.168.17.129|/data/opentenbase/data/coord|
+|DN1 master|192.168.17.128|/data/opentenbase/data/dn001|
+|DN1 slave|192.168.17.129|/data/opentenbase/data/dn001|
+|DN2 master|192.168.17.129|/data/opentenbase/data/dn002|
+|DN2 slave|192.168.17.128|/data/opentenbase/data/dn002|
 
 禁用SELinux和防火墙：
 
@@ -139,11 +93,11 @@ DN2 slave
 
 执行vi /etc/selinux/config后，将文件中SELINUX=enforcing修改为SELINUX=disabled，如下图所示
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20240829_882f5466-65aa-11ef-862e-fa163eb4f6be.png)
+<img src=../images/news-post-11-5.png class="img-fluid" /><br/>
 
 禁用防火墙流程如图所示。
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20240829_884d5fd8-65aa-11ef-862e-fa163eb4f6be.png)
+<img src=../images/news-post-11-6.png class="img-fluid" /><br/>
 
 配置机器间的ssh互信：
 
@@ -155,11 +109,11 @@ DN2 slave
 
     1.[opentenbase@localhost ~]$ vim ~/.bashrc  
 
- ![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20240829_8861abe6-65aa-11ef-862e-fa163eb4f6be.png)  
+<img src=../images/news-post-11-7.png class="img-fluid" /><br/>
 
 图3 配置环境变量 
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20240829_88774af0-65aa-11ef-862e-fa163eb4f6be.png)
+<img src=../images/news-post-11-8.png class="img-fluid" /><br/>
 
 图4 配置ssh互信
 
@@ -167,7 +121,7 @@ DN2 slave
 
     1.[opentenbase@localhost ~]$ mkdir /data/opentenbase/pgxc_ctl  
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20240829_888fac80-65aa-11ef-862e-fa163eb4f6be.png)
+<img src=../images/news-post-11-9.png class="img-fluid" /><br/>
 
 图5 初始化pgxc\_ctl.conf文件
 
@@ -175,19 +129,19 @@ pgxc\_ctl.conf文件可以复制官网快速入门文档中的内容，主要修
 
 在一个节点配置好配置文件后，需要预先将二进制包部署到所有节点所在的机器上，这个可以使用pgxc\_ctl工具，执行deploy all命令来完成。
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20240829_88a037bc-65aa-11ef-862e-fa163eb4f6be.png)
+<img src=../images/news-post-11-10.png class="img-fluid" /><br/>
 
 图6 使用pgxc\_ctl进行文件分发
 
 不用退出pgxc\_ctl，输入并执行init all，进行集群的初始化。初始化之后，可以使用monitor all检查集群的运行情况。如图7所示，所有节点都正常运行。
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20240829_88afc880-65aa-11ef-862e-fa163eb4f6be.png)
+<img src=../images/news-post-11-11.png class="img-fluid" /><br/>
 
 图7 集群运行情况
 
 之后，可以用访问PostgreSQL的方式，对OpenTenBase集群进行访问。 
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20240829_88c34cde-65aa-11ef-862e-fa163eb4f6be.png)
+<img src=../images/news-post-11-12.png class="img-fluid" /><br/>
 
 图8 访问OpenTenBase集群
 
@@ -200,7 +154,7 @@ pgxc\_ctl.conf文件可以复制官网快速入门文档中的内容，主要修
 
 如图9所示，添加了红色框内的内容。通过对gram.y的内容进行分析，OpenTenBase之前已经有一部分关于partition的代码，所以直接添加了相关的语法，以达到目标。 
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20240829_88d6ec26-65aa-11ef-862e-fa163eb4f6be.png)
+<img src=../images/news-post-11-13.png class="img-fluid" /><br/>
 
 图9 修改gram.y
 
@@ -214,7 +168,7 @@ pgxc\_ctl.conf文件可以复制官网快速入门文档中的内容，主要修
 
 将上述代码与其理想输出写入文件中，这个文件的文件路径为：src/test/regress/expected/select\_partition.out。注意，sql文件与out文件的文件名是一样的。 
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20240829_8904e090-65aa-11ef-862e-fa163eb4f6be.png)
+<img src=../images/news-post-11-14.png class="img-fluid" /><br/>
 
 图10 out文件的内容
 
@@ -222,7 +176,7 @@ pgxc\_ctl.conf文件可以复制官网快速入门文档中的内容，主要修
 
 src/test/regress/parallel\_schedule 
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20240829_891e6678-65aa-11ef-862e-fa163eb4f6be.png)
+<img src=../images/news-post-11-15.png class="img-fluid" /><br/>
 
 图11 添加测试计划
 
