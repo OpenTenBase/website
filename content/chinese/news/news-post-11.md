@@ -186,7 +186,7 @@ src/test/regress/parallel\_schedule
 
 修改后的回归测试输出如图12，可见添加的测试内容成功运行，且没有引入其他的错误。 
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20240829_8937f2dc-65aa-11ef-862e-fa163eb4f6be.png)
+<img src=../images/news-post-11-16.jpeg class="img-fluid" /><br/>
 
 图12 回归测试输出
 
