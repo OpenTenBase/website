@@ -146,190 +146,189 @@ chown -R opentenbase:opentenbase data/opentenbase
 
 各个节点的配置方案如下
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20240920_63647f48-7712-11ef-926c-fa163eb4f6be.png)
+<img src=../images/news-post-17-1.png class="img-fluid" /><br/>
 
 \*接下来的操作在单个节点192.168.56.101上即可
 
 ● 创建pgxc\_ctl\_cluster.conf文件，保存到/home/opentenbase/pgxc\_ctl\_cluster.conf
+```
+#!/bin/bash
+# Cluster Configuration
 
-`#!/bin/bash  
-# Cluster Configuration  
-  
-IP_1=192.168.56.101  
-IP_2=192.168.56.102  
-  
-pgxcInstallDir=/opt/opentenbase  
-pgxcOwner=opentenbase  
-defaultDatabase=postgres  
-pgxcUser=$pgxcOwner  
-tmpDir=/tmp  
-localTmpDir=$tmpDir  
-configBackup=n  
-configBackupHost=pgxc-linker  
-configBackupDir=$HOME/pgxc  
-configBackupFile=pgxc_ctl.bak  
-  
-#---- GTM ----------  
-gtmName=gtm  
-gtmMasterServer=$IP_1  
-gtmMasterPort=5000  
-gtmMasterDir=/data/opentenbase/cluster/gtm  
-gtmExtraConfig=none  
-gtmMasterSpecificExtraConfig=none  
-gtmSlave=y  
-# 新增,否则slave配置中为null  
-gtmSlaveName=gtm-slave  
-gtmSlaveServer=$IP_2  
-gtmSlavePort=5000  
-gtmSlaveDir=/data/opentenbase/cluster/gtm  
-gtmSlaveSpecificExtraConfig=none  
-  
-#---- Coordinators -------  
-coordMasterDir=/data/opentenbase/cluster/cn  
-coordArchLogDir=/data/opentenbase/cluster/cn_archlog  
-  
-coordNames=(cn01 cn02)  
-coordPorts=(30000 30000)  
-poolerPorts=(31110 31110)  
-coordPgHbaEntries=(0.0.0.0/0)  
-coordMasterServers=($IP_1$IP_2)  
-coordMasterDirs=($coordMasterDir$coordMasterDir)  
-coordMaxWALsernder=2  
-coordMaxWALSenders=($coordMaxWALsernder$coordMaxWALsernder)  
-coordSlave=y  
-coordSlaveSync=y  
-coordArchLogDirs=($coordArchLogDir$coordArchLogDir)  
-  
-coordExtraConfig=coordExtraConfig  
-cat > $coordExtraConfig <<EOF  
-#================================================  
-# Added to all the coordinator postgresql.conf  
-# Original: $coordExtraConfig  
-  
-# include_if_exists = '/data/cerdb/db/cerdata/1.0/cluster/global/global_cerdb.conf'  
-  
-wal_level = replica  
-wal_keep_segments = 256   
-max_wal_senders = 4  
-archive_mode = on   
-archive_timeout = 1800   
-archive_command ='echo 0'  
-log_truncate_on_rotation = on   
-log_filename ='postgresql-%M.log'  
-log_rotation_age = 4h   
-log_rotation_size = 100MB  
-hot_standby = on   
-wal_sender_timeout = 30min   
-wal_receiver_timeout = 30min   
-shared_buffers = 1024MB   
-#max_pool_size = 2000  
-max_pool_size = 65535  
-log_statement ='ddl'  
-log_destination ='csvlog'  
-logging_collector = on  
-log_directory ='pg_log'  
-#listen_addresses = '*'  
-listen_addresses ='0.0.0.0'  
-max_connections = 2000  
-  
-EOF  
-  
-coordSpecificExtraConfig=(none none)  
-coordExtraPgHba=coordExtraPgHba  
-cat > $coordExtraPgHba <<EOF  
-  
-local   all             all                                     trust  
-host    all             all             0.0.0.0/0               trust  
-host    replication     all             0.0.0.0/0               trust  
-host    all             all::1/128                 trust  
-host    replication     all::1/128                 trust  
-  
-EOF  
-  
-coordSpecificExtraPgHba=(none none)  
-coordAdditionalSlaves=n   
-cad1_Sync=n  
-  
-#---- Datanodes ---------------------  
-dn1MstrDir=/data/opentenbase/cluster/dn01  
-dn2MstrDir=/data/opentenbase/cluster/dn02  
-  
-dn1SlvDir=/data/opentenbase/cluster/dn01-slave  
-dn2SlvDir=/data/opentenbase/cluster/dn02-slave  
-  
-dn1ALDir=/data/opentenbase/cluster/dn_archlog  
-dn2ALDir=/data/opentenbase/cluster/dn_archlog  
-  
-primaryDatanode=dn01  
-datanodeNames=(dn01 dn02 )  
-datanodePorts=(40000 40000 )  
-datanodePoolerPorts=(41110 41110 )  
-datanodePgHbaEntries=(0.0.0.0/0)  
-datanodeMasterServers=($IP_1$IP_2)  
-datanodeMasterDirs=($dn1MstrDir$dn2MstrDir)  
-dnWALSndr=4  
-datanodeMaxWALSenders=($dnWALSndr$dnWALSndr)  
-  
-datanodeSlave=y  
-datanodeSlaveServers=($IP_2$IP_1)  
-datanodeSlavePorts=(50000 50000 )  
-datanodeSlavePoolerPorts=(51110 51110 )  
-datanodeSlaveSync=y  
-datanodeSlaveDirs=($dn1SlvDir$dn2SlvDir)  
-datanodeArchLogDirs=($dn1ALDir/dn01$dn2ALDir/dn02)  
-  
-datanodeExtraConfig=datanodeExtraConfig  
-cat > $datanodeExtraConfig <<EOF  
-#================================================  
-# Added to all the coordinator postgresql.conf  
-# Original: $datanodeExtraConfig  
-  
-# include_if_exists = '/data/cerdb/db/cerdata/1.0/cluster/global/global_cerdb.conf'  
-#listen_addresses = '*'   
-listen_addresses ='0.0.0.0'  
-wal_level = replica   
-wal_keep_segments = 256   
-max_wal_senders = 4  
-archive_mode = on   
-archive_timeout = 1800   
-archive_command ='echo 0'  
-log_directory ='pg_log'  
-logging_collector = on   
-log_truncate_on_rotation = on   
-log_filename ='postgresql-%M.log'  
-log_rotation_age = 4h   
-log_rotation_size = 100MB  
-hot_standby = on   
-wal_sender_timeout = 30min   
-wal_receiver_timeout = 30min   
-shared_buffers = 1024MB   
-max_connections = 4000   
-#max_pool_size = 4000  
-max_pool_size = 65535  
-log_statement ='ddl'  
-log_destination ='csvlog'  
-wal_buffers = 1GB  
-  
-EOF  
-  
-datanodeSpecificExtraConfig=(none none )  
-datanodeExtraPgHba=datanodeExtraPgHba  
-cat > $datanodeExtraPgHba <<EOF  
-  
-local   all             all                                     trust  
-host    all             all             0.0.0.0/0               trust  
-host    replication     all             0.0.0.0/0               trust  
-host    all             all::1/128                 trust  
-host    replication     all::1/128                 trust  
-  
-EOF  
-  
-datanodeSpecificExtraPgHba=(none none )  
-  
-datanodeAdditionalSlaves=n  
-walArchive=n  
-  
-`  
+IP_1=192.168.56.101
+IP_2=192.168.56.102
+
+pgxcInstallDir=/opt/opentenbase
+pgxcOwner=opentenbase
+defaultDatabase=postgres
+pgxcUser=$pgxcOwner
+tmpDir=/tmp
+localTmpDir=$tmpDir
+configBackup=n
+configBackupHost=pgxc-linker
+configBackupDir=$HOME/pgxc
+configBackupFile=pgxc_ctl.bak
+
+#---- GTM ----------
+gtmName=gtm
+gtmMasterServer=$IP_1
+gtmMasterPort=5000
+gtmMasterDir=/data/opentenbase/cluster/gtm
+gtmExtraConfig=none
+gtmMasterSpecificExtraConfig=none
+gtmSlave=y
+# 新增,否则slave配置中为null
+gtmSlaveName=gtm-slave
+gtmSlaveServer=$IP_2
+gtmSlavePort=5000
+gtmSlaveDir=/data/opentenbase/cluster/gtm
+gtmSlaveSpecificExtraConfig=none
+
+#---- Coordinators -------
+coordMasterDir=/data/opentenbase/cluster/cn
+coordArchLogDir=/data/opentenbase/cluster/cn_archlog
+
+coordNames=(cn01 cn02)
+coordPorts=(30000 30000)
+poolerPorts=(31110 31110)
+coordPgHbaEntries=(0.0.0.0/0)
+coordMasterServers=($IP_1 $IP_2)
+coordMasterDirs=($coordMasterDir $coordMasterDir)
+coordMaxWALsernder=2
+coordMaxWALSenders=($coordMaxWALsernder $coordMaxWALsernder )
+coordSlave=y
+coordSlaveSync=y
+coordArchLogDirs=($coordArchLogDir $coordArchLogDir)
+
+coordExtraConfig=coordExtraConfig
+cat > $coordExtraConfig <<EOF
+#================================================
+# Added to all the coordinator postgresql.conf
+# Original: $coordExtraConfig
+
+# include_if_exists = '/data/cerdb/db/cerdata/1.0/cluster/global/global_cerdb.conf'
+
+wal_level = replica
+wal_keep_segments = 256 
+max_wal_senders = 4
+archive_mode = on 
+archive_timeout = 1800 
+archive_command = 'echo 0' 
+log_truncate_on_rotation = on 
+log_filename = 'postgresql-%M.log' 
+log_rotation_age = 4h 
+log_rotation_size = 100MB
+hot_standby = on 
+wal_sender_timeout = 30min 
+wal_receiver_timeout = 30min 
+shared_buffers = 1024MB 
+#max_pool_size = 2000
+max_pool_size = 65535
+log_statement = 'ddl'
+log_destination = 'csvlog'
+logging_collector = on
+log_directory = 'pg_log'
+#listen_addresses = '*'
+listen_addresses = '0.0.0.0'
+max_connections = 2000
+
+EOF
+
+coordSpecificExtraConfig=(none none)
+coordExtraPgHba=coordExtraPgHba
+cat > $coordExtraPgHba <<EOF
+
+local   all             all                                     trust
+host    all             all             0.0.0.0/0               trust
+host    replication     all             0.0.0.0/0               trust
+host    all             all             ::1/128                 trust
+host    replication     all             ::1/128                 trust
+
+EOF
+
+coordSpecificExtraPgHba=(none none)
+coordAdditionalSlaves=n 
+cad1_Sync=n
+
+#---- Datanodes ---------------------
+dn1MstrDir=/data/opentenbase/cluster/dn01
+dn2MstrDir=/data/opentenbase/cluster/dn02
+
+dn1SlvDir=/data/opentenbase/cluster/dn01-slave
+dn2SlvDir=/data/opentenbase/cluster/dn02-slave
+
+dn1ALDir=/data/opentenbase/cluster/dn_archlog
+dn2ALDir=/data/opentenbase/cluster/dn_archlog
+
+primaryDatanode=dn01
+datanodeNames=(dn01 dn02 )
+datanodePorts=(40000 40000 )
+datanodePoolerPorts=(41110 41110 )
+datanodePgHbaEntries=(0.0.0.0/0)
+datanodeMasterServers=($IP_1 $IP_2 )
+datanodeMasterDirs=($dn1MstrDir $dn2MstrDir )
+dnWALSndr=4
+datanodeMaxWALSenders=($dnWALSndr $dnWALSndr )
+
+datanodeSlave=y
+datanodeSlaveServers=($IP_2 $IP_1 )
+datanodeSlavePorts=(50000 50000 )
+datanodeSlavePoolerPorts=(51110 51110 )
+datanodeSlaveSync=y
+datanodeSlaveDirs=($dn1SlvDir $dn2SlvDir )
+datanodeArchLogDirs=($dn1ALDir/dn01 $dn2ALDir/dn02 )
+
+datanodeExtraConfig=datanodeExtraConfig
+cat > $datanodeExtraConfig <<EOF
+#================================================
+# Added to all the coordinator postgresql.conf
+# Original: $datanodeExtraConfig
+
+# include_if_exists = '/data/cerdb/db/cerdata/1.0/cluster/global/global_cerdb.conf'
+#listen_addresses = '*' 
+listen_addresses = '0.0.0.0'
+wal_level = replica 
+wal_keep_segments = 256 
+max_wal_senders = 4
+archive_mode = on 
+archive_timeout = 1800 
+archive_command = 'echo 0' 
+log_directory = 'pg_log' 
+logging_collector = on 
+log_truncate_on_rotation = on 
+log_filename = 'postgresql-%M.log' 
+log_rotation_age = 4h 
+log_rotation_size = 100MB
+hot_standby = on 
+wal_sender_timeout = 30min 
+wal_receiver_timeout = 30min 
+shared_buffers = 1024MB 
+max_connections = 4000 
+#max_pool_size = 4000
+max_pool_size = 65535
+log_statement = 'ddl'
+log_destination = 'csvlog'
+wal_buffers = 1GB
+
+EOF
+
+datanodeSpecificExtraConfig=(none none )
+datanodeExtraPgHba=datanodeExtraPgHba
+cat > $datanodeExtraPgHba <<EOF
+
+local   all             all                                     trust
+host    all             all             0.0.0.0/0               trust
+host    replication     all             0.0.0.0/0               trust
+host    all             all             ::1/128                 trust
+host    replication     all             ::1/128                 trust
+
+EOF
+
+datanodeSpecificExtraPgHba=(none none )
+
+datanodeAdditionalSlaves=n
+walArchive=n
+```
 
 在节点192.168.56.101上运行
 
