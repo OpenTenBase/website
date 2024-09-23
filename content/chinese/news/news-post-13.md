@@ -2,7 +2,7 @@
 title: "社区贡献 | OpenTenBase监控踩坑指南"
 date: 2024-09-03T09:20:00+08:00
 #image_webp: images/news/news-post-2.webp
-image: images/news/news-post-13.png
+image: images/news/news-post-14.png
 author: OpenTenBase
 description: ""
 ---
