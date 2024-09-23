@@ -275,6 +275,10 @@ src/test/regress/parallel\_schedule
 
 总的来说，本案例对OpenTenBase进行了简单的修改，如果需要适配更加复杂的内容，需要继续学习相应的数据库底层原理与知识。 
 
+<img src=../images/news-post-9-11.png class="img-fluid" /><br/>
+
+我们目前正在积极征集OpenTenBase的用户使用案例，如果您有相关使用经验，欢迎提交给我们。也期待您加入OpenTenBase社区，跟我们共同推动项目发展！
+
 <img src=../images/news-post-9-12.png class="img-fluid" /><br/>
 
 **官网：** https://www.opentenbase.org/

@@ -217,7 +217,10 @@ Pgxc_ctl 10.0 OpenTenBase V2
 
 可见，第二种方式更加简单快捷。
 
-<img src=../images/news-post-13-3.png class="img-fluid" /><br/>
+
+<img src=../images/news-post-9-11.png class="img-fluid" /><br/>
+
+我们目前正在积极征集OpenTenBase的用户使用案例，如果您有相关使用经验，欢迎提交给我们。也期待您加入OpenTenBase社区，跟我们共同推动项目发展！
 
 <img src=../images/news-post-9-12.png class="img-fluid" /><br/>
 

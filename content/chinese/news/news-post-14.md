@@ -70,7 +70,10 @@ configure: error: readline library not found
 
 建议考虑进行扩容操作。显然这里资源不足。如果你的内存已经达到了8GB，那么可以考虑进一步扩展CPU资源至2核心。本次部署的系统只有1核心的CPU，显然已经不够用了，扩容后系统性能应该会恢复正常。
 
-<img src=../images/news-post-13-3.png class="img-fluid" /><br/>
+
+<img src=../images/news-post-9-11.png class="img-fluid" /><br/>
+
+我们目前正在积极征集OpenTenBase的用户使用案例，如果您有相关使用经验，欢迎提交给我们。也期待您加入OpenTenBase社区，跟我们共同推动项目发展！
 
 <img src=../images/news-post-9-12.png class="img-fluid" /><br/>
 
