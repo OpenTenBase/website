@@ -6,8 +6,8 @@
   translation: 最新活动
 - id: readMore
   translation: 阅读更多
-- id: viewAllPost
-  translation: 查看所有
+- id: viewAllevent
+  translation: 所有活动
 - id: share
   translation: 分享
 - id: aboutAuthor
