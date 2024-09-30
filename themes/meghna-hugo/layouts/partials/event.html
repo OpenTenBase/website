@@ -5,16 +5,18 @@
     {{"<!-- section title --> " | safeHTML}}
     <div class="wow fadeIn" data-wow-duration="500ms">
       <p class="basic_title"> {{ with i18n "eventTitle" }} {{ index (split . " ") 0 | safeHTML }} {{ end }}<span>
-							{{ with i18n "eventTitle" }} {{ index (split . " ") 1 | safeHTML }} {{ end }} </span></p>
+        {{ with i18n "eventTitle" }} {{ index (split . " ") 1 | safeHTML }} {{ end }} </span></p>
     </div>
     <div class="row">
       {{"<!-- /section title --> " | safeHTML}}
       {{ range first 2 (where site.RegularPages "Section" "==" "event")}}
       {{ .Render "article"}}
       {{ end }}
-      <!--			<div class="all-post text-center col-lg-12">-->
-      <!--				<a class="btn btn-main" href="{{ `event/` | absLangURL }}">{{ i18n "viewAllPost" }}</a>-->
-      <!--			</div>-->
+
+      <!-- 添加“显示更多活动”按钮 -->
+      <div class="all-post text-center col-lg-12">
+        <a class="btn btn-main" href="{{ `event/` | absLangURL }}">{{ i18n "viewAllevent" }}</a>
+      </div>
     </div>
   </div>
 </section>

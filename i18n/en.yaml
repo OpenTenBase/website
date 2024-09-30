@@ -6,8 +6,8 @@
   translation: Latest Event
 - id: readMore
   translation: Read more
-- id: viewAllPost
-  translation: View All Post
+- id: viewAllevent
+  translation: View All Events
 - id: share
   translation: Share
 - id: aboutAuthor
