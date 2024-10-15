@@ -15,10 +15,6 @@ description: ""
 
 
 <img src=../images/news-post-20-1.jpg class="img-fluid" /><br/>
-
-
-![1728990453510](images/news-post-20/1728990453510.png)
-
 OpenTenBase社区委员会执行副主席 陈琢
 
 **OpenTenBase助力数字化升级**
