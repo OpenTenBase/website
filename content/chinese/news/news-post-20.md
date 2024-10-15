@@ -22,7 +22,7 @@ OpenTenBase社区委员会执行副主席 陈琢
 
 从OpenTenBase社区的整体开源历程、关键技术以及未来发展方向来看，OpenTenBase社区始终致力于与广大开发者携手，共同打造一个更加完善的开源数据库生态。OpenTenBase社区技术委员会副主席伍鑫表示，OpenTenBase社区已成立社区委员会，并通过顾问、技术、品牌、用户和生态等委员会，打造更完备、规范和可持续发展的社区。
 
-
+<img src=../images/news-post-20-2.jpg class="img-fluid" /><br/>
 OpenTenBase社区技术委员会副主席 伍鑫
 
 **中软国际开源数据库生态贡献实践**
