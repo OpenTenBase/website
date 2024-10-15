@@ -2,7 +2,7 @@
 title: "2024开放原子开源生态大会OpenTenBase生态分论坛圆满举行"
 date: 2024-09-30T16:31:00+08:00
 #image_webp: images/news/news-post-2.webp
-image: images/news/news-post-20.png
+image: images/news/news-post-20.jpg
 author: OpenTenBase
 description: ""
 ---
@@ -13,7 +13,6 @@ description: ""
 
 在当前数字化高速发展的时代背景下，开源不仅是一种开发模式，更是一种合作精神和共享文化的体现，开源推动着技术创新与进步，为行业发展注入了新的活力。OpenTenBase社区委员会执行副主席陈琢表示，腾讯一直致力于技术创新，并高度关注开源领域的发展，其商业化数据库TXSQL开源版本目前已捐赠给OpenTenBase项目，为项目引入兼容MySQL的内核。开放原子开源基金会在培育开源生态、推动开源项目发展以及汇聚商业智慧方面发挥着不可替代的作用，为OpenTenBase项目提供了坚实的支持和广阔的发展平台。
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241015_c8a9385c-8acd-11ef-ba9b-fa163eb4f6be.png)
 
 OpenTenBase社区委员会执行副主席 陈琢
 
