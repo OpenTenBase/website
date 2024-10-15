@@ -13,6 +13,10 @@ description: ""
 
 在当前数字化高速发展的时代背景下，开源不仅是一种开发模式，更是一种合作精神和共享文化的体现，开源推动着技术创新与进步，为行业发展注入了新的活力。OpenTenBase社区委员会执行副主席陈琢表示，腾讯一直致力于技术创新，并高度关注开源领域的发展，其商业化数据库TXSQL开源版本目前已捐赠给OpenTenBase项目，为项目引入兼容MySQL的内核。开放原子开源基金会在培育开源生态、推动开源项目发展以及汇聚商业智慧方面发挥着不可替代的作用，为OpenTenBase项目提供了坚实的支持和广阔的发展平台。
 
+
+<img src=../images/news-post-20-1.jpg class="img-fluid" /><br/>
+
+
 ![1728990453510](images/news-post-20/1728990453510.png)
 
 OpenTenBase社区委员会执行副主席 陈琢
@@ -71,7 +75,6 @@ OpenTenBase社区技术委员会副主席 邵兆旭
 ![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241015_c9622380-8acd-11ef-ba9b-fa163eb4f6be.png)
 
 随着OpenTenBase生态分论坛的圆满结束，我们对未来的开源数据库生态和社区建设充满了期待。此次大会不仅展示了OpenTenBase社区在技术创新、生态建设以及人才培养方面的丰硕成果，也彰显了开源精神在推动数字化转型中的重要作用。展望未来，OpenTenBase社区将继续秉承开放、协作、共享的理念，与全球开发者携手共进，不断推动开源数据库技术的创新和发展。随着更多企业和开发者的加入，OpenTenBase的生态将更加完善，应用场景将更加广泛，为各行各业的数字化升级提供强有力的支撑。
-
 
 <img src=../images/news-post-9-11.png class="img-fluid" /><br/>
 
