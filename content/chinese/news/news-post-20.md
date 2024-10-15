@@ -22,7 +22,7 @@ OpenTenBase社区委员会执行副主席 陈琢
 
 从OpenTenBase社区的整体开源历程、关键技术以及未来发展方向来看，OpenTenBase社区始终致力于与广大开发者携手，共同打造一个更加完善的开源数据库生态。OpenTenBase社区技术委员会副主席伍鑫表示，OpenTenBase社区已成立社区委员会，并通过顾问、技术、品牌、用户和生态等委员会，打造更完备、规范和可持续发展的社区。
 
-<img src=../images/news-post-20-2.jpg class="img-fluid" /><br/>
+
 OpenTenBase社区技术委员会副主席 伍鑫
 
 **中软国际开源数据库生态贡献实践**
@@ -30,8 +30,7 @@ OpenTenBase社区技术委员会副主席 伍鑫
 
 OpenTenBase作为一个典型的开源数据库，其生态全景涵盖了软件层面的四个层次，包括数据库管理系统、驱动层面、数据库生态工具以及面向服务的应用，不同的层次共同构建起一个完整的开源数据库生态系统。OpenTenBase社区技术委员会副主席、中软国际数据库服务总监邵兆旭表示，基于PostgreSQL体系下成熟的工具，对OpenTenBase进行适配或全新开发，将极大提升用户的使用体验、完善OpenTenBase的生态体系。此外，中软国际还参与了2023开放原子开源大赛-OpenTenBase开源核心贡献挑战赛，主要选取了核心贡献挑战中的Oracle兼容视图进行适配，以提升兼容性、数据库易用性和降低学习成本，并获得了二等奖的优秀成绩。
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241015_c8cea948-8acd-11ef-ba9b-fa163eb4f6be.png)
-
+<img src=../images/news-post-20-3.jpg class="img-fluid" /><br/>
 OpenTenBase社区技术委员会副主席 邵兆旭
 
 **RDA和DDS——天翼云对OpenTenBase的社区贡献实践**
