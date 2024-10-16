@@ -1,58 +1,73 @@
 ---
-title: "Special Review of Cloud Native Open Source Project Application Practice"
-date: 2023-07-20T08:00:36+08:00
+title: "OpenTenBase user case call"
+date: 2024-07-23T08:00:36+08:00
 #image_webp: images/blog/blog-post-3.webp
 image: images/event/event-post-1-image.png
 author: OpenTenBase
-description: "Cloud Native Open Source Project Application Practice"
+description: "Supporting the European Space Agency in exploring the universe, OpenTenBase user case collection invites you to share stories of technological innovation"
 ---
+OpenTenBase is an open-source project incubated and operated by the OpenAtom Open Source Foundation. It is an enterprise-level distributed HTAP database that features high scalability, compatibility with commercial database syntax, a distributed HTAP engine, multi-level disaster recovery, and multi-dimensional resource isolation. It has been successfully applied in the core business systems of various industries, including finance, healthcare, and aerospace.
 
-**On July 15**, the third stop of the cloud native open source project application practice session came to Shenzhen, which is famous for **"innovation" and "openness"**. Technical experts from **"DaoCloud Daoke", Tencent Cloud ｜ Tengyuan Club, Microsoft, OpenCloudOS community, WasmEdge community, DCE community** gathered together to share the most cutting-edge cloud native open source project information and discuss the latest cloud native technology trends.
+Since its release, OpenTenBase has been favored by numerous high-quality users worldwide, with the European Space Agency being one of its important "fans." In its significant planetary exploration projects, the European Space Agency uses OpenTenBase as the core database for the "Gaia Mission," storing over 300TB of data. The Gaia Mission project team at the European Space Agency has maintained close attention and active interaction with the open-source community, becoming an important contributor to the community.
 
-**Peter Pan, Vice President of Research and Development of "DaoCloud", said in his opening speech that technology is never a single and independent existence. **Exchange and sharing can make technologies collide with each other and burst out with energy\*\*. A series of offline Meetup events like Lundao Native aims to give the audience a deeper understanding of all aspects of cloud native open source projects through the collision of ideas between cloud native and open source. This is a good way and a trend.
+OpenTenBase has been refined for over 10 years in Tencent's internal businesses and external commercial scenarios such as social networking, gaming, advertising, and finance. It is perfectly suited for applications with massive data, high concurrency, high HTAP, and distributed transaction capabilities. The OpenTenBase database technically fills the gap in the industry for open-source distributed OLTP systems based on PostgreSQL, and integrates HTAP dual engines, distributed transaction consistency, high SQL compatibility, and complex query capabilities, providing strong support for enterprise digital transformation:
 
-<img src=../images/event-post-1-01.png class="img-fluid" />
+🚀 In terms of the engine, OpenTenBase supports both OLTP (Online Transaction Processing) and OLAP (Online Analytical Processing) capabilities, effectively reducing the complexity and cost of business architecture;
 
-Now, let us review the highlights of this event.
+🔒 In terms of transaction consistency, a global transaction management node is introduced to manage distributed transactions, ensuring transaction consistency in a fully distributed environment through distributed transaction consistency technology;
 
-## **DaoCloud’s technical practice in the field of multi-cloud and multi-cluster**
+🐘 Highly compatible with PostgreSQL, MySQL, and Oracle in terms of compatibility;
 
-<img src=../images/event-post-1-02.png class="img-fluid" />
+🔎 In terms of querying, a newly developed distributed query optimizer can enhance the performance of complex queries by more than ten times.
 
-Zhang Xiao "DaoCloud's technical practice in the field of multi-cloud and multi-cluster"
+**OpenTenBase User Cases Call for Prizes**
 
-Facing the deployment trend of multi-cloud and hybrid cloud, the open source community is blooming, and the emergence of many open source projects has brought diverse choices to users. During the event, **Zhang Xiao**, the leader of the large container team of "DaoCloud Daoke", shared the application scenarios, core capabilities and customer best practices of "DaoCloud Daoke" in multi-cloud and multi-cloud environments. Technical practical experience in the cluster field. Among them, CloudTTY, a project independently open sourced by "DaoCloud Daoke" and newly entered into the CNCF panorama, has received widespread attention. Zhang Xiao said that DaoCloud Enterprise is a product that brings together many excellent open source projects. "DaoCloud Daoke" opens some excellent open source projects to the open source community, allowing many enterprises and open source enthusiasts to enjoy the benefits of technology accumulation. dividends.
+In order to allow more developers to engage with and experience open-source database technology, and to help users solve problems encountered in the business production process, the OpenTenBase open-source community, in collaboration with the OpenAtom Open Source Foundation, has launched a user case collection activity to co-build the domestic open-source database ecosystem. Outstanding cases are expected to be selected as "OpenTenBase User Cases by the OpenAtom Open Source Foundation," and will have the opportunity to participate in subsequent OpenTenBase open-source technology salons for in-depth exchanges with community technical experts.
 
-## **Upgrade and evolution of TDSQL-PG open source features**
+**Case Requirements**
 
-<img src=../images/event-post-1-03.png class="img-fluid" />
+The content focuses on application cases developed by developers based on OpenTenBase. Submitted materials include, but are not limited to, the background, processes, and experiences of the application. It is recommended to share detailed steps for deploying applications using OpenTenBase in a combination of text and images, or to share experiences and tips for using OpenTenBase. The project solicitation is ongoing, and you can submit project content at any time through the channels below.
 
-Chen Zaini "Upgrade and Evolution of TDSQL-PG Open Source Features"
+**Project Requirements**
 
-With the increase in application scenarios and data volume, distributed databases have become popular, and their advantages such as high availability, high scalability, and high cost performance are gradually emerging in business scenarios. **Tencent Cloud Database Senior Engineer Chen Zaini** introduced **TDSQL PG, an open source distributed database** with HTAP capabilities. It is **fully compatible with PostgreSQL and highly supports Oracle syntax**. At the event, Chen Zaini mentioned features that users are relatively concerned about, such as remote multi-activity, query optimization, partition tables, and distributed execution visualization, and explained the working principles in detail. She also analyzed application cases from WeChat Pay, the Public Security Department, and the European Space Agency. It shows how TDSQL PG helps users quickly build core business.
+Target Audience: Enterprise users, researchers, individual developers, student groups, etc. are all eligible. The project is required to use OpenTenBase open-source technology as the underlying support, and the project can be in the research phase, trial phase, or online phase
 
-## **Dapr helps modernize applications**
+**Case Content Structure**
 
-<img src=../images/event-post-1-04.png class="img-fluid" />
+Following the principles of professionalism and practical case implementation, cases need to be structurally refined from multiple dimensions, including case background, objectives, solutions, problems solved, comparative analysis before and after, insights from the case, and the value significance of the case to the organization, in order to benefit the reader. The specific structural requirements are as follows.
 
-Zhang Shanyou "Dapr helps application modernization"
+📚 1. Case Name
 
-Nowadays, Kubernetes has become the de facto standard for running distributed applications. So on top of that, how to improve developer productivity and make business development easier? **Microsoft Most Valuable Expert MVP,** **Zhang Shanyou, Chief Technology Officer and Chief Architect of Shenzhen Youhaoda Technology** mentioned Dapr, an open source project created specifically for distributed application runtimes. **Dapr is a portable, event-driven runtime** that exposes encapsulated distributed capabilities for application calls through HTTP API, gRPC API and other language-independent ways, thus supporting the use of any language or framework for development and integration. Achieve the ultimate goal of democratizing cloud native development. Finally, Zhang Shanyou took China Merchants International CTOS as an example to demonstrate the key role of Dapr in the transformation of enterprises from traditional SOA architecture to cloud native.
+🏢 2. Introducer Company/Individual Profile
 
-## **Technical practice of cloud native storage——HwameiStor**
+Brief description of company information/personal resume and cases (or projects) participated in
 
-<img src=../images/event-post-1-05.png class="img-fluid" />
+🔍 3. Case Background
 
-Dai Qiuping "Technical Practice of Cloud Native Storage - Hwameistor"
+What problem does this case aim to solve? What is the solution? What are the expected goals?
 
-As we all know, storage is the cornerstone of application operation. As cloud native enters all walks of life and stateful applications gradually become mainstream, cloud native storage also faces challenges. Based on years of practical experience in production, "DaoCloud" has independently open-sourced the **cloud-native local storage project--Hwameistor**. At the event, Dai Qiuping, senior product manager of "DaoCloud Taoke", introduced Hwameistor's rich data volume types, local storage high availability, local volume expansion, storage QoS restrictions, multi-dimensional migration of local volumes, and disk replacement And storage monitoring and other functional features, and also explained in detail the process of **one-click installation of Hwameistor** through the Operator. Interested friends can also try it by themselves! Currently, **Hwameistor has entered the CNCF sandbox** and is heading towards a new journey of cloud-native development.
+📈 4. Key Points of Success (or Lessons Learned)
 
-## **Create cloud native agents and extensions for LLM**
+Summary of experiences in the technical or practical processes of cases (or projects)
 
-<img src=../images/event-post-1-06.png class="img-fluid" />
+💡 5. Case Insights
 
-Creating Cloud-Native Agents and Extensions for LLM by Michael Yuan
+Extract the value significance and methodology of this case (or project)
 
-The birth of ChatGPT has set off an industrial upsurge of large language models, and various technical fields are facing new opportunities. Wasm, a new Internet celebrity in the cloud native community, is no exception. As a lightweight, portable and secure runtime, Wasm can further optimize the infrastructure under large model applications. **Michael Yuan (WasmEdge Maintainer) from the WasmEdge community** brought to the audience at the event site two demonstrations of **complete AI reasoning via Wasm instead of Python** and **completion of LLM agents creation via Wasm**. Wasm, a powerful tool for scalability, has moved from cloud-native scenarios to AI scenarios. As the tool chain continues to mature, there will be more technical opportunities waiting to be discovered in the future.
+Precautions: Please ensure that the content you submit does not involve any leaks or infringement. Any parts involving confidential content must be handled by the author themselves.
 
-The essence of open source is to promote technological innovation through technological openness. The open collaboration of online developers is the foundation, and the open communication offline is also not to be missed. In the future, Lun Dao's original series of activities will also go to more places. Developers from all over the world are welcome to actively participate, and there are more exciting contents waiting to be explored.
+**Submission**
+
+Add the assistant Beibei (WeChat ID: OpenTenBase), or submit case documents by sending an email (email: opentenbase@openatom.org).
+
+<img src=../images/event-post-3-01.png class="img-fluid"  />
+
+Join the OpenTenBase group chat: Add the assistant Beibei (WeChat ID: OpenTenBase)
+
+OpenTenBase Repository：
+
+● https://atomgit.com/opentenbase/OpenTenBase
+
+● https://github.com/OpenTenBase
+
+OpenTenBase official website：https://www.opentenbase.org/
