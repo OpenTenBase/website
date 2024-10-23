@@ -14,8 +14,11 @@
       {{ range first 3 (where site.RegularPages "Section" "==" "news")}}
       {{ .Render "article2"}}
       {{ end }}
+      <!-- 添加“显示更多新闻”按钮 -->
+      <div class="all-post text-center col-lg-12">
+        <a class="btn btn-main" href="{{ `news/` | absLangURL }}">{{ i18n "viewAllnews" }}</a>
+      </div>
     </div>
-  </div>
 </section>
 {{"<!-- /news -->" | safeHTML}}
 {{ end }}
