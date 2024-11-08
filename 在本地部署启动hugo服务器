@@ -3,7 +3,7 @@
 docker run -p 1313:1313 ...
 Fedora
 Linux 的 Fedora 发行版的衍生产品包括 CentOS、Red Hat Enterprise Linux 等
-一、 克隆项目到本地
+## 一、 克隆项目到本地
 git clone https://github.com/OpenTenBase/website.git
 二、 安装hugo
 sudo dnf install hugo -y
