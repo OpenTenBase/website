@@ -1,42 +1,66 @@
 在linux上部署
+
 *如果使用的是容器，最好进行端口映射
+```bash
 docker run -p 1313:1313 ...
+```
 ## Fedora
 Linux 的 Fedora 发行版的衍生产品包括 CentOS、Red Hat Enterprise Linux 等
+
 ### 一、 克隆项目到本地
+```bash
 git clone https://github.com/OpenTenBase/website.git
+```
+
 ### 二、 安装hugo
+```bash
 sudo dnf install hugo -y
 或
 wget https://github.com/gohugoio/hugo/releases/download/v0.111.3/hugo_extended_0.111.3_Linux-64bit.tar.gz
 tar -xzvf hugo_extended_0.111.3_Linux-64bit.tar.gz
 sudo mv hugo /usr/bin/
+```
 也可以前往hugo官网下载相应系统的hugo版本：https://gohugo.io/installation/
+
 ### 三、 启动本地服务器
 进入克隆到本地的目录内
+```bash
 cd website
 hugo server
 //如果使用的是容器:
 hugo server --bind 0.0.0.0
+```
 当终端上出现本地网址http://localhost:1313/等内容时，代表我们服务器启动成功，只需要右键点击网址打开上述网站即可
 或者按如下流程：
 • 打开浏览器
 • 输入http://localhost:1313/
+
 ## ubuntu
+
 ### 一、 克隆项目到本地
+```bash
 git clone https://github.com/OpenTenBase/website.git
+```
+
 ### 二、 安装hugo
 由于hugo更新迭代很快，其新旧版本存在一些文件名等不兼容问题，如果使用包管理命令下载导致hugo的版本难以控制，所以我们使用对应版本的安装包下载
+```bash
 wget https://github.com/gohugoio/hugo/releases/download/v0.111.3/hugo_extended_0.111.3_Linux-64bit.tar.gz
 tar -xzvf hugo_extended_0.111.3_Linux-64bit.tar.gz
 sudo mv hugo /usr/bin/
+```
 查看是否安装成功
+```bash
 hugo version
+```
 如果出现如版本号等类似提示，则安装成功
+
 ### 三、 启动本地服务器
 进入克隆到本地的目录内
+```bash
 cd website
 hugo server
 //如果使用的是容器：
 hugo server --bind 0.0.0.0
+```
 当终端上出现本地网址http://localhost:1313/内容时，代表我们服务器启动成功，只需要在本地浏览器打开上述网站即可（右键http://localhost:1313/ ,选择打开链接即可）
