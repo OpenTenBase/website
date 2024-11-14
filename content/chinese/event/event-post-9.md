@@ -11,12 +11,6 @@ description: "企业用户、科研人员、个人开发者、学生群体均可
 <img src=../images/event-post-9-01.png class="img-fluid"  />
 
 
-
-<img src=../images/news-post-9-12.png class="img-fluid" /><br/>
-
-
-加入OpenTenBase交流群：添加小助手蓓蓓（微信号：OpenTenBase）
-
 OpenTenBase开源地址：
 
 ● https://atomgit.com/opentenbase/OpenTenBase
