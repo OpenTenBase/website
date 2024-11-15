@@ -2,14 +2,14 @@
 title: "Workshop投稿：OpenTenBase开源分布式数据库初探与实践"
 date: 2024-10-23T16:31:00+08:00
 #image_webp: images/news/news-post-2.webp
-image: images/news/news-post-20.jpg
+image: images/news/news-post-21.jpg
 author: OpenTenBase
 description: ""
 ---
 🛠️ Workshop：10月21日OpenTenBase济南场
 📝 作者：zhaoyiheng
 
-![微信图片_20241022131429.jpg](https://oss-emcsprod-public.modb.pro/image/editor/20241023-1849047697845739520_627144.jpg)
+<img src=../images/news-post-21-1.jpg class="img-fluid" /><br/>
 ======🐙🐚======
 
 1️⃣ 在本次课程当中，对于开源OpenTenBase的部署过程、运作过程、基本逻辑和算法优化有了基础的了解和认识；对一些原本陌生的概念，例如分布式数据库、分片、分片键、分区、冷热分区等术语，有了一定的了解；对于“冷热数据搬迁”课题进行了一些思考。
