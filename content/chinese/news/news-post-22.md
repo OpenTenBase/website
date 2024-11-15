@@ -46,7 +46,11 @@ OpenTenBase 采用分布式集群架构（如下图）， 该架构分布式为�
 
 **1.2 软件环境**
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c1383c1c-9694-11ef-a88b-fa163eb4f6be.png)
+
+| 软件名称           | 软件版本   |
+| ------------------ | ---------- |
+| 麒麟服务端操作系统 | kylin\_v10 |
+| OpenTenBase        | V2.6       |
 
 **1.3 集群规划**
 
@@ -54,11 +58,22 @@ OpenTenBase 采用分布式集群架构（如下图）， 该架构分布式为�
 
 下面以两台服务器上搭建1GTM主，1GTM备，2CN主（CN主之间对等，因此无需备CN），2DN主，2DN备的集群，该集群为具备容灾能力的最小配置
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c149e106-9694-11ef-a88b-fa163eb4f6be.png)
+机器1：192.168.2.136
+机器2：192.168.2.137
 
 集群规划如下：
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c15875fe-9694-11ef-a88b-fa163eb4f6be.png)
+
+| 节点名称   | IP            | 数据目录                     |
+| ---------- | ------------- | ---------------------------- |
+| GTM master | 192.168.2.136 | /data/opentenbase/data/gtm   |
+| GTM slave  | 192.168.2.137 | /data/opentenbase/data/gtm   |
+| CN1        | 192.168.2.136 | /data/opentenbase/data/coord |
+| CN2        | 192.168.2.137 | /data/opentenbase/data/coord |
+| DN1 master | 192.168.2.136 | /data/opentenbase/data/dn001 |
+| DN1 slave  | 192.168.2.137 | /data/opentenbase/data/dn001 |
+| DN2 master | 192.168.2.137 | /data/opentenbase/data/dn002 |
+| DN2 slave  | 192.168.2.136 | /data/opentenbase/data/dn002 |
 
 **二、安装依赖**
 
@@ -66,11 +81,16 @@ OpenTenBase 采用分布式集群架构（如下图）， 该架构分布式为�
 
 对于基于 Red Hat 的系统（如 CentOS）：
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c160cb82-9694-11ef-a88b-fa163eb4f6be.png)
+```
+dnf -y install gcc make readline-devel zlib-devel openssl-devel uuid-devel bison flex git
+```
 
 对于基于 Debian 的系统（如 Ubuntu）：
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c16e8434-9694-11ef-a88b-fa163eb4f6be.png)
+```
+sudo apt-get update
+sudo apt-get -y install gcc make libreadline-dev zlib1g-dev libssl-dev libossp-uuid-dev bison flex git
+```
 
 **三、创建 OpenTenBase 用户**
 
