@@ -7,6 +7,7 @@ author: OpenTenBase
 description: ""
 ---
 🛠️ Workshop：10月21日OpenTenBase济南场
+
 📝 作者：zhaoyiheng
 
 <img src=../images/news-post-21-1.jpg class="img-fluid" /><br/>
@@ -14,19 +15,19 @@ description: ""
 
 1️⃣ 在本次课程当中，对于开源OpenTenBase的部署过程、运作过程、基本逻辑和算法优化有了基础的了解和认识；对一些原本陌生的概念，例如分布式数据库、分片、分片键、分区、冷热分区等术语，有了一定的了解；对于“冷热数据搬迁”课题进行了一些思考。
 
-![架构图](https://i0.hdslb.com/bfs/new_dyn/a53d9c96c90d81205771cd219ea26d841543475738.jpg@1192w_596h.avif)
+<img src=../images/news-post-21-2.jpg class="img-fluid" /><br/>
 
 2️⃣ 在实践环节，了解了使用pgAdmin软件访问数据库的基本方法，进行用户的注册、模式（Schema）与表（Table）的创建。
 
-![使用pgAdmin软件访问数据库](https://i0.hdslb.com/bfs/new_dyn/ab4bb3fdf92c4fa718613010703cf29d1543475738.png@1144w.avif)
+<img src=../images/news-post-21-3.png class="img-fluid" /><br/>
 
 3️⃣ 应用课程中学到的知识完成分布式表创建、复制表创建、分区表创建、冷热表创建，插入、查询数据等一系列基于OpenTenBase数据库语法的基本操作。
 
-![表创建](https://i0.hdslb.com/bfs/new_dyn/bc93dfabd353dd3be66a177c11495dcd1543475738.png@1192w.avif)
+<img src=../images/news-post-21-4.png class="img-fluid" /><br/>
 
 4️⃣ 通过查询查询计划，可以更加深入地了解到冷热分区的工作过程，验证冷热分区的正确性和有效性。
 
-![](https://i0.hdslb.com/bfs/new_dyn/bc93dfabd353dd3be66a177c11495dcd1543475738.png@1192w.avif)
+<img src=../images/news-post-21-5.png class="img-fluid" /><br/>
 
 总体而言，本次课程收获颇丰，希望以后能够深入接触更多有关开源数据库的知识和技能。
 
