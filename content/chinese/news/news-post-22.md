@@ -1,12 +1,11 @@
 ---
 title: "社区贡献 | OpenTenBase_V2.6基于麒麟源码编译安装"
-date: 2024-10-23T16:31:00+08:00
+date: 2024-10-29T16:31:00+08:00
 #image_webp: images/news/news-post-2.webp
 image: images/news/news-post-20.jpg
 author: OpenTenBase
 description: ""
 ---
-
 ![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c113a67c-9694-11ef-a88b-fa163eb4f6be.png)
 
 **前言：什么是OpenTenBase**
@@ -263,7 +262,6 @@ OpenTenBase使用datanode group来增加节点的管理灵活度，要求有一�
 **九、结语**
 
 通过以上步骤，你已经成功地从源码编译并安装了 OpenTenBase V2.6。现在你可以开始使用 OpenTenBase 来管理你的分布式数据库集群。
-
 
 <img src=../images/news-post-9-11.png class="img-fluid" /><br/>
 
