@@ -2,11 +2,11 @@
 title: "社区贡献 | OpenTenBase_V2.6基于麒麟源码编译安装"
 date: 2024-10-29T16:31:00+08:00
 #image_webp: images/news/news-post-2.webp
-image: images/news/news-post-20.jpg
+image: images/news/news-post-22.png
 author: OpenTenBase
 description: ""
 ---
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c113a67c-9694-11ef-a88b-fa163eb4f6be.png)
+<img src=../images/news-post-22-1.png class="img-fluid" /><br/>
 
 **前言：什么是OpenTenBase**
 
@@ -14,7 +14,7 @@ OpenTenBase 是一个提供写可靠性，多主节点数据同步的关系数�
 
 OpenTenBase 采用分布式集群架构（如下图）， 该架构分布式为无共享(share nothing)模式，节点之间相应独立，各自处理自己的数据，处理后的结果可能向上层汇总或在节点间流转，各处理单元之间通过网络协议进行通信，并行处理和扩展能力更好，这也意味着只需要简单的x86服务器就可以部署 OpenTenBase 数据库集群。
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c1268ce2-9694-11ef-a88b-fa163eb4f6be.png)
+<img src=../images/news-post-21-2.jpg class="img-fluid" /><br/>
 
 下面简单解读一下OpenTenBase的三大模块
 
@@ -96,7 +96,12 @@ sudo apt-get -y install gcc make libreadline-dev zlib1g-dev libssl-dev libossp-u
 
 所有需要安装 OpenTenBase 集群的机器上都需要创建 opentenbase 用户，并设置相应的目录权限。
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c1785086-9694-11ef-a88b-fa163eb4f6be.png)
+```
+#创建 opentenbase 用户
+useradd -d /data/opentenbase -s /bin/bash -m opentenbase#设置密码
+passwd opentenbase
+--mko0-pl,
+```
 
 **四、获取安装包**
 
@@ -104,19 +109,24 @@ sudo apt-get -y install gcc make libreadline-dev zlib1g-dev libssl-dev libossp-u
 
 • 创建软件目录
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c18be9c0-9694-11ef-a88b-fa163eb4f6be.png)
+```
+[root]
+mkdir /dbsoft
+```
 
 • 使用 git 克隆 OpenTenBase 的源码仓库：
 
 克隆源码(root用户)
 
+```
 git clone https://github.com/OpenTenBase/OpenTenBase
+```
 
 **4.2 下载源码包**
 
 登录git，下载最新的v2.6.0版本
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c1982456-9694-11ef-a88b-fa163eb4f6be.png)
+https://github.com/OpenTenBase/OpenTenBase/tags
 
 **五、编译源码**
 
@@ -124,23 +134,59 @@ git clone https://github.com/OpenTenBase/OpenTenBase
 
 所有节点都要操作
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c1a32a40-9694-11ef-a88b-fa163eb4f6be.png)
+```
+mkdir -p /data/opentenbase/{install,dbsoft}
+chown -R opentenbase:opentenbase /data/opentenbase
+```
 
 **5.2 编译安装**
 
 • 将源码包移动到源码目录
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c1b13360-9694-11ef-a88b-fa163eb4f6be.png)
+```
+#复制安装包
+cp /dbsoft/OpenTenBase-2.6.0.tar.gz /data/opentenbase/dbsoft
+
+#解压
+tar -zxvf OpenTenBase-2.6.0.tar.gz
+```
 
 • 进入源码目录并进行编译：
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c1bb6524-9694-11ef-a88b-fa163eb4f6be.png)
+```
+#进入源码目录
+/data/opentenbase/dbsoft/OpenTenBase-2.6.0
+
+#赋予配置脚本执行权限
+chmod +x configure*
+
+#配置编译选项
+./configure --prefix=/data/opentenbase/install/opentenbase_bin_v2.6 --enable-user-switch --with-openssl --with-ossp-uuid CFLAGS=-g
+
+#编译安装软件
+make clean
+make -sj  4
+make install
+
+#编译 contrib 目录下的工具
+cd contrib
+make -sj 4
+make install
+```
 
 **六、集群初始化**
 
 **6.1 禁用 SELinux 和 防火墙 (可选)**
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c1d56762-9694-11ef-a88b-fa163eb4f6be.png)
+```
+--关闭selinux
+vi /etc/selinux/config
+# disable SELinux, change SELINUX=enforcing to SELINUX=disabled--
+
+关闭防火墙
+systemctl disable firewalld
+systemctl stop firewalld
+```
 
 **6.2 配置 SSH**
 
