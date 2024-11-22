@@ -477,7 +477,6 @@ PGXC 【这里输入指令】 deploy all
 
 通过运行 pgxc\_ctl 工具，执行clean all命令删除已经初始化的文件，修改pgxc\_ctl.conf文件，重新执行init all命令重新发起初始化。
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c34ff15c-9694-11ef-a88b-fa163eb4f6be.png)
 
 3) 常见问题
 
@@ -485,17 +484,14 @@ PGXC 【这里输入指令】 deploy all
 
 这样的问题，通常是环境变量的问题，通过root用户配置/etc/environment 解决
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c35d8c72-9694-11ef-a88b-fa163eb4f6be.png)
 
 • 执行inti all时，提示无法创建目录
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c36865b6-9694-11ef-a88b-fa163eb4f6be.png)
 
 这样的问题，通常是分发节点上，没有创建对应的目录
 
 解决方案：检查所有节点的目录配置，如果没有创建，创建即可。
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c3771a70-9694-11ef-a88b-fa163eb4f6be.png)
 
 **七、集群访问**
 
@@ -503,23 +499,19 @@ PGXC 【这里输入指令】 deploy all
 
 **7.1 登录cn主节点**
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c381e694-9694-11ef-a88b-fa163eb4f6be.png)
 
 **7.2 使用数据库前需要创建default group以及sharding表**
 
 OpenTenBase使用datanode group来增加节点的管理灵活度，要求有一个default group才能使用，因此需要预先创建；一般情况下，会将节点的所有datanode节点加入到default group里 另外一方面，OpenTenBase的数据分布为了增加灵活度，加了中间逻辑层来维护数据记录到物理节点的映射，我们叫sharding，所以需要预先创建sharding，命令如下：
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c390cfd8-9694-11ef-a88b-fa163eb4f6be.png)
 
 **7.3 创建数据库，用户，创建表，增删查改等操作**
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c3a8126a-9694-11ef-a88b-fa163eb4f6be.png)
 
 **八、集群启停**
 
 **8.1 停止集群**
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c3b4d9d2-9694-11ef-a88b-fa163eb4f6be.png)
 
 停止日志
 
