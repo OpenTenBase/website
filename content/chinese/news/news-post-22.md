@@ -438,7 +438,13 @@ PGXC 【这里输入指令】 deploy all
 
 分发日志
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c2a16308-9694-11ef-a88b-fa163eb4f6be.png)
+```
+Deploying Postgres-XL components to all the target servers.
+Prepare tarball to deploy ...
+Deploying to the server 192.168.2.136.
+Deploying to the server 192.168.2.137.
+Deployment done.
+```
 
 注：以下指令均在pgxc\_ctl终端命令行中
 
@@ -446,37 +452,149 @@ PGXC 【这里输入指令】 deploy all
 
 使用 pgxc\_ctl 工具初始化集群：
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c2b33196-9694-11ef-a88b-fa163eb4f6be.png)
+```
+pgxc_ctl -c /data/opentenbase/pgxc_ctl/pgxc_ctl.conf
+# 初始化集群
+pgxc_ctl init all
+```
 
 初始化日志
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c2cae0a2-9694-11ef-a88b-fa163eb4f6be.png)
+```
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c2eb1bb0-9694-11ef-a88b-fa163eb4f6be.png)
+。。。省略
+2024-10-10 03:53:35.680 GMT [64489,coord(0.0)] LOG:  skipping missing configuration file "/data/opentenbase/global/global_opentenbase.conf"
+2024-10-10 03:53:35.680 GMT [64489,coord(0.0)] LOG:  skipping missing configuration file "/data/opentenbase/global/global_opentenbase.conf"
+2024-10-10 11:53:35.682 CST [64489,coord(0.0)] LOG:  listening on IPv4 address "0.0.0.0", port 50004
+2024-10-10 11:53:35.682 CST [64489,coord(0.0)] LOG:  listening on IPv6 address "::", port 50004
+2024-10-10 11:53:35.683 CST [64489,coord(0.0)] LOG:  listening on Unix socket "/tmp/.s.PGSQL.50004"
+2024-10-10 11:53:44.803 CST [64489,coord(0.0)] LOG:  init committs shmem.
+2024-10-10 11:53:50.550 CST [64489,coord(0.0)] LOG:  could not open file "global/pg_crypt_key.map":No such file or directory for bufFile merging.
+2024-10-10 11:53:50.550 CST [64489,coord(0.0)] LOG:  start rel crypt load mapfile
+2024-10-10 11:53:50.550 CST [64489,coord(0.0)] LOG:  could not open file "global/pg_rel_crypt.map":No such file or directory for bufFile merging.
+2024-10-10 11:53:50.550 CST [64489,coord(0.0)] LOG:  end rel crypt load mapfile
+2024-10-10 11:53:58.003 CST [64489,coord(0.0)] LOG:  redirecting log output to logging collector process
+2024-10-10 11:53:58.003 CST [64489,coord(0.0)] HINT:  Future log output will appear in directory "pg_log".
+2024-09-06 19:34:20.971 GMT [220835,coord(0.0)] LOG:  skipping missing configuration file "/data/opentenbase/global/global_opentenbase.conf"
+2024-09-06 19:34:20.971 GMT [220835,coord(0.0)] LOG:  skipping missing configuration file "/data/opentenbase/global/global_opentenbase.conf"
+2024-09-07 03:34:20.972 CST [220835,coord(0.0)] LOG:  listening on IPv4 address "0.0.0.0", port 54004
+2024-09-07 03:34:20.973 CST [220835,coord(0.0)] LOG:  listening on IPv6 address "::", port 54004
+2024-09-07 03:34:20.973 CST [220835,coord(0.0)] LOG:  listening on Unix socket "/tmp/.s.PGSQL.54004"
+2024-09-07 03:34:20.974 CST [220835,coord(0.0)] FATAL:  could not map anonymous shared memory: Cannot allocate memory
+2024-09-07 03:34:20.974 CST [220835,coord(0.0)] HINT:  This error usually means that PostgreSQL's request for a shared memory segment exceeded available memory, swap space, or huge pages. To reduce the request size (currently 5500862692 bytes), reduce PostgreSQL's shared memory usage, perhaps by reducing shared_buffers or max_connections.
+2024-09-07 03:34:20.974 CST [220835,coord(0.0)] LOG:  database system is shut down
+pg_ctl: could not start server
+Examine the log output.
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c30c2328-9694-11ef-a88b-fa163eb4f6be.png)
+Done.
+ALTER NODE cn001 WITH (HOST='192.168.2.136', PORT=30004);
+ALTER NODE
+CREATE NODE cn002 WITH (TYPE='coordinator', HOST='192.168.2.137', PORT=30004);
+CREATE NODE
+CREATE NODE dn001 WITH (TYPE='datanode', HOST='192.168.2.136', PORT=40004, PRIMARY, PREFERRED);
+CREATE NODE
+CREATE NODE dn002 WITH (TYPE='datanode', HOST='192.168.2.137', PORT=40004);
+CREATE NODE
+SELECT pgxc_pool_reload();
+pgxc_pool_reload
+----------------
+t
+(1 row)
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c317e6ea-9694-11ef-a88b-fa163eb4f6be.png)
+CREATE NODE cn001 WITH (TYPE='coordinator', HOST='192.168.2.136', PORT=30004);
+CREATE NODE
+ALTER NODE cn002 WITH (HOST='192.168.2.137', PORT=30004);
+ALTER NODE
+CREATE NODE dn001 WITH (TYPE='datanode', HOST='192.168.2.136', PORT=40004, PRIMARY);
+CREATE NODE
+CREATE NODE dn002 WITH (TYPE='datanode', HOST='192.168.2.137', PORT=40004, PREFERRED);
+CREATE NODE
+SELECT pgxc_pool_reload();
+pgxc_pool_reload
+----------------
+t
+(1 row)
+
+Done.
+EXECUTE DIRECT ON (dn001) 'CREATE NODE cn001 WITH (TYPE=''coordinator'', HOST=''192.168.2.136'', PORT=30004)';
+EXECUTE DIRECT
+EXECUTE DIRECT ON (dn001) 'CREATE NODE cn002 WITH (TYPE=''coordinator'', HOST=''192.168.2.137'', PORT=30004)';
+EXECUTE DIRECT
+EXECUTE DIRECT ON (dn001) 'ALTER NODE dn001 WITH (TYPE=''datanode'', HOST=''192.168.2.136'', PORT=40004, PRIMARY, PREFERRED)';
+EXECUTE DIRECT
+EXECUTE DIRECT ON (dn001) 'CREATE NODE dn002 WITH (TYPE=''datanode'', HOST=''192.168.2.137'', PORT=40004, PREFERRED)';
+EXECUTE DIRECT
+EXECUTE DIRECT ON (dn001) 'SELECT pgxc_pool_reload()';
+pgxc_pool_reload
+----------------
+t
+(1 row)
+
+EXECUTE DIRECT ON (dn002) 'CREATE NODE cn001 WITH (TYPE=''coordinator'', HOST=''192.168.2.136'', PORT=30004)';
+EXECUTE DIRECT
+EXECUTE DIRECT ON (dn002) 'CREATE NODE cn002 WITH (TYPE=''coordinator'', HOST=''192.168.2.137'', PORT=30004)';
+EXECUTE DIRECT
+EXECUTE DIRECT ON (dn002) 'CREATE NODE dn001 WITH (TYPE=''datanode'', HOST=''192.168.2.136'', PORT=40004, PRIMARY, PREFERRED)';
+EXECUTE DIRECT
+EXECUTE DIRECT ON (dn002) 'ALTER NODE dn002 WITH (TYPE=''datanode'', HOST=''192.168.2.137'', PORT=40004, PREFERRED)';
+EXECUTE DIRECT
+EXECUTE DIRECT ON (dn002) 'SELECT pgxc_pool_reload()';
+pgxc_pool_reload
+----------------
+t
+(1 row)
+
+Done.
+```
 
 **6.8 查看集群状态**
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c32ce31a-9694-11ef-a88b-fa163eb4f6be.png)
+```
+[opentenbase@db1 pgxc_ctl]$ pgxc_ctl -c /data/opentenbase/pgxc_ctl/pgxc_ctl.conf
+
+# 启动集群
+pgxc_ctl monitor all
+```
 
 日志如下
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c337340a-9694-11ef-a88b-fa163eb4f6be.png)
+```
+Running: gtm master
+Running: gtm slave
+Running: coordinator master cn001
+Running: coordinator master cn002
+Running: datanode master dn001
+Running: datanode slave dn001
+Running: datanode master dn002
+Not running: datanode slave dn002
+```
 
 **6.9 安装错误处理**
 
 1）日志查看
 
 一般init集群出错，终端会打印出错误日志，通过查看错误原因，更改配置即可，或者可以通过/data/opentenbase/pgxc\_ctl/pgxc\_log路径下的错误日志查看错误，排查配置文件的错误
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c3433d9a-9694-11ef-a88b-fa163eb4f6be.png)
+
+```
+[opentenbase@db1 ~]$ cd ~/pgxc_ctl/pgxc_log/
+[opentenbase@db1 pgxc_log]$ ll
+total 1052
+-rw-r--r-- 1 opentenbase opentenbase   2585 Sep  7 03:19 213564_pgxc_ctl.log
+-rw-r--r-- 1 opentenbase opentenbase    767 Sep  7 03:20 213793_pgxc_ctl.log
+-rw-r--r-- 1 opentenbase opentenbase    749 Sep  7 03:20 213805_pgxc_ctl.log
+-rw-r--r-- 1 opentenbase opentenbase 477889 Sep  7 03:22 213813_pgxc_ctl.log
+-rw-r--r-- 1 opentenbase opentenbase 584714 Sep  7 03:41 214355_pgxc_ctl.log
+```
 
 2）清理集群重新安装
 
 通过运行 pgxc\_ctl 工具，执行clean all命令删除已经初始化的文件，修改pgxc\_ctl.conf文件，重新执行init all命令重新发起初始化。
 
+```
+[opentenbase@db1 pgxc_ctl]$ pgxc_ctl -c /data/opentenbase/pgxc_ctl/pgxc_ctl.conf
+
+#PGXC clean all
+```
 
 3) 常见问题
 
@@ -484,14 +602,26 @@ PGXC 【这里输入指令】 deploy all
 
 这样的问题，通常是环境变量的问题，通过root用户配置/etc/environment 解决
 
+```
+[root]
+$ cat /etc/environment
+PATH=/data/opentenbase/install/opentenbase_bin_v2.6/bin:/data/opentenbase/.local/bin:/data/opentenbase/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+```
 
 • 执行inti all时，提示无法创建目录
 
+```
+mkdir: cannot create directory '/data/opentenbase': Permission denied
+```
 
 这样的问题，通常是分发节点上，没有创建对应的目录
 
 解决方案：检查所有节点的目录配置，如果没有创建，创建即可。
 
+```
+mkdir -p /data/opentenbase/{install,dbsoft}
+chown -R opentenbase:opentenbase /data/opentenbase
+```
 
 **七、集群访问**
 
@@ -499,25 +629,99 @@ PGXC 【这里输入指令】 deploy all
 
 **7.1 登录cn主节点**
 
+```
+[opentenbase@db1 pgxc_log]$ psql -h 192.168.2.136 -p 30004 -d postgres -U opentenbase
+psql (PostgreSQL 10.0 OpenTenBase V2)
+Type "help" for help.
+
+postgres=#
+```
 
 **7.2 使用数据库前需要创建default group以及sharding表**
 
 OpenTenBase使用datanode group来增加节点的管理灵活度，要求有一个default group才能使用，因此需要预先创建；一般情况下，会将节点的所有datanode节点加入到default group里 另外一方面，OpenTenBase的数据分布为了增加灵活度，加了中间逻辑层来维护数据记录到物理节点的映射，我们叫sharding，所以需要预先创建sharding，命令如下：
 
+```
+postgres=# create default node group default_group  with (dn001,dn002);
+CREATE NODE GROUP
+postgres=# create sharding group to group default_group;
+CREATE SHARDING GROUP
+```
 
 **7.3 创建数据库，用户，创建表，增删查改等操作**
 
+```
+postgres=# create database test;
+CREATE DATABASE
+postgres=# create user test with password 'test';
+CREATE ROLE
+postgres=# alter database test owner to test;
+ALTER DATABASE
+postgres=# \c test test
+You are now connected to database "test" as user "test".
+test=> create table foo(id bigint, str text) distribute by shard(id);
+CREATE TABLE
+test=> insert into foo values(1, 'tencent'), (2, 'shenzhen');
+COPY 2
+test=> select * from foo;
+id |   str
+----+----------
+1 | tencent
+2 | shenzhen
+(2 rows)
+```
 
 **八、集群启停**
 
 **8.1 停止集群**
 
+```
+[opentenbase@db1 pgxc_ctl]$ pgxc_ctl -c /data/opentenbase/pgxc_ctl/pgxc_ctl.conf
+
+PGXC stop all -m fast
+```
 
 停止日志
 
+```
+Stopping all the coordinator masters.
+Stopping coordinator master cn001.
+Stopping coordinator master cn002.
+
+Done.
+Stopping all the datanode slaves.
+Stopping datanode slave dn001.
+Stopping datanode slave dn002.
+
+pg_ctl: PID file "/data/opentenbase/data/dn002/postmaster.pid" does not exist
+Is server running?
+
+Authorized users only. All activities may be monitored and reported.
+
+Authorized users only. All activities may be monitored and reported.
+Stopping all the datanode masters.
+Stopping datanode master dn001.
+Stopping datanode master dn002.
+
+Done.
+Stop GTM slave
+
+waiting for server to shut down.... done
+server stopped
+
+Stop GTM master
+
+waiting for server to shut down.... done
+server stopped
+```
 
 **8.2 启动集群**
 
+```
+[opentenbase@db1 pgxc_ctl]$ pgxc_ctl -c /data/opentenbase/pgxc_ctl/pgxc_ctl.conf
+
+PGXC start all
+```
 
 **九、结语**
 
