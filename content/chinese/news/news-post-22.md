@@ -192,45 +192,249 @@ systemctl stop firewalld
 
 互信为了方便后续操作，建议配置opentenbase机器间的 SSH 互信：
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c1e31d58-9694-11ef-a88b-fa163eb4f6be.png)
+```
+[opentenbase]
+#切换opentenbase用户
+su - opentenbase
+
+# 192.168.2.136生成 SSH 密钥对
+ssh-keygen -t rsa
+
+# 将公钥复制到其他节点
+ssh-copy-id -i ~/.ssh/id_rsa.pub opentenbase@192.168.2.136
+ssh-copy-id -i ~/.ssh/id_rsa.pub opentenbase@192.168.2.137
+ssh-copy-id -i ~/.ssh/id_rsa.pub opentenbase@192.168.2.138
+```
 
 **6.3 配置opentenbase环境变量**
 
 集群所有机器都需要配置
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c1ef391c-9694-11ef-a88b-fa163eb4f6be.png)
+```
+[opentenbase]
+$ vim ~/.bashrc
+export OPENTENBASE_HOME=/data/opentenbase/install/opentenbase_bin_v2.6
+export PATH=$OPENTENBASE_HOME/bin:OPENTENBASEHOME/bin:$PATH
+export LD_LIBRARY_PATH=$OPENTENBASE_HOME/lib:OPENTENBASEHOME/lib:${LD_LIBRARY_PATH}
+export LC_ALL=C
+```
 
 **6.4 配置root环境变量**
 
 集群所有机器都需要配置,把opentenbase用户的$PATH环境变量添加到 etc/environment
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c20293fe-9694-11ef-a88b-fa163eb4f6be.png)
+```
+[root]
+cat /etc/environment
+PATH=/data/opentenbase/install/opentenbase_bin_v2.6/bin:/data/opentenbase/.local/bin:/data/opentenbase/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+```
 
 **6.5 初始化pgxc\_ctl.conf文件**
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c20d75d0-9694-11ef-a88b-fa163eb4f6be.png)
+```
+[opentenbase]
+mkdir /data/opentenbase/pgxc_ctl
+cd /data/opentenbase/pgxc_ctl
+vim pgxc_ctl.conf
+```
 
 如下，是结合上文描述的IP，端口，数据库目录，二进制目录等规划来写的pgxc\_ctl.conf文件。
 
 pgxc\_ctl.conf配置如下：
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c21e4838-9694-11ef-a88b-fa163eb4f6be.png)
+```
+#!/bin/bash
+# Double Node Config
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c22a4034-9694-11ef-a88b-fa163eb4f6be.png)
+#主要调整IP地址即可
+IP_1=192.168.2.136
+IP_2=192.168.2.137
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c245cafc-9694-11ef-a88b-fa163eb4f6be.png)
+pgxcInstallDir=/data/opentenbase/install/opentenbase_bin_v2.6
+pgxcOwner=opentenbase
+defaultDatabase=postgres
+pgxcUser=$pgxcOwner
+tmpDir=/tmp
+localTmpDir=$tmpDir
+configBackup=n
+configBackupHost=pgxc-linker
+configBackupDir=$HOME/pgxc
+configBackupFile=pgxc_ctl.bak
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c258875a-9694-11ef-a88b-fa163eb4f6be.png)
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c2680ae0-9694-11ef-a88b-fa163eb4f6be.png)
+#---- GTM ----------
+gtmName=gtm
+gtmMasterServer=$IP_1
+gtmMasterPort=50001
+gtmMasterDir=/data/opentenbase/data/gtm
+gtmExtraConfig=none
+gtmMasterSpecificExtraConfig=none
+gtmSlave=y
+gtmSlaveServer=$IP_2
+gtmSlavePort=50001
+gtmSlaveDir=/data/opentenbase/data/gtm
+gtmSlaveSpecificExtraConfig=none
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c27ffb46-9694-11ef-a88b-fa163eb4f6be.png)
+#---- Coordinators -------
+coordMasterDir=/data/opentenbase/data/coord
+coordArchLogDir=/data/opentenbase/data/coord_archlog
+
+coordNames=(cn001 cn002 )
+coordPorts=(30004 30004 )
+poolerPorts=(31110 31110 )
+coordPgHbaEntries=(0.0.0.0/0)
+coordMasterServers=($IP_1 IP1$IP_2)
+coordMasterDirs=($coordMasterDir coordMasterDir$coordMasterDir)
+coordMaxWALsernder=2
+coordMaxWALSenders=($coordMaxWALsernder coordMaxWALsernder$coordMaxWALsernder )
+coordSlave=n
+coordSlaveSync=n
+coordArchLogDirs=($coordArchLogDir coordArchLogDir$coordArchLogDir)
+
+coordExtraConfig=coordExtraConfig
+cat > $coordExtraConfig <eof $coordExtraPgHba <eof
+#================================================
+# Added to all the coordinator postgresql.conf
+# Original: $coordExtraConfig
+
+include_if_exists = '/data/opentenbase/global/global_opentenbase.conf'
+ 
+wal_level = replica
+wal_keep_segments = 256 
+max_wal_senders = 4
+archive_mode = on 
+archive_timeout = 1800 
+archive_command = 'echo 0' 
+log_truncate_on_rotation = on 
+log_filename = 'postgresql-%M.log' 
+log_rotation_age = 4h 
+log_rotation_size = 100MB
+hot_standby = on 
+wal_sender_timeout = 30min 
+wal_receiver_timeout = 30min 
+shared_buffers = 1024MB 
+max_pool_size = 2000
+log_statement = 'ddl'
+log_destination = 'csvlog'
+logging_collector = on
+log_directory = 'pg_log'
+listen_addresses = '*'
+max_connections = 2000
+ 
+EOF
+
+coordSpecificExtraConfig=(none none)
+coordExtraPgHba=coordExtraPgHba
+cat > $coordExtraPgHba <<EOF
+ 
+local   all             all                                     trust
+host    all             all             0.0.0.0/0               trust
+host    replication     all             0.0.0.0/0               trust
+host    all             all             ::1/128                 trust
+host    replication     all             ::1/128                 trust
+ 
+ 
+EOF
+ 
+ 
+coordSpecificExtraPgHba=(none none)
+coordAdditionalSlaves=n 
+cad1_Sync=n
+ 
+#---- Datanodes ---------------------
+dn1MstrDir=/data/opentenbase/data/dn001
+dn2MstrDir=/data/opentenbase/data/dn002
+dn1SlvDir=/data/opentenbase/data/dn001
+dn2SlvDir=/data/opentenbase/data/dn002
+dn1ALDir=/data/opentenbase/data/datanode_archlog
+dn2ALDir=/data/opentenbase/data/datanode_archlog
+ 
+primaryDatanode=dn001
+datanodeNames=(dn001 dn002)
+datanodePorts=(40004 40004)
+datanodePoolerPorts=(41110 41110)
+datanodePgHbaEntries=(0.0.0.0/0)
+datanodeMasterServers=($IP_1 $IP_2)
+datanodeMasterDirs=($dn1MstrDir $dn2MstrDir)
+dnWALSndr=4
+datanodeMaxWALSenders=($dnWALSndr $dnWALSndr)
+ 
+datanodeSlave=y
+datanodeSlaveServers=($IP_2 $IP_1)
+datanodeSlavePorts=(50004 54004)
+datanodeSlavePoolerPorts=(51110 51110)
+datanodeSlaveSync=n
+datanodeSlaveDirs=($dn1SlvDir $dn2SlvDir)
+datanodeArchLogDirs=($dn1ALDir/dn001 $dn2ALDir/dn002)
+ 
+datanodeExtraConfig=datanodeExtraConfig
+cat > $datanodeExtraConfig <<EOF
+#================================================
+# Added to all the coordinator postgresql.conf
+# Original: $datanodeExtraConfig
+ 
+include_if_exists = '/data/opentenbase/global/global_opentenbase.conf'
+listen_addresses = '*' 
+wal_level = replica 
+wal_keep_segments = 256 
+max_wal_senders = 4
+archive_mode = on 
+archive_timeout = 1800 
+archive_command = 'echo 0' 
+log_directory = 'pg_log' 
+logging_collector = on 
+log_truncate_on_rotation = on 
+log_filename = 'postgresql-%M.log' 
+log_rotation_age = 4h 
+log_rotation_size = 100MB
+hot_standby = on 
+wal_sender_timeout = 30min 
+wal_receiver_timeout = 30min 
+shared_buffers = 1024MB 
+max_connections = 4000 
+max_pool_size = 4000
+log_statement = 'ddl'
+log_destination = 'csvlog'
+wal_buffers = 1GB
+ 
+EOF
+ 
+datanodeSpecificExtraConfig=(none none)
+datanodeExtraPgHba=datanodeExtraPgHba
+cat > $datanodeExtraPgHba <<EOF
+ 
+local   all             all                                     trust
+host    all             all             0.0.0.0/0               trust
+host    replication     all             0.0.0.0/0               trust
+host    all             all             ::1/128                 trust
+host    replication     all             ::1/128                 trust
+ 
+ 
+EOF
+ 
+ 
+datanodeSpecificExtraPgHba=(none none)
+ 
+datanodeAdditionalSlaves=n
+walArchive=n
+```
 
 **6.6 分发二进制包**
 
 在一个节点上配置好配置文件后，使用 pgxc\_ctl 工具将二进制包部署到所有节点：
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c29652a6-9694-11ef-a88b-fa163eb4f6be.png)
+```
+[opentenbase@db1 pgxc_ctl]$ pgxc_ctl -c /data/opentenbase/pgxc_ctl/pgxc_ctl.conf
+/usr/bin/bash
+Installing pgxc_ctl_bash script as /home/opentenbase/pgxc_ctl/pgxc_ctl_bash.
+Installing pgxc_ctl_bash script as /home/opentenbase/pgxc_ctl/pgxc_ctl_bash.
+Reading configuration using /home/opentenbase/pgxc_ctl/pgxc_ctl_bash --home /home/opentenbase/pgxc_ctl --configuration /data/opentenbase/pgxc_ctl/pgxc_ctl.conf
+Finished reading configuration.
+******** PGXC_CTL START ***************
+
+Current directory: /home/opentenbase/pgxc_ctl
+PGXC 【这里输入指令】 deploy all
+```
 
 分发日志
 
@@ -319,11 +523,9 @@ OpenTenBase使用datanode group来增加节点的管理灵活度，要求有一�
 
 停止日志
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c3c65e3c-9694-11ef-a88b-fa163eb4f6be.png)
 
 **8.2 启动集群**
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241030_c3d8054c-9694-11ef-a88b-fa163eb4f6be.png)
 
 **九、结语**
 
