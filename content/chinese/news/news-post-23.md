@@ -230,22 +230,6 @@ Filter: (inserttimeforhis < '2022-01-01 00:00:00'::timestamp without time zone)
 
 可以看到执行计划访问的dn003是冷数据所在的cold\_group组。
 
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241031_1fe7334c-9750-11ef-afed-fa163eb4f6be.png)
-
-我们目前正在积极征集OpenTenBase的用户使用案例，如果您有相关使用经验，欢迎提交给我们。也期待您加入OpenTenBase社区，跟我们共同推动项目发展！
-
-![](https://oss-emcsprod-public.modb.pro/image/auto/modb_20241031_1ff17fd2-9750-11ef-afed-fa163eb4f6be.png)
-
-**官网：**https://www.opentenbase.org/
-
-**贡献代码**
-
-* AtomGit
-
-  https://atomgit.com/opentenbase
-* GitHub
-
-  https://github.com/OpenTenBase
 
 <img src=../images/news-post-9-11.png class="img-fluid" /><br/>
 
