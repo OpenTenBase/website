@@ -1,6 +1,6 @@
 ---
-title: "社区贡献 | OpenTenBase配置冷热数据分离"
-date: 2024-10-31T16:31:00+08:00
+title: "社区贡献 | OpenTenBase_v2.6.0 基于玲珑容器编译并在业务环境安装"
+date: 2024-11-22T16:31:00+08:00
 #image_webp: images/news/news-post-2.webp
 image: images/news/news-post-26.png
 author: OpenTenBase
