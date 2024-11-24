@@ -2,12 +2,11 @@
 title: "社区贡献 | OpenTenBase配置冷热数据分离"
 date: 2024-10-31T16:31:00+08:00
 #image_webp: images/news/news-post-2.webp
-image: images/news/news-post-23.png
+image: images/news/news-post-26.png
 author: OpenTenBase
 description: ""
 ---
-<img src=../images/news-post-23-1.png class="img-fluid" /><br/>
-
+<img src=../images/news-post-26-1.png class="img-fluid" /><br/>
 
 
 
