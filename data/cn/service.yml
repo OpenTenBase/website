@@ -9,9 +9,9 @@ service:
       content: 完整兼容SQL2011，支持Oracle语法
 
     # service item loop
-    - name: PostgreSQL兼容性
+    - name: MySQL/PostgreSQL兼容性
       icon: ti-layout # themify icon pack : https://themify.me/themify-icons
-      content: 高度兼容PostgreSQL语法和生态跟进社区
+      content: 高度兼容MySQL/PostgreSQL语法和生态跟进社区
 
     # service item loop
     - name: 完整的分布式事务能力
@@ -19,9 +19,9 @@ service:
       content: 完整的分布式事务ACID能力,保证分布式读一致性
 
     # service item loop
-    - name: HTAP双引擎
+    - name: 双内核引擎
       icon: ti-palette # themify icon pack : https://themify.me/themify-icons
-      content: 具备高效OLTP和强大OLAP双引擎能力,支持PB级海量数据高效处理高效分布式执行能力
+      content: 具备 OpenTenBase 和 TXSQL 双引擎能力,支持PB级海量数据高效处理高效分布式执行能力
 
     # service item loop
     - name: 灵活的扩展
