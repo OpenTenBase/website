@@ -24,11 +24,11 @@ service:
       content: 具备 OpenTenBase 和 TXSQL 双引擎能力,支持PB级海量数据高效处理高效分布式执行能力
 
     # service item loop
-    - name: 灵活的扩展
-      icon: ti-package # themify icon pack : https://themify.me/themify-icons
-      content: 分布式灵活扩展,分布式高效弹性扩缩容
-
-    # service item loop
     - name: 性能优越
       icon: ti-pulse # themify icon pack : https://themify.me/themify-icons
       content: 性能优越,分布式弹性扩展好,支持高并发和高速吞吐
+
+    # service item loop
+    - name: Data + AI
+      icon: ti-light-bulb # themify icon pack : https://themify.me/themify-icons
+      content: 支持分布式向量检索能力，支持Data + AI 多模态分析
