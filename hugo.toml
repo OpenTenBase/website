@@ -227,7 +227,7 @@ contentDir = "content/chinese"
 
 [Languages.cn.params]
 home = "首页"
-copyright = "Copyright 2026 OPENATOM FOUNDATION. All rights reserved."
+copyright = "Copyright 2026 OPENATOM FOUNDATION. All rights reserved. 开放原子开源基金会版权所有"
 
 ################################ English Language ########################
 [Languages.en]
@@ -238,4 +238,4 @@ contentDir = "content/english"
 [Languages.en.params]
 weight = 2
 home = "Home"
-copyright = "Copyright 2026 OPENATOM FOUNDATION. All rights reserved."
+copyright = "Copyright 2026 OPENATOM FOUNDATION. All rights reserved.开放原子开源基金会版权所有"
