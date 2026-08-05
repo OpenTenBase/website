@@ -165,6 +165,7 @@ weight = 6
 logo = "images/logo.png"
 logo_footer = "images/logo_footer.png"
 qr_code = "images/qr.png"
+icp = "京ICP备2020036654号-14"   # 新增：ICP 备案号
 # Meta data
 description = "Responsive Multipurpose Parallax Hugo Template"
 author = "Themefisher"
