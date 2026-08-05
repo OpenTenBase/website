@@ -12,6 +12,9 @@
         </div>
         <div class="copyright">
           <div>{{ site.Params.copyright | markdownify }}</div>
+           {{ with site.Params.icp }}
+          <div><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">{{ . }}</a></div>
+          {{ end }}
         </div>
       </div>
     </div>
