@@ -930,11 +930,3 @@ nameserver 8.8.8.8
 nameserver 1.1.1.1
 nameserver 114.114.114
 ```
-
-## 号外
-
-OpenTenBase 城市行南京站将于明天举行，欢迎南京及周边城市的朋友到场交流！
-
-<div class="text-center">
-  <img src="../images/news-post-51-20.png" class="img-fluid" alt="OpenTenBase城市行南京站活动海报" />
-</div>
