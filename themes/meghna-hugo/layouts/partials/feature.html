@@ -9,7 +9,7 @@ $data.feature.feature.enable }} {{ with $data.feature.feature }} {{"<!-- feature
       <img src="{{ .image_webp | absURL }}" style="display: none;" onerror="this.onerror=null;this.parentElement.style.backgroundImage= 'url({{ .image | absURL }})'">
     </div>
     <div class="col-lg-6 container feature-content">
-      <p class="feature-title-font">{{ .title | markdownify }}</p>
+      <h2 class="feature-title-font">{{ .title | markdownify }}</h2>
       <div class="row">
         {{ range .feature_item }}
         <div class="col-lg-6">
@@ -20,7 +20,7 @@ $data.feature.feature.enable }} {{ with $data.feature.feature }} {{"<!-- feature
             </div>
             {{ end }}
             <div class="media-body">
-              <p class="feature-sub-title-font">{{ .title | markdownify }}</p>
+              <h3 class="feature-sub-title-font">{{ .title | markdownify }}</h3>
               <p class="feature-sub-content-font">
                 {{ .content | markdownify }}
               </p>
