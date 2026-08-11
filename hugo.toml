@@ -167,8 +167,8 @@ logo_footer = "images/logo_footer.png"
 qr_code = "images/qr.png"
 icp = "京ICP备2020036654号-14"   # 新增：ICP 备案号
 # Meta data
-description = "Responsive Multipurpose Parallax Hugo Template"
-author = "Themefisher"
+description = "OpenTenBase 是企业级分布式数据库 TDSQL 的社区发行版，支持分布式事务、HTAP、商业数据库兼容、向量检索及 Data+AI 等能力。"
+author = "OpenTenBase Community"
 # Google Analytics
 google_analytics_id = "" # Your ID
 # post share
@@ -229,6 +229,9 @@ contentDir = "content/chinese"
 home = "首页"
 copyright = "Copyright 2026 OPENATOM FOUNDATION. All rights reserved. 开放原子开源基金会版权所有"
 
+description = "OpenTenBase 是企业级分布式数据库 TDSQL 的社区发行版，支持分布式事务、HTAP、商业数据库兼容、向量检索及 Data+AI 等能力。"
+author = "OpenTenBase Community"
+
 ################################ English Language ########################
 [Languages.en]
 languageName = "En"
@@ -238,4 +241,7 @@ contentDir = "content/english"
 [Languages.en.params]
 weight = 2
 home = "Home"
-copyright = "Copyright 2026 OPENATOM FOUNDATION. All rights reserved.开放原子开源基金会版权所有"
+copyright = "Copyright 2026 OPENATOM FOUNDATION. All rights reserved. 开放原子开源基金会版权所有"
+
+description = "OpenTenBase is an enterprise-grade distributed database supporting distributed transactions, HTAP, database compatibility, vector search, and Data+AI capabilities."
+author = "OpenTenBase Community"
