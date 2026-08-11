@@ -4,8 +4,8 @@
   <div class="container">
     {{"<!-- section title --> " | safeHTML}}
     <div class="wow fadeIn" data-wow-duration="500ms">
-      <p class="basic_title"> {{ with i18n "eventTitle" }} {{ index (split . " ") 0 | safeHTML }} {{ end }}<span>
-        {{ with i18n "eventTitle" }} {{ index (split . " ") 1 | safeHTML }} {{ end }} </span></p>
+      <h2 class="basic_title"> {{ with i18n "eventTitle" }} {{ index (split . " ") 0 | safeHTML }} {{ end }}<span>
+        {{ with i18n "eventTitle" }} {{ index (split . " ") 1 | safeHTML }} {{ end }} </span></h2>
     </div>
     <div class="row">
       {{"<!-- /section title --> " | safeHTML}}

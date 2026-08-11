@@ -9,7 +9,7 @@
       <div class="col-lg-12">
         {{"<!-- section title --> " | safeHTML }}
         <div class="wow fadeIn" data-wow-duration="500ms">
-          <p class="service-font">{{.title | markdownify }} </p>
+          <h2 class="service-font">{{.title | markdownify }} </h2>
         </div>
       </div>
       <div id="service" class="row">
@@ -22,7 +22,7 @@
             </div>
             {{ end }}
             <div>
-              <div class="feature-sub-title-font service-name">{{ .name | markdownify }}</div>
+              <h3 class="feature-sub-title-font service-name">{{ .name | markdownify }}</h3>
               <div class="feature-sub-content-font">{{ .content | markdownify }}</div>
             </div>
           </div>
