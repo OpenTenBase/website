@@ -4,9 +4,9 @@ banner:
   bg_image_webp: "images/backgrounds/hero-area.webp"
   bg_image: "images/backgrounds/hero-area.jpg"
   icon: "" # themify icon pack : https://themify.me/themify-icons
-  title: "OpenTenBase an enterprise-level distributed HTAP open source database"
-  content: "OpenTenBase is an enterprise-level distributed HTAP open source database. It has high scalability, commercial database syntax compatibility, distributed HTAP engine, multi-level disaster recovery and multi-dimensional resource isolation. It has been successfully used in core businesses in finance, medical, aerospace and other industries system."
+  title: "OpenTenBase An Open and Neutral Open-Source Database"
+  content: "OpenTenBase is the community edition of TDSQL, an enterprise-grade distributed database. It includes two database kernels, OpenTenBase and TXSQL, and provides high scalability, compatibility with commercial database syntax, distributed processing, multi-level disaster recovery, and multi-dimensional resource isolation. It has been deployed in mission-critical systems across financial services, healthcare, aerospace, and other industries."
   button:
     enable: true
-    label: "Explore Us"
+    label: "View on GitHub"
     link: "https://github.com/OpenTenBase/OpenTenBase"

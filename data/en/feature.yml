@@ -3,25 +3,25 @@ feature:
   enable: true
   image: images/about/about-business-man.jpg
   image_webp: images/about/about-business-man.webp
-  title: Install, Use, Contribute? Get started quickly with OpenTenBase!
+  title: Install, Use, Contribute — Get Started with OpenTenBase
   content:
   feature_item:
     # feature item loop
     - title: What is OpenTenBase
       icon: ti-help # themify icon pack : https://themify.me/themify-icons
-      content: OpenTenBase is an open source distributed database that can easily handle the storage, analysis and query of billions of data.
+      content: OpenTenBase is an open-source distributed database designed to efficiently handle large-scale data storage, analytics, and queries.
 
       # feature item loop
     - title: Quick Start
       icon: ti-wand # themify icon pack : https://themify.me/themify-icons
-      content: OpenTenBase architecture, introduction, compilation and installation, cluster running status, start and stop, etc.
+      content: Learn about the OpenTenBase architecture, source code compilation and installation, cluster status, startup and shutdown, and more.
 
       # feature item loop
-    - title: Basic Use
+    - title: Basic Usage
       icon: ti-book # themify icon pack : https://themify.me/themify-icons
-      content: Creation of shard table, hot and cold partition table, copy table, and basic DML operations.
+      content: Create shard tables, hot/cold partitioned tables, and replication tables, and perform basic DML operations.
 
       # feature item loop
     - title: Contribute
       icon: ti-write # themify icon pack : https://themify.me/themify-icons
-      content: If you have good comments or suggestions, welcome to create Issues or Pull Requests to contribute to the OpenTenBase open source community.
+      content: If you have suggestions or improvements, feel free to open an Issue or Pull Request and contribute to the OpenTenBase community.

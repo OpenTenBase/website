@@ -1,40 +1,40 @@
 ################################# Service #################################
 service:
   enable: true
-  title: Key Feature
+  title: Key Features
   service_item:
     # service item loop
     - name: Commercial Database Compatibility
       icon: ti-world # themify icon pack : https://themify.me/themify-icons
-      content: Fully compatible with SQL2011, Supports commercial database syntax
+      content: Full SQL:2011 compatibility with support for Oracle-compatible syntax.
       content_2:
 
     # service item loop
-    - name: PostgreSQL Compatibility
+    - name: MySQL and PostgreSQL Compatibility
       icon: ti-layout # themify icon pack : https://themify.me/themify-icons
-      content: Highly compatible with PostgreSQL syntax and following the community ecology
+      content: Provides strong compatibility with the MySQL and PostgreSQL ecosystems through the TXSQL and OpenTenBase kernels, respectively.
       content_2:
 
     # service item loop
-    - name: Complete Distributed Transaction Capabilities
+    - name: Complete Distributed Transaction Support
       icon: ti-blackboard # themify icon pack : https://themify.me/themify-icons
-      content: Complete distributed transaction ACID capabilities to ensure distributed read consistency
+      content: Provides full ACID-compliant distributed transactions and consistent reads across the distributed system.
       content_2:
 
     # service item loop
-    - name: HTAP Dual Engine
+    - name: Dual-Kernel Architecture
       icon: ti-palette # themify icon pack : https://themify.me/themify-icons
-      content: Equipped with efficient OLTP and powerful OLAP dual engine capabilities, supporting PB level
-      content_2: Efficient processing of massive data and efficient distributed execution capabilities
-
-    # service item loop
-    - name: Flexible Extension
-      icon: ti-package # themify icon pack : https://themify.me/themify-icons
-      content: Distributed flexible expansion, distributed efficient elastic expansion and contraction
+      content: Includes both the OpenTenBase and TXSQL kernels, with efficient distributed execution and support for petabyte-scale data processing.
       content_2:
 
     # service item loop
-    - name: Superior performance
+    - name: High Performance
       icon: ti-pulse # themify icon pack : https://themify.me/themify-icons
-      content: Superior performance, good distributed elastic expansion, supporting high concurrency and high-speed throughput
+      content: Provides elastic distributed scalability with support for high concurrency and high throughput.
+      content_2:
+
+    # service item loop
+    - name: Data + AI
+      icon: ti-light-bulb # themify icon pack : https://themify.me/themify-icons
+      content: Supports distributed vector search and multimodal Data + AI analytics.
       content_2:
