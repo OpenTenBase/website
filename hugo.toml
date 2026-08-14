@@ -140,12 +140,12 @@ url = "#blog"
 weight = 2
 
 [[Languages.en.menu.main]]
-name = "Event"
+name = "Events"
 url = "#event"
 weight = 3
 
 [[Languages.en.menu.main]]
-name = "Document"
+name = "Documentation"
 url = "https://docs.opentenbase.org/en/"
 weight = 4
 
@@ -155,7 +155,7 @@ url = "https://github.com/OpenTenBase/OpenTenBase/tags"
 weight = 5
 
 [[Languages.en.menu.main]]
-name = "Code"
+name = "GitHub"
 url = "https://github.com/OpenTenBase/OpenTenBase"
 weight = 6
 

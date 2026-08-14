@@ -1,11 +1,11 @@
 - id: blogTitle
-  translation: Latest Post
+  translation: Technical Blog
 - id: newsTitle
-  translation: Latest News
+  translation: Community News
 - id: eventTitle
-  translation: Latest Event
+  translation: Latest Events
 - id: readMore
-  translation: Read more
+  translation: Read More
 - id: viewAllevent
   translation: View All Events
 - id: share
@@ -39,4 +39,4 @@
 - id: newPublish
   translation: Latest
 - id: viewAllnews
-  translation: VIEW ALL NEWS
+  translation: View All News
