@@ -27,9 +27,16 @@ description: "8 月 29 日下午，开放原子技术沙龙·OpenTenBase 城市�
 
 落地成效方面：AI 优化器已上线数千个实例，线上 SQL 总耗时降低 90% 以上；在 SaaS、金融等业务场景中，跑批任务从超过 6 小时缩短到 3.5 小时内，实现开箱即用的“千人千面”最优性能。
 
-| 线上真实负载指标 | SQL 总执行时间 | CPU | 慢日志 |
-| --- | --- | --- | --- |
-| 优化效果 | ↓ 63.8% | ↓ 90.8% | ↓ 23.8% |
+<div class="table-responsive">
+<table class="table table-bordered">
+<thead>
+<tr><th>线上真实负载指标</th><th>SQL 总执行时间</th><th>CPU</th><th>慢日志</th></tr>
+</thead>
+<tbody>
+<tr><td>优化效果</td><td>↓ 63.8%</td><td>↓ 90.8%</td><td>↓ 23.8%</td></tr>
+</tbody>
+</table>
+</div>
 
 <div class="text-center">
   <img src="../images/event-post-11-03.jpg" class="img-fluid" alt="TXSQL 自学习优化器分享现场" />
@@ -65,14 +72,21 @@ description: "8 月 29 日下午，开放原子技术沙龙·OpenTenBase 城市�
 
 **六大真实生产案例**
 
-| 案例 | 说明 |
-| --- | --- |
-| 案例一 | 复合索引：查询从 1624ms 降到 1.04ms，提升约 1566 倍 |
-| 案例二 | 带上分片键：避免不带分片键查询被广播到全部 DN |
-| 案例三 | 分片键与 Join 列对齐：消除数据重分布，651 秒到 20 毫秒，约 3.2 万倍 |
-| 案例四 | 小表改复制表：Join 本地化，8.1 秒到 86 毫秒，约 94 倍 |
-| 案例五 | DISTINCT 改写为 GROUP BY：支持局部聚合下推，27 秒到 11 秒 |
-| 案例六 | 会话级调大 work_mem：消除磁盘排序，Sort Method 从 Disk 到 Memory |
+<div class="table-responsive">
+<table class="table table-bordered">
+<thead>
+<tr><th>案例</th><th>说明</th></tr>
+</thead>
+<tbody>
+<tr><td>案例一</td><td>复合索引：查询从 1624ms 降到 1.04ms，提升约 1566 倍</td></tr>
+<tr><td>案例二</td><td>带上分片键：避免不带分片键查询被广播到全部 DN</td></tr>
+<tr><td>案例三</td><td>分片键与 Join 列对齐：消除数据重分布，651 秒到 20 毫秒，约 3.2 万倍</td></tr>
+<tr><td>案例四</td><td>小表改复制表：Join 本地化，8.1 秒到 86 毫秒，约 94 倍</td></tr>
+<tr><td>案例五</td><td>DISTINCT 改写为 GROUP BY：支持局部聚合下推，27 秒到 11 秒</td></tr>
+<tr><td>案例六</td><td>会话级调大 work_mem：消除磁盘排序，Sort Method 从 Disk 到 Memory</td></tr>
+</tbody>
+</table>
+</div>
 
 最后他总结了“先看数据在哪，再看 SQL 怎么跑”的五步法与六条军规，为分布式场景提供一套经生产验证的方法论。
 
