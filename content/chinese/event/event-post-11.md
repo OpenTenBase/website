@@ -149,17 +149,3 @@ OpenTenBase 城市行希望持续连接内核研发者、DBA、架构师与开�
 **OpenAtom OpenTenBase 社区**
 
 开源分布式数据库 · 欢迎 Star 与共建
-
-官网：https://www.opentenbase.org
-
-AtomGit：https://opentenbase.atomgit.com
-
-GitHub：https://github.com/OpenTenBase/OpenTenBase
-
-TXSQL：https://github.com/OpenTenBase/TXSQL
-
-觉得项目不错？给我们点个 Star ⭐ 吧
-
-提交 Issue / PR，一起把国产分布式数据库做得更好
-
-— 关注我们，获取更多技术干货 —
