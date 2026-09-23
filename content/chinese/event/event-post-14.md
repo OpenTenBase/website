@@ -101,7 +101,7 @@ OpenTenBase 社区 ACE、PG 中文社区创始人之一周正中（德哥）把�
 
 从一条 SQL 的执行计划，到数据库内核的极致优化，再到让 Agent 记住团队经验、带着更多人完成第一次 PR——成都站用一个下午验证了「从理解技术到动手共创」的完整路径。
 
-10 月 16 日，OpenTenBase 城市行将来到上海，欢迎提前扫码报名，提前锁定席位，下次见！
+10 月 16 日，OpenTenBase 城市行将来到上海，欢迎提前扫码报名锁定席位，下次见！
 
 <div class="text-center">
   <img src="../images/event-post-14-12.jpg" class="img-fluid" alt="OpenTenBase 城市行上海站活动海报" />
@@ -110,17 +110,3 @@ OpenTenBase 社区 ACE、PG 中文社区创始人之一周正中（德哥）把�
 **OpenAtom OpenTenBase 社区**
 
 开源分布式数据库 · 欢迎 Star 与共建
-
-官网：https://www.opentenbase.org
-
-AtomGit：https://opentenbase.atomgit.com
-
-GitHub：https://github.com/OpenTenBase/OpenTenBase
-
-TXSQL：https://github.com/OpenTenBase/TXSQL
-
-觉得项目不错？给我们点个 Star ⭐ 吧
-
-提交 Issue / PR，一起把国产分布式数据库做得更好
-
-— 关注我们，获取更多技术干货 —
