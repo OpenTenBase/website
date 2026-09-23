@@ -102,17 +102,3 @@ description: "9 月 18 日下午，由开放原子上海开源促进中心、Ope
 **OpenAtom OpenTenBase 社区**
 
 开源分布式数据库 · 欢迎 Star 与共建
-
-官网：https://www.opentenbase.org
-
-AtomGit：https://opentenbase.atomgit.com
-
-GitHub：https://github.com/OpenTenBase/OpenTenBase
-
-TXSQL：https://github.com/OpenTenBase/TXSQL
-
-觉得项目不错？给我们点个 Star ⭐ 吧
-
-提交 Issue / PR，一起把国产分布式数据库做得更好
-
-— 关注我们，获取更多技术干货 —
