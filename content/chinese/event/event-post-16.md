@@ -1,6 +1,6 @@
 ---
 title: "从数据库底座到智能体治理：OpenTenBase 城市行上海站圆满落幕"
-date: 2026-10-20T19:10:00+08:00
+date: 2026-10-20T18:30:00+08:00
 author: OpenTenBase
 description: "2026 年 10 月 16 日下午，开放原子技术沙龙 · OpenTenBase 城市行上海站在上海龙之梦大酒店举行。"
 ---
