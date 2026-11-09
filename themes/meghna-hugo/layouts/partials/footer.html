@@ -10,6 +10,13 @@
             <img src="{{ site.Params.logo_footer | absURL }}" alt="{{ site.Title }}" height="38"/>
           </a>
         </div>
+        {{ with site.Params.friend_links }}
+        <div class="copyright">
+          <div>友情链接：
+            {{ range $i, $l := . }}{{ if $i }} · {{ end }}<a href="{{ $l.url }}" target="_blank" rel="noopener">{{ $l.name }}</a>{{ end }}
+          </div>
+        </div>
+        {{ end }}
         <div class="copyright">
           <div>{{ site.Params.copyright | markdownify }}</div>
            {{ with site.Params.icp }}
