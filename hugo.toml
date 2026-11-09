@@ -175,6 +175,11 @@ google_analytics_id = "" # Your ID
 # post share
 post_share = true
 
+# footer friend links（页脚友情链接）
+[[params.friend_links]]
+name = "光合开发者社区"
+url = "https://developer.sourcefind.cn/"
+
 # preloader
 [params.preloader]
 enable = false
